@@ -1,0 +1,3 @@
+ 1|/Main/Examples/Python/python_input.py|hidden|program|/Main/Examples/Python/python_input.py||<P>|
+ 2|Enter name: |text|parm1|John Doe|10|<BR>|
+ 3|Enter age: |text|parm2|27|5|<P>|

@@ -1,0 +1,39 @@
+/* ************************* SAS 9.1.3 with SP4 ************************* */
+/* ********************************************************************** */
+
+Credit goes to J (oil99) for gathering up the bits and pieces of SAS 9.1.3 torrents out there, and MakoShark2 for creating the patch to get it all working. I used ThinApp 4.0.4 to wrap up an installation as a portable app (i.e. it's a single executable--no need to install--just download and run) that should work on most setups (although 9.1.3 does not work on 64-bit systems). If it doesn't work for you, make sure your system meets the minimum requirements, and update your Java Runtime Environment (JRE).
+
+The patch forces in a date within the (now long expired) licence period. Note that this means that date() and datetime() functions {eg. today()} will return the *forced* date. Instead, use macro &SYSDATE which stores the CORRECT date returned by the system (assuming you start a new SAS session each day).
+
+If this torrent works well for you, please leave a comment at http://thepiratebay.org/user/jmdr/ to let others know. Thanks.
+
+The license includes:
+Academic Computing Offer
+Base SAS Software
+SAS OnlineTutor Programming Software
+SAS/ACCESS Interface to DB2 Software
+SAS/ACCESS Interface to MySQL
+SAS/ACCESS Interface to ODBC Software
+SAS/ACCESS Interface to OLE DB Software
+SAS/ACCESS Interface to ORACLE Software
+SAS/ACCESS Interface to PC Files Software
+SAS/ACCESS Interface to SYBASE Software
+SAS/AF Software
+SAS/ASSIST Software
+SAS/CONNECT Software
+SAS/EIS Software
+SAS/ETS Software
+SAS/FSP Software
+SAS/GIS Software
+SAS/GRAPH Software
+SAS/IML Software
+SAS/INSIGHT Software
+SAS/LAB Software
+SAS/OR Software
+SAS/QC Software
+SAS/SECURE for Windows Software
+SAS/SHARE Software
+SAS/SPECTRAVIEW Software
+SAS/STAT Software
+
+Enjoy...

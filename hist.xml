@@ -1,0 +1,979 @@
+19-05-02 04:50:47 vvvvictory:/Main/Users/vvvvictory> sas.exe -noterminal -sysin /Main/Users/vvvvictory/first.sas -log first.log -print first.lst
+19-05-02 04:51:24 vvvvictory:/Main/Users/vvvvictory> sas.exe -noterminal -sysin /Main/Users/vvvvictory/first.sas -log first.log -print first.lst
+19-05-02 04:51:52 vvvvictory:/Main/Users/vvvvictory> sas.exe -noterminal -sysin /Main/Users/vvvvictory/first.sas -log first.log -print first.lst
+19-05-02 04:51:59 vvvvictory:/Main/Users/vvvvictory> sas.exe -noterminal -sysin /Main/Users/vvvvictory/first.sas -log first.log -print first.lst
+19-05-03 16:01:03 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/longnormal.r longnormal.out
+19-05-03 16:01:26 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+19-05-03 18:06:22 admin:/Main/Users/casper> sas.exe -noterminal -sysin /Main/Users/casper/first.sas -log first.log -print first.lst
+19-05-03 18:07:19 admin:/Main/Users/casper> R.exe CMD BATCH --no-save --no-restore /Main/Users/casper/HelloWorld.r HelloWorld.out
+19-05-04 18:21:54 shijia:/Main/Users/shijia> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/st.r st.out
+19-05-05 07:34:53 pnight:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-05-05 07:34:56 pnight:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-05-05 07:35:18 pnight:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-05-05 07:35:34 pnight:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/get_prog_name.sas -log get_prog_name.log -print get_prog_name.lst
+19-05-05 07:35:45 pnight:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/get_prog_name.sas -log get_prog_name.log -print get_prog_name.lst
+19-05-05 07:39:37 pnight:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+19-05-05 07:41:11 pnight:/Main/Examples/SAS/CDISC/prog/chapter02> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/chapter02/make_define.sas -log make_define.log -print make_define.lst
+19-05-05 07:42:18 pnight:/Main/Users/pnight> sas.exe -noterminal -sysin /Main/Users/pnight/first.sas -log first.log -print first.lst
+19-05-05 07:53:05 pnight:/Main/Users/pnight> sas.exe -noterminal -sysin /Main/Users/pnight/first.sas -log first.log -print first.lst
+19-05-05 08:00:21 pnight:/Main/Users/pnight> sas.exe -noterminal -sysin /Main/Users/pnight/first.sas -log first.log -print first.lst
+19-05-08 08:04:55 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-05-12 18:22:20 guest:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/example.sas -log example.log -print example.lst
+19-05-12 18:22:48 guest:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/example.sas -log example.log -print example.lst
+19-05-16 03:35:43 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-05-16 06:01:36 jojo:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/nobs.sas -log nobs.log -print nobs.lst
+19-05-16 06:01:54 jojo:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/nobs.sas -log nobs.log -print nobs.lst
+19-05-16 06:02:32 jojo:/Main/Users/jojo> sas.exe -noterminal -sysin /Main/Users/jojo/first.sas -log first.log -print first.lst
+19-05-16 06:02:57 jojo:/Main/Users/jojo> sas.exe -noterminal -sysin /Main/Users/jojo/first.sas -log first.log -print first.lst
+19-05-18 20:26:27 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-05-18 20:27:17 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+19-05-21 02:08:16 admin:/Main/Users/tony8> sas.exe -noterminal -sysin /Main/Users/tony8/first.sas -log first.log -print first.lst
+19-05-22 17:38:01 admin:/Main/Users/casper> sas.exe -noterminal -sysin /Main/Users/casper/first.sas -log first.log -print first.lst
+19-06-08 02:59:55 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c4_3_input.sas -log c4_3_input.log -print c4_3_input.lst
+19-06-08 03:24:50 guest:/Main/Library/SAS/getvarlist> sas.exe -noterminal -sysin /Main/Library/SAS/getvarlist/example.sas -log example.log -print example.lst
+19-06-09 20:28:18 guest:/Main/Examples/SAS/MonteCarlo> sas.exe -noterminal -sysin /Main/Examples/SAS/MonteCarlo/area.sas -log area.log -print area.lst
+19-06-10 06:05:57 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Simple.py Simple.out Simple.err
+19-06-12 02:45:24 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+19-06-12 18:15:13 admin:/Main/Users/frank> sas.exe -noterminal -sysin /Main/Users/frank/first.sas -log first.log -print first.lst
+19-06-15 20:57:45 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 20:58:18 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 21:01:34 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 21:05:00 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 21:07:00 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 22:25:17 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-15 22:26:11 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-16 03:48:41 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-16 03:48:56 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex317.sas -log ex317.log -print ex317.lst
+19-06-22 01:24:57 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+19-06-23 23:43:49 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-06-25 09:27:56 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+19-06-25 21:51:50 007:/Main/Users/007> sas.exe -noterminal -sysin /Main/Users/007/first.sas -log first.log -print first.lst
+19-07-03 02:10:05 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:10:22 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:15:33 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:15:55 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:19:26 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:22:36 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:22:46 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:23:21 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 02:34:33 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 06:56:41 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/yydy222.sas -log yydy222.log -print yydy222.lst
+19-07-03 11:52:13 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log input.log -print input.lst
+19-07-04 06:37:51 guest:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-07-04 06:55:21 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+19-07-10 07:18:09 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-07-10 07:24:45 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-07-10 07:51:25 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-07-10 07:53:27 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-07-11 06:18:23 admin:/Main/Users/tony10> sas.exe -noterminal -sysin /Main/Users/tony10/first.sas -log first.log -print first.lst
+19-07-13 21:39:24 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log volume.log -print volume.lst
+19-07-13 21:39:51 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log volume.log -print volume.lst
+19-07-13 21:39:52 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log volume.log -print volume.lst
+19-07-13 21:40:03 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log volume.log -print volume.lst
+19-07-14 14:32:39 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-07-14 14:33:11 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-07-14 14:33:50 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+19-07-15 13:13:20 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-07-18 15:15:03 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Simple.py Simple.out Simple.err
+19-07-19 04:36:22 admin:/Main/Users/frank> sas.exe -noterminal -sysin /Main/Users/frank/first.sas -log first.log -print first.lst
+19-07-19 05:42:53 admin:/Main/Users/lisa> sas.exe -noterminal -sysin /Main/Users/lisa/first.sas -log first.log -print first.lst
+19-07-20 13:40:28 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+19-07-21 23:09:40 niu3jin:/Main/Users/niu3jin> sas.exe -noterminal -sysin /Main/Users/niu3jin/first.sas -log first.log -print first.lst
+19-07-21 23:10:23 niu3jin:/Main/Users/niu3jin> sas.exe -noterminal -sysin /Main/Users/niu3jin/first.sas -log first.log -print first.lst
+19-07-21 23:11:02 niu3jin:/Main/Users/niu3jin> python.exe /Main/Users/niu3jin/Simple.py Simple.out Simple.err
+19-07-24 18:46:31 admin:/Main/Users/admin/SAS_Input> sas.exe -noterminal -sysin /Main//Users/admin/SAS_Input/volume.sas -log input.log -print input.lst
+19-07-24 18:48:00 admin:/Main/Users/frank> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log input.log -print input.lst
+19-07-25 14:27:41 frank:/Main/Users/frank> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log input.log -print input.lst
+19-07-26 02:02:30 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/dbi.r dbi.out
+19-07-26 02:09:53 chkdqq:/Main/Users/chkdqq> sas.exe -noterminal -sysin /Main/Users/chkdqq/first.sas -log first.log -print first.lst
+19-07-26 02:10:05 chkdqq:/Main/Users/chkdqq> sas.exe -noterminal -sysin /Main/Users/chkdqq/first.sas -log first.log -print first.lst
+19-07-26 02:10:21 chkdqq:/Main/Users/chkdqq> sas.exe -noterminal -sysin /Main/Users/chkdqq/first.sas -log first.log -print first.lst
+19-07-26 02:10:58 chkdqq:/Main/Users/chkdqq> sas.exe -noterminal -sysin /Main/Users/chkdqq/first.sas -log first.log -print first.lst
+19-08-01 11:14:07 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+19-08-01 11:14:34 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+19-08-01 11:14:58 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+19-08-02 18:01:01 shijia:/Main/Users/shijia/Zhang> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/type_I_error_m_t.r type_I_error_m_t.out
+19-08-02 18:04:24 shijia:/Main/Users/shijia/Zhang> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/type_I_error_m.r type_I_error_m.out
+19-08-03 11:45:46 shijia:/Main/Users/shijia/Zhang> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/type_I_error_m_1.r type_I_error_m_1.out
+19-08-06 10:45:27 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0001k10.r type_I_error_m0001k10.out
+19-08-06 10:47:11 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0001k10.r type_I_error_m0001k10.out
+19-08-06 10:48:32 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k10.r type_I_error_m0005k10.out
+19-08-06 14:12:28 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m001k10.r type_I_error_m001k10.out
+19-08-07 12:13:32 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k20.r type_I_error_m0005k20.out
+19-08-07 12:14:59 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k10maf1.r type_I_error_m0005k10maf1.out
+19-08-07 17:11:38 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k10maf3.r type_I_error_m0005k10maf3.out
+19-08-08 12:28:59 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k50.r type_I_error_m0005k50.out
+19-08-08 18:09:06 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k50maf1.r type_I_error_m0005k50maf1.out
+19-08-09 01:14:09 shijia:/Main/Users/shijia/Zhang/typeierror8.6> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/typeierror8.6/type_I_error_m0005k50maf3.r type_I_error_m0005k50maf3.out
+19-08-09 12:20:30 guest:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/adverse.sas -log adverse.log -print adverse.lst
+19-08-09 17:17:14 guest:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/adverse.sas -log adverse.log -print adverse.lst
+19-08-09 17:17:24 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50.r type_I_error_m0005k50.out
+19-08-09 17:17:29 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50maf1.r type_I_error_m0005k50maf1.out
+19-08-10 08:59:11 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50maf3.r type_I_error_m0005k50maf3.out
+19-08-10 17:17:27 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50s20.r type_I_error_m0005k50s20.out
+19-08-11 05:31:35 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50s20maf1.r type_I_error_m0005k50s20maf1.out
+19-08-12 01:27:39 shijia:/Main/Users/shijia/Zhang/ty8.9> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.9/type_I_error_m0005k50s20maf3.r type_I_error_m0005k50s20maf3.out
+19-08-13 17:31:53 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-08-13 17:44:04 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/graph.sas -log graph.log -print graph.lst
+19-08-13 17:44:33 guest:/Main/Library/SAS/getvarlist> sas.exe -noterminal -sysin /Main/Library/SAS/getvarlist/example.sas -log example.log -print example.lst
+19-08-13 18:01:14 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/plot_input.r plot_input.out
+19-08-13 18:27:27 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+19-08-13 18:28:00 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/simple.r simple.out
+19-08-13 18:28:06 admin:/Main/Examples/SAS/MonteCarlo> sas.exe -noterminal -sysin /Main/Examples/SAS/MonteCarlo/area.sas -log area.log -print area.lst
+19-08-13 18:29:48 admin:/Main/Users/sakya/sl/ty1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/sl/ty1/type_I_error_m0005k50s20.r type_I_error_m0005k50s20.out
+19-08-15 07:52:16 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper.sas -log paper.log -print paper.lst
+19-08-15 07:59:52 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper1.sas -log paper1.log -print paper1.lst
+19-08-15 08:00:07 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper1.sas -log paper1.log -print paper1.lst
+19-08-15 08:00:15 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper1.sas -log paper1.log -print paper1.lst
+19-08-15 08:30:52 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper1.sas -log paper1.log -print paper1.lst
+19-08-15 08:31:08 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper1.sas -log paper1.log -print paper1.lst
+19-08-20 17:58:13 admin:/Main/Examples/SAS/MonteCarlo> sas.exe -noterminal -sysin /Main/Examples/SAS/MonteCarlo/area.sas -log area.log -print area.lst
+19-08-27 13:31:11 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf3.r typeIerror_maf3.out
+19-08-27 14:36:21 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf1.r typeIerror_maf1.out
+19-08-28 07:16:13 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf05.r typeIerror_maf05.out
+19-08-28 19:41:07 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+19-08-29 11:00:04 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf05_t1.r typeIerror_maf05_t1.out
+19-08-29 11:00:45 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf05_t2.r typeIerror_maf05_t2.out
+19-08-31 09:51:03 shijia:/Main/Users/shijia/Zhang/ty8.27> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty8.27/typeIerror_maf3_t3.r typeIerror_maf3_t3.out
+19-09-04 16:00:30 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-09-04 18:11:42 nikki:/Main/Users/nikki> sas.exe -noterminal -sysin /Main/Users/nikki/first.sas -log first.log -print first.lst
+19-09-04 22:45:43 nikki:/Main/Users/nikki> sas.exe -noterminal -sysin /Main/Users/nikki/first.sas -log first.log -print first.lst
+19-09-05 00:07:07 nikki:/Main/Users/nikki> sas.exe -noterminal -sysin /Main/Users/nikki/first.sas -log first.log -print first.lst
+19-09-05 23:22:40 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-09-05 23:23:41 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+19-09-11 11:51:51 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-11 15:49:20 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/python_input.py py_input.out py_input.err
+19-09-11 18:37:07 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-11 19:06:22 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+19-09-11 19:52:01 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-11 19:52:56 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-11 20:11:46 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-11 20:32:28 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-11 22:42:42 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 08:26:41 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-12 12:18:12 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 12:18:35 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 12:26:01 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-12 15:58:33 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 17:56:30 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 18:20:28 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-12 18:33:46 admin:/Main/Users/admin> R.exe CMD BATCH --no-save --no-restore /Main/Users/admin/packages.r packages.out
+19-09-13 05:47:05 admin:/Main/Users/admin> R.exe CMD BATCH --no-save --no-restore /Main/Users/admin/packages.r packages.out
+19-09-13 12:16:56 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-13 12:25:10 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-13 12:40:11 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/memory.r memory.out
+19-09-13 16:11:16 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-13 16:32:58 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-13 16:47:23 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-13 17:24:56 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-13 17:46:05 shijia:/Main/Users/shijia/Zhang/ty9.11> R.exe CMD BATCH --no-save --no-restore /Main/Users/shijia/Zhang/ty9.11/typeIerror1.r typeIerror1.out
+19-09-14 22:09:10 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/ex1_1.sas -log ex1_1.log -print ex1_1.lst
+19-09-14 22:10:49 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_1.sas -log ex1_1.log -print ex1_1.lst
+19-09-14 22:12:53 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_1.sas -log ex1_1.log -print ex1_1.lst
+19-09-14 22:17:48 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_1.sas -log ex1_1.log -print ex1_1.lst
+19-09-14 22:17:57 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_1.sas -log ex1_1.log -print ex1_1.lst
+19-09-15 05:49:13 chasing01:/Main/Users/chasing01> sas.exe -noterminal -sysin /Main/Users/chasing01/first.sas -log first.log -print first.lst
+19-09-15 05:49:45 chasing01:/Main/Users/chasing01> sas.exe -noterminal -sysin /Main/Users/chasing01/first.sas -log first.log -print first.lst
+19-09-15 05:50:01 chasing01:/Main/Users/chasing01> sas.exe -noterminal -sysin /Main/Users/chasing01/first.sas -log first.log -print first.lst
+19-09-15 19:15:11 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:16:31 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:18:12 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:19:09 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:21:46 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:23:03 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 19:49:11 admin:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/ty.r ty.out
+19-09-15 20:22:22 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/typeIerror_5.r typeIerror_5.out
+19-09-15 20:22:57 sakyayan:/Main/Users/sakyayan/Zhang/program_9.13.2019> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakyayan/Zhang/program_9.13.2019/typeIerror_5.r typeIerror_5.out
+19-09-16 08:29:25 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:01 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:19 heyinprc:/Main/Users/heyinprc> sas.exe -noterminal -sysin /Main/Users/heyinprc/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:24 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:29 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:35 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:40 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/ex1_3.sas -log ex1_3.log -print ex1_3.lst
+19-09-16 18:30:50 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:30:50 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:30:57 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:02 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:07 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:12 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:17 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:22 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:27 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-16 18:31:32 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-16 18:31:37 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-16 18:31:42 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-16 18:31:47 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-18 01:08:13 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-18 06:39:47 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/exercise1.sas -log exercise1.log -print exercise1.lst
+19-09-18 06:40:00 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/exercise1.sas -log exercise1.log -print exercise1.lst
+19-09-18 06:40:06 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-18 06:40:11 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-18 06:40:16 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/0916.sas -log 0916.log -print 0916.lst
+19-09-18 06:40:21 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/trust.sas -log trust.log -print trust.lst
+19-09-18 06:40:26 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/trust.sas -log trust.log -print trust.lst
+19-09-18 06:40:32 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/trust.sas -log trust.log -print trust.lst
+19-09-18 06:40:37 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/trust.sas -log trust.log -print trust.lst
+19-09-18 06:40:42 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/trust.sas -log trust.log -print trust.lst
+19-09-18 06:40:47 heyubo:/Main/Users/heyubo> sas.exe -noterminal -sysin /Main/Users/heyubo/example1.sas -log example1.log -print example1.lst
+19-09-18 06:40:52 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/d0101.sas -log d0101.log -print d0101.lst
+19-09-18 06:40:58 spider:/Main/Users/spider> sas.exe -noterminal -sysin /Main/Users/spider/d0101.sas -log d0101.log -print d0101.lst
+19-09-18 06:41:03 kangyajie:/Main/Users/kangyajie> sas.exe -noterminal -sysin /Main/Users/kangyajie/d0101.sas -log d0101.log -print d0101.lst
+19-09-18 06:41:08 spider:/Main/Users/spider> sas.exe -noterminal -sysin /Main/Users/spider/d0101.sas -log d0101.log -print d0101.lst
+19-09-18 06:41:14 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/d0101.sas -log d0101.log -print d0101.lst
+19-09-18 06:41:19 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/d0101.sas -log d0101.log -print d0101.lst
+19-09-19 02:21:39 guest:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-09-21 03:51:55 deadbone123:/Main/Users/deadbone123> R.exe CMD BATCH --no-save --no-restore /Main/Users/deadbone123/HelloWorld.r HelloWorld.out
+19-09-21 03:53:08 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-21 03:53:38 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-21 03:56:35 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-21 04:01:06 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-21 04:05:31 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-21 04:09:50 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 19:57:35 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 20:08:08 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 20:15:43 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:09:55 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:16:49 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:18:17 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:19:30 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:25:41 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:28:45 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:41:55 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:42:00 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-22 21:42:28 deadbone123:/Main/Users/deadbone123> sas.exe -noterminal -sysin /Main/Users/deadbone123/first.sas -log first.log -print first.lst
+19-09-24 04:33:34 guest:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+19-09-24 04:50:45 qwe123:/Main/Users/qwe123> sas.exe -noterminal -sysin /Main/Users/qwe123/first.sas -log first.log -print first.lst
+19-09-25 00:51:20 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table38.sas -log table38.log -print table38.lst
+19-09-25 00:57:11 guest:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/nobs.sas -log nobs.log -print nobs.lst
+19-09-25 01:04:43 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+19-09-25 01:08:15 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+19-09-25 01:10:18 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table38.sas -log table38.log -print table38.lst
+19-09-25 01:10:48 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table03.sas -log table03.log -print table03.lst
+19-09-27 00:58:37 kky:/Main/Users/kky> sas.exe -noterminal -sysin /Main/Users/kky/first.sas -log first.log -print first.lst
+19-10-04 04:19:31 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+19-10-08 07:34:35 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c4_3_input.sas -log c4_3_input.log -print c4_3_input.lst
+19-10-08 07:35:47 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table04.sas -log table04.log -print table04.lst
+19-10-08 07:36:06 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table04.sas -log table04.log -print table04.lst
+19-10-10 15:38:41 admin:/Main/Users/admin/SAS_Input> sas.exe -noterminal -sysin /Main//Users/admin/SAS_Input/volume.sas -log input.log -print input.lst
+19-10-10 15:39:29 admin:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+19-10-11 07:17:58 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-10-13 19:34:27 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+19-10-16 05:56:21 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-10-17 01:37:53 kk0508:/Main/Users/kk0508> sas.exe -noterminal -sysin /Main/Users/kk0508/kk.sas -log kk.log -print kk.lst
+19-10-17 01:38:19 kk0508:/Main/Users/kk0508> sas.exe -noterminal -sysin /Main/Users/kk0508/kk.sas -log kk.log -print kk.lst
+19-10-17 01:38:23 kk0508:/Main/Users/kk0508> sas.exe -noterminal -sysin /Main/Users/kk0508/kk.sas -log kk.log -print kk.lst
+19-10-17 06:10:28 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-10-19 01:01:35 yanhui:/Main/Users/yanhui> sas.exe -noterminal -sysin /Main/Users/yanhui/123.sas -log 123.log -print 123.lst
+19-10-22 10:00:46 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+19-10-27 03:26:58 lvdandan:/Main/Users/lvdandan> python.exe /Main/Users/lvdandan/Simple.py Simple.out Simple.err
+19-10-27 03:27:29 lvdandan:/Main/Users/lvdandan> python.exe /Main/Users/lvdandan/Simple.py Simple.out Simple.err
+19-10-27 03:27:42 lvdandan:/Main/Users/lvdandan> python.exe /Main/Users/lvdandan/Simple.py Simple.out Simple.err
+19-10-27 22:14:31 guest:/Main/Examples/SAS/CDISC/prog/chapter02> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/chapter02/make_define.sas -log make_define.log -print make_define.lst
+19-10-28 00:41:01 guest:/Main/Examples/SAS/CDISC/prog/chapter03> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/chapter03/AE.sas -log AE.log -print AE.lst
+19-10-28 00:41:22 guest:/Main/Examples/SAS/CDISC/prog/chapter03> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/chapter03/AE.sas -log AE.log -print AE.lst
+19-10-29 00:14:06 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 00:14:22 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 00:16:00 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 00:16:04 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 00:16:32 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 00:54:13 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 05:08:18 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c2_1.sas -log c2_1.log -print c2_1.lst
+19-10-29 05:57:09 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 05:57:26 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 07:11:15 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 07:15:06 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-29 18:27:16 yubmath:/Main/Users/yubmath> sas.exe -noterminal -sysin /Main/Users/yubmath/paper2.sas -log paper2.log -print paper2.lst
+19-10-30 06:06:09 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-10-30 08:33:07 yao:/Main/Users/yao> sas.exe -noterminal -sysin /Main/Users/yao/first.sas -log first.log -print first.lst
+19-10-30 08:33:34 yao:/Main/Users/yao> sas.exe -noterminal -sysin /Main/Users/yao/first.sas -log first.log -print first.lst
+19-11-03 19:52:01 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+19-11-04 19:02:28 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-11-09 18:37:01 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/p56_d_2.sas -log p56_d_2.log -print p56_d_2.lst
+19-11-11 21:27:07 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/graph.sas -log graph.log -print graph.lst
+19-11-13 07:35:31 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-11-15 06:36:13 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+19-11-18 05:11:57 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/test_1.sas -log test_1.log -print test_1.lst
+19-11-18 05:16:47 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/test_1.sas -log test_1.log -print test_1.lst
+19-11-18 05:57:17 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/test_2.sas -log test_2.log -print test_2.lst
+19-11-20 07:59:08 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+19-11-20 08:00:03 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c2_1.sas -log c2_1.log -print c2_1.lst
+19-11-26 23:30:38 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-12-11 07:47:38 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+19-12-19 18:56:37 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+19-12-23 11:09:59 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 11:11:42 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 11:12:20 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 12:09:03 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 14:00:20 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 17:15:21 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-23 19:02:19 admin:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-24 06:19:21 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/test.r test.out
+19-12-24 06:21:53 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/M1_B04.R M1_B04.out
+19-12-24 06:23:35 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/M1_B04.R M1_B04.out
+19-12-24 06:28:32 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/M1_B04_ALPHA0.R M1_B04_ALPHA0.out
+19-12-30 00:49:31 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/M1_B04_ALPHA1.r M1_B04_ALPHA1.out
+20-01-10 11:27:49 localhost:/Main/Users/localhost> sas.exe -noterminal -sysin /Main/Users/localhost/test_12_27.sas -log test_12_27.log -print test_12_27.lst
+20-01-11 11:34:38 yubmath:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/nobs.sas -log nobs.log -print nobs.lst
+20-01-11 11:34:48 yubmath:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/get_prog_name.sas -log get_prog_name.log -print get_prog_name.lst
+20-01-11 11:34:53 yubmath:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/get_prog_name.sas -log get_prog_name.log -print get_prog_name.lst
+20-01-11 11:34:59 haha:/Main/Users/haha> sas.exe -noterminal -sysin /Main/Users/haha/first.sas -log first.log -print first.lst
+20-01-11 11:35:04 alterorout:/Main/Users/alterorout> sas.exe -noterminal -sysin /Main/Users/alterorout/first.sas -log first.log -print first.lst
+20-01-11 11:35:09 guest:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/example.sas -log example.log -print example.lst
+20-01-11 11:35:15 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/PCLC_O_simulation_model6.R PCLC_O_simulation_model6.out
+20-01-11 11:35:21 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:45:19 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:46:50 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:48:53 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:52:35 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:56:31 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 17:58:48 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 18:00:22 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 18:12:14 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 18:14:21 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/first.sas -log first.log -print first.lst
+20-01-11 19:10:15 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/PCLC_O_simulation_model6.R PCLC_O_simulation_model6.out
+20-01-11 19:14:12 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m7.sas -log 128m7.log -print 128m7.lst
+20-01-11 19:15:52 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m39.sas -log 128m39.log -print 128m39.lst
+20-01-12 08:13:43 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m7.sas -log 128m7.log -print 128m7.lst
+20-01-12 09:29:43 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-01-12 11:26:47 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m71.sas -log 128m71.log -print 128m71.lst
+20-01-12 18:25:48 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-01-12 21:50:11 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m39.sas -log 128m39.log -print 128m39.lst
+20-01-12 22:00:56 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-01-13 07:33:48 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m71.sas -log 128m71.log -print 128m71.lst
+20-01-13 07:34:55 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-01-15 06:18:47 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/HelloWorld.r HelloWorld.out
+20-01-16 09:43:05 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m71.sas -log 128m71.log -print 128m71.lst
+20-01-16 10:43:12 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/PCLC_O_simulation_model6.R PCLC_O_simulation_model6.out
+20-01-16 19:15:44 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m71.sas -log 128m71.log -print 128m71.lst
+20-01-18 10:03:45 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-01-20 20:39:59 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+20-01-20 20:42:00 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+20-01-20 20:42:52 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+20-01-20 20:43:35 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+20-01-26 03:55:04 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 03:57:34 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 03:59:44 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 04:03:39 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 04:05:25 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 04:06:10 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 04:08:08 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 05:59:20 alice:/Main/Users/alice> R.exe CMD BATCH --no-save --no-restore /Main/Users/alice/test.r test.out
+20-01-26 06:01:21 alice:/Main/Users/alice> R.exe CMD BATCH --no-save --no-restore /Main/Users/alice/test.r test.out
+20-01-26 06:16:16 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:22:16 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:24:54 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:35:37 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:38:57 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:41:29 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:49:59 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:51:37 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:52:18 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:56:18 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-26 06:57:42 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-01-27 04:48:22 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/test.sas -log test.log -print test.lst
+20-01-27 04:50:03 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/test.sas -log test.log -print test.lst
+20-01-27 05:38:33 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/test.sas -log test.log -print test.lst
+20-01-27 05:40:45 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/test.sas -log test.log -print test.lst
+20-01-28 12:47:19 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 12:58:49 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 13:00:34 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 13:09:33 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 13:13:51 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 13:14:53 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-28 14:38:06 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/first.sas -log first.log -print first.lst
+20-01-29 19:15:24 qqhe:/Main/Users/qqhe> sas.exe -noterminal -sysin /Main/Users/qqhe/firs1t.sas -log firs1t.log -print firs1t.lst
+20-01-31 02:42:20 xuexi2003a:/Main/Users/xuexi2003a> sas.exe -noterminal -sysin /Main/Users/xuexi2003a/first.sas -log first.log -print first.lst
+20-01-31 02:44:31 xuexi2003a:/Main/Users/xuexi2003a> sas.exe -noterminal -sysin /Main/Users/xuexi2003a/first.sas -log first.log -print first.lst
+20-02-03 09:47:54 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-02-03 09:49:02 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-02-03 09:49:36 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+20-02-03 09:51:36 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+20-02-03 09:52:42 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/python_input.py py_input.out py_input.err
+20-02-03 09:54:21 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+20-02-03 09:57:42 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+20-02-03 10:01:32 guest:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+20-02-03 21:04:08 kyxu:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+20-02-03 21:05:33 kyxu:/Main/Users/kyxu> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/HelloWorld.r HelloWorld.out
+20-02-03 23:00:00 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-03 23:00:54 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-03 23:04:04 kyxu:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/dbi.r dbi.out
+20-02-03 23:11:00 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 01:55:42 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 01:59:34 kyxu:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/dbi.r dbi.out
+20-02-04 02:00:42 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 02:02:04 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 02:02:23 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 02:03:15 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 02:08:02 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 02:09:39 kyxu:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 09:58:28 admin:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 09:58:54 admin:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-04 10:08:31 admin:/Main/Users/kyxu/Flower_longevity> R.exe CMD BATCH --no-save --no-restore /Main/Users/kyxu/Flower_longevity/pollination_history_both.R pollination_history_both.out
+20-02-05 15:05:35 dyq:/Main/Users/dyq> sas.exe -noterminal -sysin /Main/Users/dyq/first.sas -log first.log -print first.lst
+20-02-05 15:05:44 dyq:/Main/Users/dyq> sas.exe -noterminal -sysin /Main/Users/dyq/first.sas -log first.log -print first.lst
+20-02-05 15:14:10 dyq:/Main/Users/dyq> sas.exe -noterminal -sysin /Main/Users/dyq/first.sas -log first.log -print first.lst
+20-02-05 15:15:35 dyq:/Main/Users/dyq> sas.exe -noterminal -sysin /Main/Users/dyq/0205.sas -log 0205.log -print 0205.lst
+20-02-14 19:39:21 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-02-16 10:58:38 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-02-17 01:48:37 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-02-17 09:13:20 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Simple.py Simple.out Simple.err
+20-02-18 09:30:47 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-02-21 19:37:27 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-02-21 19:40:40 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-02-24 19:38:23 mumu:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+20-02-24 19:46:58 mumu:/Main/Users/mumu> sas.exe -noterminal -sysin /Main/Users/mumu/first.sas -log first.log -print first.lst
+20-02-24 19:48:23 mumu:/Main/Users/mumu> sas.exe -noterminal -sysin /Main/Users/mumu/first.sas -log first.log -print first.lst
+20-02-26 14:53:05 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-03-03 10:55:47 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-03-04 20:42:42 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-03-06 16:27:13 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-03-07 21:27:24 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-03-16 17:28:56 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-03-18 02:06:46 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/ex25.sas -log ex25.log -print ex25.lst
+20-03-18 02:07:02 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/ex25.sas -log ex25.log -print ex25.lst
+20-03-21 05:26:23 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c5_4.sas -log c5_4.log -print c5_4.lst
+20-03-21 05:27:47 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Pandas_Example.py Pandas_Example.out Pandas_Example.err
+20-03-21 05:38:49 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Simple.py Simple.out Simple.err
+20-03-21 05:39:00 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Simple.py Simple.out Simple.err
+20-03-21 06:04:33 guest:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/example.sas -log example.log -print example.lst
+20-03-21 06:10:07 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+20-03-21 06:11:32 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+20-03-21 06:12:29 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/barplot1.r barplot1.out
+20-03-21 06:13:20 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/barplot1.r barplot1.out
+20-03-25 19:22:07 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-03-27 07:11:58 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+20-04-03 03:50:55 jiangyating:/Main/Users/jiangyating> sas.exe -noterminal -sysin /Main/Users/jiangyating/xgfybl.sas -log xgfybl.log -print xgfybl.lst
+20-04-13 00:34:25 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 00:34:42 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 00:37:16 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 02:09:17 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 02:11:58 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter2.sas -log chapter2.log -print chapter2.lst
+20-04-13 16:41:53 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 16:42:06 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-13 16:44:17 2280069868:/Main/Users/2280069868> sas.exe -noterminal -sysin /Main/Users/2280069868/chapter1.sas -log chapter1.log -print chapter1.lst
+20-04-19 03:50:57 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-04-19 04:11:24 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-04-19 04:13:45 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-04-19 04:15:03 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-04-19 04:16:18 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/gen.sas -log gen.log -print gen.lst
+20-04-27 02:13:48 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:17:28 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:32:15 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:40:21 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:42:24 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:44:00 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:49:06 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 02:55:23 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 04:56:23 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 04:58:06 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:01:03 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:04:09 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:06:40 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:07:58 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:09:30 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:11:39 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:14:45 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:17:58 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:19:54 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:21:27 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:23:15 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:24:47 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:26:33 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:27:50 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:31:30 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 05:34:09 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:10:48 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:13:08 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:15:34 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:17:53 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:23:35 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:26:29 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:27:34 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:29:43 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:31:26 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:33:48 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:39:09 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:43:08 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 09:45:56 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:11:45 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:24:35 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:26:17 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:27:37 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:28:44 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:29:45 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:31:17 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:34:05 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:40:31 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:42:15 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:42:57 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:43:47 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:44:35 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:45:39 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:46:27 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:47:18 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 10:48:04 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:06:23 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:07:15 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:08:04 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:11:15 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:12:30 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:13:57 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:14:35 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:15:20 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:16:10 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:16:43 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:17:29 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:18:11 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-27 12:37:59 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m7.sas -log 128m7.log -print 128m7.lst
+20-04-27 18:16:05 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m129.sas -log 128m129.log -print 128m129.lst
+20-04-27 18:16:16 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m129.sas -log 128m129.log -print 128m129.lst
+20-04-27 18:17:03 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/129.sas -log 129.log -print 129.lst
+20-04-27 18:17:08 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m129.sas -log 128m129.log -print 128m129.lst
+20-04-27 18:17:27 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/129.sas -log 129.log -print 129.lst
+20-04-27 18:19:11 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-04-27 23:10:10 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-04-28 13:57:02 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+20-04-28 13:57:48 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-04-29 08:08:58 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty.r simulation_GAW_ty.out
+20-04-29 08:09:48 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty.r simulation_GAW_ty.out
+20-04-29 08:22:54 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty_001.r simulation_GAW_ty_001.out
+20-04-29 09:11:29 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty_25.r simulation_GAW_ty_25.out
+20-04-29 10:13:09 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty_25_01.r simulation_GAW_ty_25_01.out
+20-04-29 10:17:45 sakya:/Main/Users/sakya/p2> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p2/simulation_GAW_ty_25_001.r simulation_GAW_ty_25_001.out
+20-04-29 18:11:30 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-05-02 22:27:46 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/128m103.sas -log 128m103.log -print 128m103.lst
+20-05-07 07:24:36 zhangc927:/Main/Users/zhangc927> sas.exe -noterminal -sysin /Main/Users/zhangc927/first.sas -log first.log -print first.lst
+20-05-13 19:11:48 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-05-19 05:55:29 qimei1:/Main/Users/qimei1> sas.exe -noterminal -sysin /Main/Users/qimei1/f1.sas -log f1.log -print f1.lst
+20-05-19 19:21:15 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/HelloWorld.r HelloWorld.out
+20-05-19 19:49:06 xueweic:/Main/Users/xueweic> R.exe CMD BATCH --no-save --no-restore /Main/Users/xueweic/HelloWorld.r HelloWorld.out
+20-05-19 19:49:13 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:18 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:26 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:31 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:36 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:41 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:49:46 rrcrrc:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/example.sas -log example.log -print example.lst
+20-05-19 19:49:51 rrcrrc:/Main/Library/SAS/nobs> sas.exe -noterminal -sysin /Main/Library/SAS/nobs/nobs.sas -log nobs.log -print nobs.lst
+20-05-19 19:49:57 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:50:46 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:51:51 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:56:51 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/first.sas -log first.log -print first.lst
+20-05-19 19:58:23 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/second.sas -log second.log -print second.lst
+20-05-19 20:32:23 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/second.sas -log second.log -print second.lst
+20-05-19 20:34:24 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/second.sas -log second.log -print second.lst
+20-05-19 20:36:22 rrcrrc:/Main/Users/rrcrrc> sas.exe -noterminal -sysin /Main/Users/rrcrrc/second.sas -log second.log -print second.lst
+20-05-26 20:42:29 ying:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/adverse.sas -log adverse.log -print adverse.lst
+20-05-26 20:43:00 ying:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/dosing.sas -log dosing.log -print dosing.lst
+20-05-28 20:23:05 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gplot.sas -log gplot.log -print gplot.lst
+20-05-28 20:27:33 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gplot.sas -log gplot.log -print gplot.lst
+20-05-31 23:49:22 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example41_1.sas -log example41_1.log -print example41_1.lst
+20-05-31 23:49:49 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example41_1.sas -log example41_1.log -print example41_1.lst
+20-05-31 23:50:44 nyf:/Main/Users/nyf> sas.exe -noterminal -sysin /Main/Users/nyf/cf.sas -log cf.log -print cf.lst
+20-06-01 00:05:03 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-01 00:10:24 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-01 19:04:07 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-01 19:04:40 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-02 22:09:14 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-02 22:50:52 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-06-03 03:14:34 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-03 03:42:14 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-03 03:42:59 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-03 03:43:07 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-03 05:21:25 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-04 19:06:18 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-04 19:15:25 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-04 19:19:04 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example42_1.sas -log example42_1.log -print example42_1.lst
+20-06-04 19:19:45 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example41_1.sas -log example41_1.log -print example41_1.lst
+20-06-04 20:34:32 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/ex26.sas -log ex26.log -print ex26.lst
+20-06-05 03:16:02 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 03:17:57 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example32_1.sas -log example32_1.log -print example32_1.lst
+20-06-05 05:40:45 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 05:40:50 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 16:54:29 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/ex31.sas -log ex31.log -print ex31.lst
+20-06-05 16:54:55 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/ex31.sas -log ex31.log -print ex31.lst
+20-06-05 16:55:24 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 17:00:05 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 17:00:36 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example31_1.sas -log example31_1.log -print example31_1.lst
+20-06-05 17:08:43 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example32_1.sas -log example32_1.log -print example32_1.lst
+20-06-09 21:13:15 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example51_1.sas -log example51_1.log -print example51_1.lst
+20-06-09 21:14:33 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example51_1.sas -log example51_1.log -print example51_1.lst
+20-06-09 22:16:42 789:/Main/Users/789> sas.exe -noterminal -sysin /Main/Users/789/example51_1.sas -log example51_1.log -print example51_1.lst
+20-06-09 22:25:22 datamind:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/demographic.sas -log demographic.log -print demographic.lst
+20-06-12 04:32:24 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example51_1.sas -log example51_1.log -print example51_1.lst
+20-06-12 04:34:34 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example52_1.sas -log example52_1.log -print example52_1.lst
+20-06-12 04:35:30 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example52_2.sas -log example52_2.log -print example52_2.lst
+20-06-12 04:36:10 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example51_1.sas -log example51_1.log -print example51_1.lst
+20-06-12 04:36:50 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example52_1.sas -log example52_1.log -print example52_1.lst
+20-06-12 04:43:49 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example52_1.sas -log example52_1.log -print example52_1.lst
+20-06-12 04:44:32 mei:/Main/Users/mei> sas.exe -noterminal -sysin /Main/Users/mei/example52_1.sas -log example52_1.log -print example52_1.lst
+20-06-17 23:02:21 guest:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log volume.log -print volume.lst
+20-06-17 23:03:30 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/autos.r autos.out
+20-06-19 01:49:47 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-06-19 02:05:04 243550865:/Main/Users/243550865> sas.exe -noterminal -sysin /Main/Users/243550865/first.sas -log first.log -print first.lst
+20-06-23 19:14:36 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-06-27 19:31:00 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/simple_input.r simple_input.out
+20-06-27 19:31:04 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/simple_input.r simple_input.out
+20-06-27 19:32:11 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/simple_input.r simple_input.out
+20-06-27 19:32:13 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/simple_input.r simple_input.out
+20-06-27 19:32:19 guest:/Main/Users/guest/R> R.exe CMD BATCH --no-save --no-restore /Main/Users/guest/R/simple_input.r simple_input.out
+20-06-27 19:33:37 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c4_3_input.sas -log c4_3_input.log -print c4_3_input.lst
+20-06-27 19:36:11 guest:/Main/Library/SAS/get_prog_name> sas.exe -noterminal -sysin /Main/Library/SAS/get_prog_name/get_prog_name.sas -log get_prog_name.log -print get_prog_name.lst
+20-06-27 19:37:39 guest:/Main/Library/SAS/getvarlist> sas.exe -noterminal -sysin /Main/Library/SAS/getvarlist/getvarlist.sas -log getvarlist.log -print getvarlist.lst
+20-06-27 19:39:10 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/python_input.py py_input.out py_input.err
+20-06-27 19:39:14 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/python_input.py py_input.out py_input.err
+20-06-27 19:40:57 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/simple.r simple.out
+20-06-30 16:26:43 admin:/Main/Users/admin/SAS_Input> sas.exe -noterminal -sysin /Main//Users/admin/SAS_Input/volume.sas -log input.log -print input.lst
+20-06-30 16:27:35 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-07-12 06:06:57 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:08:04 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:09:15 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:10:04 qin:/Main/Users/qin> python.exe /Main/Users/qin/Simple.py Simple.out Simple.err
+20-07-12 06:10:51 qin:/Main/Users/qin> python.exe /Main/Users/qin/Simple.py Simple.out Simple.err
+20-07-12 06:12:57 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:46:21 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:47:20 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/first.sas -log first.log -print first.lst
+20-07-12 06:50:38 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 06:53:17 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 06:55:45 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 06:59:15 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 06:59:19 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 07:02:24 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 07:03:04 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-12 07:03:53 qin:/Main/Users/qin> sas.exe -noterminal -sysin /Main/Users/qin/asa.sas -log asa.log -print asa.lst
+20-07-19 14:44:56 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-07-22 20:09:00 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-08-19 04:52:17 admin:/Main/Examples/SAS/MonteCarlo> sas.exe -noterminal -sysin /Main/Examples/SAS/MonteCarlo/area.sas -log area.log -print area.lst
+20-08-23 23:29:16 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty.r ty.out
+20-08-23 23:34:34 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m1.r ty_m1.out
+20-08-23 23:36:11 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m1.r ty_m1.out
+20-08-23 23:36:56 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m1.r ty_m1.out
+20-08-23 23:39:46 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m1_d1.r ty_m1_d1.out
+20-08-23 23:40:58 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m2_d1.r ty_m2_d1.out
+20-08-23 23:42:03 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_m3_d1.r ty_m3_d1.out
+20-08-26 21:02:45 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:05:01 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:09:11 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:10:59 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:12:19 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:13:52 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:21:03 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:22:53 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:25:45 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:28:15 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:30:27 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:34:28 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 21:55:42 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:00:31 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:06:07 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:09:38 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:12:13 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:14:52 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:16:50 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:19:21 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:22:28 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:30:32 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:32:48 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:34:36 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:36:23 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:39:41 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:42:17 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:48:17 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:50:30 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:54:03 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 22:59:04 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:04:19 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:08:00 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:11:03 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:13:17 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:17:12 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:19:29 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:21:29 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:25:21 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:29:46 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:38:24 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:43:09 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:50:16 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-26 23:54:39 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-27 00:03:46 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/power.r power.out
+20-08-27 00:19:53 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty.r ty.out
+20-08-27 00:21:40 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n1_m1_2.r ty_n1_m1_2.out
+20-08-27 00:24:44 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n1_m1_3.r ty_n1_m1_3.out
+20-08-27 00:28:54 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m1_1.r ty_n2_m1_1.out
+20-08-27 00:31:51 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m1_2.r ty_n2_m1_2.out
+20-08-27 00:34:43 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m1_3.r ty_n2_m1_3.out
+20-08-27 00:37:22 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m1_1.r ty_n3_m1_1.out
+20-08-27 00:43:45 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m1_2.r ty_n3_m1_2.out
+20-08-27 00:49:22 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m1_3.r ty_n3_m1_3.out
+20-08-27 00:57:15 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n1_m2_1.r ty_n1_m2_1.out
+20-08-27 01:08:00 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n1_m2_2.r ty_n1_m2_2.out
+20-08-27 01:10:14 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n1_m2_3.r ty_n1_m2_3.out
+20-08-27 01:13:18 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m2_1.r ty_n2_m2_1.out
+20-08-27 01:17:32 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m2_2.r ty_n2_m2_2.out
+20-08-27 01:20:51 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n2_m2_3.r ty_n2_m2_3.out
+20-08-27 01:25:27 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m2_1.r ty_n3_m2_1.out
+20-08-27 01:31:49 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m2_2.r ty_n3_m2_2.out
+20-08-27 01:37:22 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_n3_m2_3.r ty_n3_m2_3.out
+20-08-28 00:10:36 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g1_m1.r ty_g1_m1.out
+20-08-28 00:12:44 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g1_m2.r ty_g1_m2.out
+20-08-28 00:14:19 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g1_m3.r ty_g1_m3.out
+20-08-28 00:15:11 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g2_m1.r ty_g2_m1.out
+20-08-28 00:17:27 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g2_m2.r ty_g2_m2.out
+20-08-28 00:20:28 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g2_m3.r ty_g2_m3.out
+20-08-28 00:23:32 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g3_m1.r ty_g3_m1.out
+20-08-28 00:26:36 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g3_m2.r ty_g3_m2.out
+20-08-28 00:30:49 sakya:/Main/Users/sakya/p1> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p1/ty_g3_m3.r ty_g3_m3.out
+20-09-11 19:14:48 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-09-12 17:39:40 guest:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/demographic.sas -log demographic.log -print demographic.lst
+20-09-12 17:41:06 guest:/Main/Examples/SAS/CDISC/prog/appendix_a> sas.exe -noterminal -sysin /Main/Examples/SAS/CDISC/prog/appendix_a/adverse.sas -log adverse.log -print adverse.lst
+20-09-14 10:19:54 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-09-15 13:01:34 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-09-16 10:55:18 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-09-17 08:17:23 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+20-10-01 07:55:16 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-11-04 21:19:20 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+20-11-11 18:11:18 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+20-11-24 22:35:22 dx010424:/Main/Users/dx010424> sas.exe -noterminal -sysin /Main/Users/dx010424/1.sas -log 1.log -print 1.lst
+20-11-24 22:35:45 dx010424:/Main/Users/dx010424> sas.exe -noterminal -sysin /Main/Users/dx010424/1.sas -log 1.log -print 1.lst
+20-11-24 22:35:53 dx010424:/Main/Users/dx010424> sas.exe -noterminal -sysin /Main/Users/dx010424/1.sas -log 1.log -print 1.lst
+20-11-24 22:36:48 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/5-9.sas -log 5-9.log -print 5-9.lst
+20-11-24 22:38:49 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/5-11.sas -log 5-11.log -print 5-11.lst
+20-11-24 22:39:28 lilisha:/Main/Users/lilisha> sas.exe -noterminal -sysin /Main/Users/lilisha/a.sas -log a.log -print a.lst
+20-11-24 22:46:00 lilisha:/Main/Users/lilisha> sas.exe -noterminal -sysin /Main/Users/lilisha/c.sas -log c.log -print c.lst
+20-11-24 22:48:35 lilisha:/Main/Users/lilisha> sas.exe -noterminal -sysin /Main/Users/lilisha/a.sas -log a.log -print a.lst
+20-11-24 22:50:29 zy12:/Main/Users/zy12> sas.exe -noterminal -sysin /Main/Users/zy12/one.sas -log one.log -print one.lst
+20-11-24 22:52:43 duanzhikun:/Main/Users/duanzhikun> sas.exe -noterminal -sysin /Main/Users/duanzhikun/1.sas -log 1.log -print 1.lst
+20-11-24 22:52:57 duanzhikun:/Main/Users/duanzhikun> sas.exe -noterminal -sysin /Main/Users/duanzhikun/1.sas -log 1.log -print 1.lst
+20-11-24 22:53:30 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/qwe.sas -log qwe.log -print qwe.lst
+20-11-24 22:53:56 duan:/Main/Users/duan> sas.exe -noterminal -sysin /Main/Users/duan/dzkjsb.sas -log dzkjsb.log -print dzkjsb.lst
+20-11-24 22:53:59 duanzhikun:/Main/Users/duanzhikun> sas.exe -noterminal -sysin /Main/Users/duanzhikun/2.sas -log 2.log -print 2.lst
+20-11-24 22:54:13 duanzhikun:/Main/Users/duanzhikun> sas.exe -noterminal -sysin /Main/Users/duanzhikun/2.sas -log 2.log -print 2.lst
+20-11-24 22:54:31 duanzhikun:/Main/Users/duanzhikun> sas.exe -noterminal -sysin /Main/Users/duanzhikun/2.sas -log 2.log -print 2.lst
+20-11-24 22:55:03 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/tang.sas -log tang.log -print tang.lst
+20-11-24 22:55:28 zy12:/Main/Users/zy12> sas.exe -noterminal -sysin /Main/Users/zy12/zy.sas -log zy.log -print zy.lst
+20-11-24 22:58:52 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/qwe.sas -log qwe.log -print qwe.lst
+20-11-24 22:59:59 duan:/Main/Users/duan> sas.exe -noterminal -sysin /Main/Users/duan/14771.sas -log 14771.log -print 14771.lst
+20-11-24 23:00:40 duan:/Main/Users/duan> sas.exe -noterminal -sysin /Main/Users/duan/14771.sas -log 14771.log -print 14771.lst
+20-11-24 23:01:01 duan:/Main/Users/duan> sas.exe -noterminal -sysin /Main/Users/duan/14771.sas -log 14771.log -print 14771.lst
+20-11-24 23:07:37 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/qwe.sas -log qwe.log -print qwe.lst
+20-11-24 23:14:36 dx010424:/Main/Users/dx010424> sas.exe -noterminal -sysin /Main/Users/dx010424/2.sas -log 2.log -print 2.lst
+20-11-24 23:20:05 libazhi:/Main/Users/libazhi> sas.exe -noterminal -sysin /Main/Users/libazhi/shiyan5.sas -log shiyan5.log -print shiyan5.lst
+20-12-05 19:11:42 ron.young:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-12-05 19:13:20 ron.young:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-12-05 19:13:48 ron.young:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-12-05 19:14:11 ron.young:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+20-12-05 19:16:49 ron.young:/Main/Users/ron.young> python.exe /Main/Users/ron.young/Simple.py Simple.out Simple.err
+20-12-08 22:47:41 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:04:40 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/6-11.sas -log 6-11.log -print 6-11.lst
+20-12-08 23:11:41 maimai:/Main/Users/maimai> sas.exe -noterminal -sysin /Main/Users/maimai/text.sas -log text.log -print text.lst
+20-12-08 23:13:08 maimai:/Main/Users/maimai> sas.exe -noterminal -sysin /Main/Users/maimai/text.sas -log text.log -print text.lst
+20-12-08 23:19:37 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/6-11.sas -log 6-11.log -print 6-11.lst
+20-12-08 23:22:04 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:23:32 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/132.sas -log 132.log -print 132.lst
+20-12-08 23:24:07 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/6-11.sas -log 6-11.log -print 6-11.lst
+20-12-08 23:24:21 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:25:40 maimai:/Main/Users/maimai> sas.exe -noterminal -sysin /Main/Users/maimai/text1.sas -log text1.log -print text1.lst
+20-12-08 23:27:48 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/6-12.sas -log 6-12.log -print 6-12.lst
+20-12-08 23:29:40 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:33:33 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:37:36 liaoxianglan:/Main/Users/liaoxianglan> sas.exe -noterminal -sysin /Main/Users/liaoxianglan/a.sas -log a.log -print a.lst
+20-12-08 23:38:45 maimai:/Main/Users/maimai> sas.exe -noterminal -sysin /Main/Users/maimai/text1.sas -log text1.log -print text1.lst
+20-12-08 23:38:46 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/132.sas -log 132.log -print 132.lst
+20-12-08 23:39:21 liaoxianglan:/Main/Users/liaoxianglan> sas.exe -noterminal -sysin /Main/Users/liaoxianglan/a.sas -log a.log -print a.lst
+20-12-08 23:48:55 liaoxianglan:/Main/Users/liaoxianglan> sas.exe -noterminal -sysin /Main/Users/liaoxianglan/a.sas -log a.log -print a.lst
+20-12-08 23:51:12 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-08 23:51:54 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/22222.sas -log 22222.log -print 22222.lst
+20-12-09 00:01:03 libazhi:/Main/Users/libazhi> sas.exe -noterminal -sysin /Main/Users/libazhi/6.sas -log 6.log -print 6.lst
+20-12-09 00:03:08 dx010424:/Main/Users/dx010424> sas.exe -noterminal -sysin /Main/Users/dx010424/3.sas -log 3.log -print 3.lst
+20-12-09 06:56:06 npu3101:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+20-12-19 20:36:31 guest:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+20-12-22 22:43:52 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/shiyan.sas -log shiyan.log -print shiyan.lst
+20-12-22 22:44:40 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/shiyaba.sas -log shiyaba.log -print shiyaba.lst
+20-12-22 22:45:18 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/shiyan.sas -log shiyan.log -print shiyan.lst
+20-12-22 22:45:46 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/shiyaba.sas -log shiyaba.log -print shiyaba.lst
+20-12-22 22:46:02 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/shiyan.sas -log shiyan.log -print shiyan.lst
+20-12-22 22:46:40 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/shiyaba.sas -log shiyaba.log -print shiyaba.lst
+20-12-22 22:46:50 jiangyawen:/Main/Users/jiangyawen> sas.exe -noterminal -sysin /Main/Users/jiangyawen/shiyaba.sas -log shiyaba.log -print shiyaba.lst
+20-12-22 22:48:38 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/ssssss.sas -log ssssss.log -print ssssss.lst
+20-12-22 22:49:41 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/shiyan.sas -log shiyan.log -print shiyan.lst
+20-12-22 22:50:52 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/7-1.sas -log 7-1.log -print 7-1.lst
+20-12-22 22:52:08 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/7-1.sas -log 7-1.log -print 7-1.lst
+20-12-22 22:54:44 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/7-1.sas -log 7-1.log -print 7-1.lst
+20-12-22 22:56:12 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/44554451544.sas -log 44554451544.log -print 44554451544.lst
+20-12-22 22:56:58 moralitc:/Main/Users/moralitc> sas.exe -noterminal -sysin /Main/Users/moralitc/7-1.sas -log 7-1.log -print 7-1.lst
+20-12-22 22:58:28 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/44554451544.sas -log 44554451544.log -print 44554451544.lst
+20-12-22 23:00:54 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/44554451544.sas -log 44554451544.log -print 44554451544.lst
+20-12-22 23:03:22 1786246075:/Main/Users/1786246075> sas.exe -noterminal -sysin /Main/Users/1786246075/shiyan.sas -log shiyan.log -print shiyan.lst
+21-01-24 12:25:49 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+21-01-30 16:57:25 alice:/Main/Users/alice> sas.exe -noterminal -sysin /Main/Users/alice/test.sas -log test.log -print test.lst
+21-02-04 16:16:36 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+21-02-04 16:17:10 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+21-02-04 16:50:54 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test2.sas -log test2.log -print test2.lst
+21-02-12 09:39:58 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+21-03-18 01:21:48 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/sjxlfx.sas -log sjxlfx.log -print sjxlfx.lst
+21-03-18 01:23:24 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/sjxlfx.sas -log sjxlfx.log -print sjxlfx.lst
+21-03-18 01:23:56 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/sjxlfx.sas -log sjxlfx.log -print sjxlfx.lst
+21-03-18 01:26:11 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:27:37 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:29:55 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:30:57 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:31:05 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:34:41 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:38:04 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:40:55 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:41:40 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-03-18 01:44:16 dengxi:/Main/Users/dengxi> sas.exe -noterminal -sysin /Main/Users/dengxi/555.sas -log 555.log -print 555.lst
+21-04-11 21:43:48 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_0.3.r r_0.3.out
+21-04-11 22:16:17 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_0.5.r r_0.5.out
+21-04-12 00:14:05 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_0.7.r r_0.7.out
+21-04-12 02:43:56 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/HelloWorld.r HelloWorld.out
+21-04-12 05:13:52 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_n0.5.r r_n0.5.out
+21-04-12 07:43:52 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_n0.1.r r_n0.1.out
+21-04-12 10:14:01 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_n0.9.r r_n0.9.out
+21-04-12 12:43:18 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_n0.7.r r_n0.7.out
+21-04-12 15:13:38 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/r_n0.3.r r_n0.3.out
+21-04-13 04:56:29 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c2_1.sas -log c2_1.log -print c2_1.lst
+21-04-13 04:57:32 guest:/Main/Users/guest/SAS> sas.exe -noterminal -sysin /Main/Users/guest/SAS/c2_1.sas -log c2_1.log -print c2_1.lst
+21-04-16 15:39:06 admin:/Main/Users/admin/R_Input> R.exe CMD BATCH --no-save --no-restore /Main/Users/admin/R_Input/r_input.r r_input.out
+21-04-16 17:16:56 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+21-04-17 10:35:00 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/theory_size.r theory_size.out
+21-04-19 08:27:40 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/minp.r minp.out
+21-04-19 08:46:58 wangsiyuyy:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/minp.r minp.out
+21-04-19 09:47:30 admin:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/minp.r minp.out
+21-04-19 09:51:23 admin:/Main/Users/wangsiyuyy> R.exe CMD BATCH --no-save --no-restore /Main/Users/wangsiyuyy/minp.r minp.out
+21-04-19 09:58:54 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+21-04-19 21:42:49 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+21-05-14 07:49:39 guest:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+21-06-14 03:45:41 alice1:/Main/Users/alice1> R.exe CMD BATCH --no-save --no-restore /Main/Users/alice1/test.r test.out
+21-06-14 03:47:40 alice1:/Main/Users/alice1> sas.exe -noterminal -sysin /Main/Users/alice1/test.sas -log test.log -print test.lst
+21-06-14 04:17:09 tzeng:/Main/Users/tzeng> python.exe /Main/Users/tzeng/Simple.py Simple.out Simple.err
+21-06-14 04:18:05 tzeng:/Main/Users/tzeng> python.exe /Main/Users/tzeng/Simple.py Simple.out Simple.err
+21-06-14 04:19:03 tzeng:/Main/Users/tzeng> python.exe /Main/Users/tzeng/Simple.py Simple.out Simple.err
+21-06-14 14:46:06 sakya:/Main/Users/sakya/p3> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p3/type1-NB.r type1-NB.out
+21-06-14 14:47:06 sakya:/Main/Users/sakya/p3> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p3/type1-NB.r type1-NB.out
+21-06-14 14:48:18 sakya:/Main/Users/sakya/p3> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p3/type1-NB.r type1-NB.out
+21-06-14 14:50:52 sakya:/Main/Users/sakya/p3> R.exe CMD BATCH --no-save --no-restore /Main/Users/sakya/p3/type1-NB.r type1-NB.out
+21-06-17 20:24:56 guest:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+21-07-18 16:09:35 guest:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+21-07-23 21:26:48 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+22-01-05 17:14:34 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+22-01-09 09:27:59 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+22-01-09 09:29:14 admin:/Main/Users/admin/SAS_Input> sas.exe -noterminal -sysin /Main//Users/admin/SAS_Input/volume.sas -log input.log -print input.lst
+22-01-09 12:37:25 admin:/Main/Examples/SAS/Input> sas.exe -noterminal -sysin /Main/Examples/SAS/Input/volume.sas -log input.log -print input.lst
+22-01-20 20:37:50 dsc:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+22-01-20 20:39:49 dsc:/Main/Users/dsc> python.exe /Main/Users/dsc/Simple.py Simple.out Simple.err
+22-01-20 20:40:46 dsc:/Main/Users/dsc> python.exe /Main/Users/dsc/Simple.py Simple.out Simple.err
+22-01-20 20:47:06 dsc:/Main/Users/dsc/test1> python.exe /Main/Users/dsc/test1/t1.py t1.out t1.err
+22-01-31 23:12:18 :/> 
+23-04-06 14:50:09 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+23-04-06 14:53:46 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-06 14:55:59 admin:/Main/Users/admin/SAS_Input> sas.exe -noterminal -sysin /Main//Users/admin/SAS_Input/volume.sas -log input.log -print input.lst
+23-04-06 14:56:58 admin:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+23-04-06 14:59:08 admin:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+23-04-06 15:00:45 admin:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+23-04-06 15:02:48 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+23-04-06 15:03:52 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/simple.r simple.out
+23-04-06 15:05:29 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+23-04-06 15:06:20 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/barplot1.r barplot1.out
+23-04-07 14:38:42 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+23-04-07 14:46:29 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/test3.sas -log test3.log -print test3.lst
+23-04-07 14:50:20 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 15:02:49 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 15:03:51 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 15:21:16 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 15:24:58 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 16:07:37 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 16:17:14 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 16:27:29 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-07 16:28:28 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/simple.r simple.out
+23-04-07 16:29:17 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/simple_input.r simple_input.out
+23-04-07 17:51:50 admin:/Main/Examples/Python> python.exe /Main/Examples/Python/Dog.py Dog.out Dog.err
+23-04-07 17:52:37 admin:/Main/Examples/R> R.exe CMD BATCH --no-save --no-restore /Main/Examples/R/autos.r autos.out
+23-04-07 19:16:59 admin:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gchart.sas -log gchart.log -print gchart.lst
+23-04-07 19:19:31 admin:/Main/Examples/SAS/SASGraph> sas.exe -noterminal -sysin /Main/Examples/SAS/SASGraph/gmap.sas -log gmap.log -print gmap.lst
+23-04-08 09:59:39 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 10:02:39 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 10:03:26 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:24:29 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:26:04 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:26:50 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:28:25 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:29:18 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:39:53 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:41:11 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:44:22 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/SAS/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 12:45:54 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/SAS/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-08 13:52:39 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/SAS/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-09 06:51:34 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-14 16:30:15 admin:/Main/Users/admin/QuadEquation> sas.exe -noterminal -sysin /Main/Users/admin/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-16 13:26:46 admin:/Main/Users/admin/dec2bin> python.exe /Main/Users/admin/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 13:27:20 admin:/Main/Users/admin/dec2bin> python.exe /Main/Users/admin/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 13:29:17 admin:/Main/Users/admin/dec2bin> python.exe /Main/Users/admin/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 13:37:20 admin:/Main/Users/admin/dec2bin> R.exe CMD BATCH --no-save --no-restore /Main/Users/admin/dec2bin/dec2bin.r dec2bin.out
+23-04-16 13:38:23 admin:/Main/Users/admin/dec2bin> python.exe /Main/Users/admin/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 13:40:39 admin:/Main/Users/admin/dec2bin> python.exe /Main/Users/admin/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 13:57:30 admin:/Main/Examples/Python/dec2bin> python.exe /Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 14:01:30 admin:/Main/Examples/Python/dec2bin> python.exe /Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 14:04:55 admin:/Main/Examples/Python/dec2bin> python.exe /Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 14:11:26 admin:/Main/Examples/Python/dec2bin> python.exe /Main/Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 14:17:06 admin:/Main/Examples/Python/dec2bin> python.exe /Main/Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-16 17:33:36 admin:/Main/Examples/Python/dec2bin> python.exe /Main/Examples/Python/dec2bin/dec2bin.py dec2bin.out dec2bin.err
+23-04-17 20:41:27 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:43:32 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:44:36 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:46:21 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:47:20 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:48:16 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:50:57 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-17 20:52:58 admin:/Main/Users/admin/Calendar> python.exe /Main/Users/admin/Calendar/calendar.py calendar.out calendar.err
+23-04-18 11:23:45 admin:/Main/Examples/SAS/DemoSurvey> sas.exe -noterminal -sysin /Main/Examples/SAS/DemoSurvey/SurveyInput.sas -log SurveyInput.log -print SurveyInput.lst
+23-04-19 08:02:54 enewstree:/Main/Users/enewstree> python.exe /Main/Users/enewstree/Simple.py Simple.out Simple.err
+23-04-19 08:04:11 enewstree:/Main/Examples/Python> python.exe /Main/Examples/Python/zoo.py zoo.out zoo.err
+23-04-19 22:09:10 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/first.sas -log first.log -print first.lst
+23-04-19 22:15:30 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/second.sas -log second.log -print second.lst
+23-04-19 22:16:46 jingjixue:/Main/Users/jingjixue> R.exe CMD BATCH --no-save --no-restore /Main/Users/jingjixue/HelloWorld.r HelloWorld.out
+23-04-19 22:16:52 jingjixue:/Main/Users/jingjixue> python.exe /Main/Users/jingjixue/Simple.py Simple.out Simple.err
+23-04-19 22:17:07 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/first.sas -log first.log -print first.lst
+23-04-19 22:17:13 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/first.sas -log first.log -print first.lst
+23-04-19 22:17:18 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/second.sas -log second.log -print second.lst
+23-04-19 22:28:56 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/first.sas -log first.log -print first.lst
+23-04-19 22:30:06 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/first.sas -log first.log -print first.lst
+23-04-19 22:30:38 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/jingjixue0420.sas -log jingjixue0420.log -print jingjixue0420.lst
+23-04-23 06:22:13 liii:/Main/Users/liii> sas.exe -noterminal -sysin /Main/Users/liii/first.sas -log first.log -print first.lst
+23-04-23 06:24:34 liii:/Main/Users/liii> sas.exe -noterminal -sysin /Main/Users/liii/liii.sas -log liii.log -print liii.lst
+23-04-23 06:29:56 liii:/Main/Users/liii> sas.exe -noterminal -sysin /Main/Users/liii/first.sas -log first.log -print first.lst
+23-04-23 06:30:31 liii:/Main/Users/liii> sas.exe -noterminal -sysin /Main/Users/liii/liii0423.sas -log liii0423.log -print liii0423.lst
+23-04-23 23:41:26 wangying:/Main/Users/wangying> sas.exe -noterminal -sysin /Main/Users/wangying/first.sas -log first.log -print first.lst
+23-04-23 23:42:26 zhangxinyue:/Main/Users/zhangxinyue> sas.exe -noterminal -sysin /Main/Users/zhangxinyue/zhangxinyue0424.sas -log zhangxinyue0424.log -print zhangxinyue0424.lst
+23-04-23 23:42:39 chenshanru:/Main/Users/chenshanru> sas.exe -noterminal -sysin /Main/Users/chenshanru/first.sas -log first.log -print first.lst
+23-04-23 23:43:12 wangying:/Main/Users/wangying> sas.exe -noterminal -sysin /Main/Users/wangying/wangying0424.sas -log wangying0424.log -print wangying0424.lst
+23-04-23 23:44:20 chenshanru:/Main/Users/chenshanru> sas.exe -noterminal -sysin /Main/Users/chenshanru/chenshanru0424.sas -log chenshanru0424.log -print chenshanru0424.lst
+23-04-23 23:46:00 wangying:/Main/Users/wangying> sas.exe -noterminal -sysin /Main/Users/wangying/first.sas -log first.log -print first.lst
+23-04-24 01:00:42 zgp:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-24 01:01:50 zgp:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-24 01:02:33 zgp:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-24 01:03:24 zgp:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-24 01:18:01 zgp:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-24 17:22:30 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-24 17:43:21 jingjixue:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 06:34:45 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 06:34:48 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 06:38:50 admin:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-25 06:38:52 admin:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-25 06:41:44 admin:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-25 06:43:57 admin:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-25 06:44:15 admin:/Main/Users/zgp> sas.exe -noterminal -sysin /Main/Users/zgp/country.sas -log country.log -print country.lst
+23-04-25 07:06:36 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 07:08:39 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 07:09:08 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 07:13:25 admin:/Main/Users/admin> sas.exe -noterminal -sysin /Main/Users/admin/version.sas -log version.log -print version.lst
+23-04-25 07:37:17 admin:/Main/Users/jingjixue> sas.exe -noterminal -sysin /Main/Users/jingjixue/chapter5.sas -log chapter5.log -print chapter5.lst
+23-04-25 07:39:30 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/SAS/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst
+23-04-25 20:40:07 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+23-04-25 20:46:34 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table01.sas -log table01.log -print table01.lst
+23-04-25 20:47:50 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table02.sas -log table02.log -print table02.lst
+23-04-25 20:47:56 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table02.sas -log table02.log -print table02.lst
+23-04-25 20:48:01 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table02.sas -log table02.log -print table02.lst
+23-04-26 00:19:44 kevinzhou:/Main/Examples/SAS/SASStat> sas.exe -noterminal -sysin /Main/Examples/SAS/SASStat/table03.sas -log table03.log -print table03.lst
+23-04-29 18:11:34 admin:/Main/Examples/SAS/QuadEquation> sas.exe -noterminal -sysin /Main/Examples/SAS/QuadEquation/QuadEquation.sas -log QuadEquation.log -print QuadEquation.lst

@@ -1,0 +1,22 @@
+1) question: What is a .par file for?
+
+answer: A parameter file (.par) enables user to execute 
+the underlying scripts without seeing the dreadful code, 
+it stores the parameter values to avoid repeat entry as
+well. In addition, it can schedule repeated tasks.
+
+2) question: In SAS, how do I define libname for current 
+directory?
+
+answer: For example, if the current dirctory is 
+/home/Users/guest/SAS, then: 
+libname mylib '..\home\Users\guest\SAS';
+
+3) question: In R, how do I read from/write to files 
+in the current directory?
+
+answer: For example, if the current dirctory is 
+/home/Users/guest/R, then: 
+autos_data <- read.table("..\\home\\Users\\guest\\R\\autos.dat", header=T, sep="\t") 
+or 
+png(filename="..\\home\\Users\\guest\\R\\autos2.png", height=295, width=300, bg="white")
