@@ -1,0 +1,44 @@
+
+R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # Get a random log-normal distribution
+> r <- rlnorm(1000)
+> 
+> jpeg("C:\\Apache\\htdocs\\casper2\\Main\\Examples\\R\\longnormal.jpg")
+> 
+> # Get the distribution without plotting it using tighter breaks
+> h <- hist(r, plot=F, breaks=c(seq(0,max(r)+1, .1)))
+> 
+> # Plot the distribution using log scale on both axes, and use
+> # blue points
+> plot(h$counts, log="xy", pch=20, col="blue",
++ 	main="Log-normal distribution",
++ 	xlab="Value", ylab="Frequency")
+Warning message:
+In xy.coords(x, y, xlabel, ylabel, log) :
+  257 y values <= 0 omitted from logarithmic plot
+> 
+> dev.off()
+null device 
+          1 
+> 
+> quit()
+> proc.time()
+   user  system elapsed 
+   0.14    0.06    0.59 
