@@ -1,0 +1,126 @@
+1                                                     The SAS System                      04:52 Wednesday, August 19, 2020
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to MICHIGAN STATE UNIVERSITY-T&R-SFA, Site 70082953.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           2.22 seconds
+      cpu time            0.21 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\MonteCarlo"'
+1        !                                                                  ;
+2          
+3          %global samplesize;
+4          
+5          %macro checkparm;
+6          
+7              %if %symexist(parm1) %then %let samplesize = &parm1;
+8              %else %let samplesize = 1000000;
+9          
+10         %mend;
+11         
+12         %checkparm;
+13         
+14         
+15         %macro  area(time);
+16         
+17         
+18         data random;
+19         
+20         do i=1 to &time;
+21         
+22         x=20*ranuni(0);
+23         
+24         y=10*ranuni(0);
+25         
+26         output;
+27         
+28         end;
+29         
+30         run;
+31         
+32         
+33         data count;
+34         
+35         set random;
+36         
+37         if x<5 and y<5 and y<0.5*x and (x-5)*(x-5)+(y-5)*(y-5)>25 then flag=1;
+38         
+39         else flag=0;
+40         
+41         run;
+42         
+2                                                     The SAS System                      04:52 Wednesday, August 19, 2020
+
+43         
+44         proc sql;
+45         
+46         create table area&time as select
+47         
+48         &time as samplesize, 100-25*constant('pi')-sum(flag)/count(flag)*200 as area
+49         
+50         from count;
+51         
+52         quit;
+53         
+54         
+55         proc print data=area&time;
+56         
+57         run;
+58         
+59         %mend;
+60         
+61         
+62         %area(&samplesize);
+
+NOTE: The data set WORK.RANDOM has 1000000 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.41 seconds
+      cpu time            0.06 seconds
+      
+
+
+NOTE: There were 1000000 observations read from the data set WORK.RANDOM.
+NOTE: The data set WORK.COUNT has 1000000 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.07 seconds
+      
+
+NOTE: Table WORK.AREA1000000 created, with 1 rows and 2 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.57 seconds
+      cpu time            0.06 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK.AREA1000000.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.38 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           4.33 seconds
+      cpu time            0.46 seconds
+      

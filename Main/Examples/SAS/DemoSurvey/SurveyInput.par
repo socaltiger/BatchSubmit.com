@@ -1,0 +1,5 @@
+ 1|<b>/Main/Examples/SAS/DemoSurvey/SurveyInput.sas: Survey Input</b>|hidden|program|/Main/Examples/SAS/DemoSurvey/SurveyInput.sas||<P>|
+ 2|gender:<font color=#dbe6e0>____</font> |radio|parm1|#M:F||<br>|
+ 3|age(yr):<font color=#dbe6e0>___</font> |text|parm2||5|<br>|
+ 4|weight(kg):<font color=#dbe6e0></font> |text|parm3||5|<br>|
+ 5|height(cm):<font color=#dbe6e0></font> |text|parm4||5|<p>|

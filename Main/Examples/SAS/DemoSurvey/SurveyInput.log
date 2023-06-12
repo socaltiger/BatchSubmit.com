@@ -1,0 +1,99 @@
+1                                                     The SAS System                         11:23 Tuesday, April 18, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           7.87 seconds
+      cpu time            0.35 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\DemoSurvey"'
+1        !                                                                  ;
+2          
+3          * Please DO NOT run this program directly, as it requires 4 paramaters, ;
+4          * Run SurveyInput.par instead. ;
+5          
+6          libname mylib '.';
+NOTE: Libref MYLIB was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\Main\Examples\SAS\DemoSurvey
+7          
+8          data newentry;
+9              gender = "&parm1";
+10             age    = "&parm2"*1;
+11             weight = "&parm3"*1;
+12             height = "&parm4"*1;
+13             output;
+14         run;
+
+NOTE: Character values have been converted to numeric values at the places given by: (Line):(Column).
+      10:2   11:2   12:2   
+NOTE: The data set WORK.NEWENTRY has 1 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.74 seconds
+      cpu time            0.00 seconds
+      
+
+15         
+16         data mylib.surveydata;
+17             set mylib.surveydata newentry;
+18         run;
+
+NOTE: There were 29 observations read from the data set MYLIB.SURVEYDATA.
+NOTE: There were 1 observations read from the data set WORK.NEWENTRY.
+NOTE: The data set MYLIB.SURVEYDATA has 30 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.00 seconds
+      
+
+19         
+20         proc print data=mylib.surveydata;
+21         run;
+2                                                     The SAS System                         11:23 Tuesday, April 18, 2023
+
+
+NOTE: There were 30 observations read from the data set MYLIB.SURVEYDATA.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.96 seconds
+      cpu time            0.07 seconds
+      
+
+22         
+23         filename sasgraph 'SurveyInput.png';
+24         goptions gsfname=sasgraph dev=png xpixels=500 ypixels=400;
+25         
+26         proc gplot data=mylib.surveydata;
+27            plot height*weight;
+28         run;
+
+NOTE: 12 observation(s) contained a MISSING value for the height * weight request.
+NOTE: 7213 bytes written to C:\Apache\htdocs\casper2\Main\Examples\SAS\DemoSurvey\SurveyInput.png.
+NOTE: There were 30 observations read from the data set MYLIB.SURVEYDATA.
+NOTE: PROCEDURE GPLOT used (Total process time):
+      real time           2.45 seconds
+      cpu time            0.17 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           13.53 seconds
+      cpu time            0.65 seconds
+      

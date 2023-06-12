@@ -1,0 +1,85 @@
+1                                                     The SAS System                        18:11 Saturday, April 29, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           3.25 seconds
+      cpu time            0.21 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\QuadEquation"'
+1        !                                                                    ;
+2          
+3          /*
+4              Do not run this script directly, as it requires
+5              macro variables parm1,parm2,parm3, run QuadEquation.par instead.
+6          */
+7          
+8          %let a = &parm1;
+9          %let b = &parm2;
+10         %let c = &parm3;
+11         
+12         data work;
+13         
+14         a = &a;
+15         b = &b;
+16         c = &c;
+17         
+18         d = (b**2) - (4*a*c);
+19         
+20         X1 = (-b+sqrt(d))/(2*a);
+21         X2 = (-b-sqrt(d))/(2*a);
+22         
+23         run;
+
+NOTE: Invalid argument to function SQRT(-7) at line 20 column 10.
+NOTE: Invalid argument to function SQRT(-7) at line 21 column 10.
+a=2 b=7 c=7 d=-7 X1=. X2=. _ERROR_=1 _N_=1
+NOTE: Missing values were generated as a result of performing an operation on missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 20:9   1 at 21:9   
+NOTE: Mathematical operations could not be performed at the following places. The results of the operations have been set 
+      to missing values.
+      Each place is given by: (Number of times) at (Line):(Column).
+      1 at 20:10   1 at 21:10   
+NOTE: The data set WORK.WORK has 1 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.54 seconds
+      cpu time            0.00 seconds
+      
+
+24         
+25         proc print data=work;
+2                                                     The SAS System                        18:11 Saturday, April 29, 2023
+
+26             var x1 x2;
+27         run;
+
+NOTE: There were 1 observations read from the data set WORK.WORK.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.71 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5.11 seconds
+      cpu time            0.31 seconds
+      

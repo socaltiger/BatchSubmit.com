@@ -1,0 +1,64 @@
+1                                                     The SAS System                         12:37 Sunday, January 9, 2022
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to SUNGKYUNKWAN UNIV-MIDTIER1 0401, Site 10502994.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.37 seconds
+      cpu time            0.23 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\Input"'
+1        !                                                             ;
+2          
+3          /*
+4              Do not run this script directly, as it requires
+5              macro variables parm1,parm2,parm3, run input.par instead.
+6          */
+7          
+8          %let l = &parm1;
+9          %let h = &parm2;
+10         %let b = &parm3;
+11         
+12         data volume;
+13             v = &l*&h*&b;
+14         	output;
+15         run;
+
+NOTE: The data set WORK.VOLUME has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.34 seconds
+      cpu time            0.01 seconds
+      
+
+16         
+17         proc print data=volume;
+18         run;
+
+NOTE: There were 1 observations read from the data set WORK.VOLUME.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.56 seconds
+      cpu time            0.03 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.64 seconds
+      cpu time            0.31 seconds
+      

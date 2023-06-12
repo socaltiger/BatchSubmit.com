@@ -1,0 +1,4 @@
+ 1|<b>Solving Quad Equation:</b>|hidden|program|/Main/Examples/SAS/QuadEquation/QuadEquation.sas||<P>|
+ 2||text|parm1|2|6|x^2 +|
+ 3||text|parm2|7|6|x +|
+ 4||text|parm3|6|6|= 0<P>|
