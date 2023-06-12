@@ -5,7 +5,7 @@
 
 $basedir = $ARGV[0];
 
-open(DIR, "/usr/bin/find /$basedir/html/departments/cdm/casper/home -name '*.spf' |");
+open(DIR, "/usr/bin/find /$basedir/home -name '*.par' |");
 @dir = sort <DIR>;
 close(DIR);
 
@@ -23,11 +23,11 @@ foreach $spf (@dir) {
 
     chop($spf);
  
-    open (SPF, "$spf") || die $!;
-    @spf = <SPF>;
-    close (SPF);
+    open (PAR, "$par") || die $!;
+    @par = <PAR>;
+    close (PAR);
 
-    foreach $line (@spf) {
+    foreach $line (@par) {
 
 	($wwwid, $wwwlabel, $wwwtype, $wwwname, $wwwvalue, $wwwsize, $wwwbreak) = split(/\|/, $line);
 
@@ -41,10 +41,10 @@ foreach $spf (@dir) {
  			
             	    open (PAR, ">parm.xml");
 
-	            print PAR "%let usrid=mickeyc;\n";
-	            print PAR "%let usremail=mickeyc\@amgen.com;\n";
+	            print PAR "%let usrid=admin;\n";
+	            print PAR "%let usremail=admin\@batchsubmit.com;\n";
 
-		    foreach $line2 (@spf) {
+		    foreach $line2 (@par) {
 
 			($wwwid, $wwwlabel, $wwwtype, $wwwname, $wwwvalue, $wwwsize, $wwwbreak) = split(/\|/, $line2);
 
@@ -75,17 +75,17 @@ foreach $spf (@dir) {
 
  		    close(PAR);
 
-		    $_ = $spf;
-		    s/spf/log/;
+		    $_ = $par;
+		    s/par/log/;
 		    $tasklog = $_;
 
-		    $_ = $spf;
-	   	    s/spf/txt/;
+		    $_ = $par;
+	   	    s/par/txt/;
 		    $tasktxt = $_;
 
-		    system("/usr/local/bin/sas -9.1.3 -noterminal -sysin /$basedir/html/departments/cdm/casper/program/$program -log $tasklog -print $tasktxt");
+		    system("/usr/local/bin/sas -9.1.4 -noterminal -sysin /$basedir/html/departments/cdm/casper/program/$program -log $tasklog -print $tasktxt");
 
-		    print LOG "$spf\n";	
+		    print LOG "$par\n";	
 
 		    if (-e "parm.xml") {
 			unlink "parm.xml";
@@ -106,10 +106,10 @@ foreach $spf (@dir) {
  			
             	    open (PAR, ">parm.xml");
 
-	            print PAR "%let usrid=mickeyc;\n";
-	            print PAR "%let usremail=mickeyc\@amgen.com;\n";
+	            print PAR "%let usrid=admin;\n";
+	            print PAR "%let usremail=admin\@batchsubmit.com;\n";
 
-		    foreach $line2 (@spf) {
+		    foreach $line2 (@par) {
 
 			($wwwid, $wwwlabel, $wwwtype, $wwwname, $wwwvalue, $wwwsize, $wwwbreak) = split(/\|/, $line2);
 
@@ -140,15 +140,15 @@ foreach $spf (@dir) {
 
  		    close(PAR);
 
-		    $_ = $spf;
-		    s/spf/log/;
+		    $_ = $par;
+		    s/par/log/;
 		    $tasklog = $_;
 
-		    $_ = $spf;
-	   	    s/spf/txt/;
+		    $_ = $par;
+	   	    s/par/txt/;
 		    $tasktxt = $_;
 
-		    system("/usr/local/bin/sas -9.1.3 -noterminal -sysin /$basedir/html/departments/cdm/casper/program/$program -log $tasklog -print $tasktxt");
+		    system("/usr/local/bin/sas -9.1.4 -noterminal -sysin /$basedir/html/departments/cdm/casper/program/$program -log $tasklog -print $tasktxt");
 
 		    print LOG "$spf\n";	
 
