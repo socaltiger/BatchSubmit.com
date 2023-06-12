@@ -1,0 +1,6 @@
+ 1|<img src="http://BatchSubmit.com/casper2/Main/Examples/SAS/Input/Rectangularprism2.png"><p><b>/Main/Examples/SAS/Input/volume.sas: calculate volume</b>|hidden|program|/Main/Examples/SAS/Input/volume.sas||<P>|
+ 2|l: |select|parm1|#6:7:8||<BR>|
+ 3|b: |radio|parm2|8:#9:10||<BR>|
+ 4|h: |text|parm3|14|5|<P>|
+ 5|exec on: |text|cron|16|5|day of month (0-30)<BR>|
+ 6|exec on: |text|cronwk|1|5|day of wk (0-6, 0=Sun)<P>|
