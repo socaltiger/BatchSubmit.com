@@ -1,0 +1,348 @@
+1                                         The SAS System            10:23 Sunday, December 6, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.32 seconds
+      cpu time            0.09 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03"'
+1        !                                                                            ;
+2          
+3          *---------------------------------------------------------------*;
+4          * DM.sas creates the SDTM DM and SUPPDM datasets and saves them
+5          * as permanent SAS datasets to the target libref.
+6          *---------------------------------------------------------------*;
+7          %include 'common.sas';
+15         
+16         %common
+NOTE: Libref SOURCE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref LIBRARY refers to the same physical library as SOURCE.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref TARGET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\sdtm
+17         
+18         **** CREATE EMPTY DM DATASET CALLED EMPTY_DM;
+19         %include 'make_empty_dataset.sas';
+101        
+102        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=DM)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+2 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 15 observations read from the data set WORK._TEMP.
+      WHERE domain='DM';
+NOTE: The data set WORK._TEMP has 15 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 15 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_DM has 0 observations and 15 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+103        
+104        **** GET FIRST AND LAST DOSE DATE FOR RFSTDTC AND RFENDTC;
+105        proc sort
+106          data=source.dosing(keep=subject startdt enddt)
+107          out=dosing;
+108            by subject startdt;
+109        run;
+
+NOTE: There were 84 observations read from the data set SOURCE.DOSING.
+NOTE: The data set WORK.DOSING has 84 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+110        
+111        **** FIRSTDOSE=FIRST DOSING AND LASTDOSE=LAST DOSING;
+112        data dosing;
+113          set dosing;
+114            by subject;
+115        
+116            retain firstdose lastdose;
+117        
+118            if first.subject then
+119              do;
+120                firstdose = .;
+121                lastdose = .;
+3 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+122              end;
+123        
+124            firstdose = min(firstdose,startdt,enddt);
+125            lastdose = max(lastdose,startdt,enddt);
+126        
+127            if last.subject;
+128        run;
+
+NOTE: There were 84 observations read from the data set WORK.DOSING.
+NOTE: The data set WORK.DOSING has 60 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+129        
+130        **** GET DEMOGRAPHICS DATA;
+131        proc sort
+132          data=source.demographic
+133          out=demographic;
+134            by subject;
+135        run;
+
+NOTE: There were 60 observations read from the data set SOURCE.DEMOGRAPHIC.
+NOTE: The data set WORK.DEMOGRAPHIC has 60 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+136        
+137        **** MERGE DEMOGRAPHICS AND FIRST DOSE DATE;
+138        data demog_dose;
+139          merge demographic
+140                dosing;
+141            by subject;
+142        run;
+
+NOTE: There were 60 observations read from the data set WORK.DEMOGRAPHIC.
+NOTE: There were 60 observations read from the data set WORK.DOSING.
+NOTE: The data set WORK.DEMOG_DOSE has 60 observations and 12 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+143        
+144        **** DERIVE THE MAJORITY OF SDTM DM VARIABLES;
+145        options missing = ' ';
+146        data dm;
+147          set EMPTY_DM
+148            demog_dose(rename=(race=_race));
+149        
+4 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+150            studyid = 'XYZ123';
+151            domain = 'DM';
+152            usubjid = left(uniqueid);
+153            subjid = put(subject,3.);
+154            rfstdtc = put(firstdose,yymmdd10.);
+155            rfendtc = put(lastdose,yymmdd10.);
+156            siteid = substr(subjid,1,1) || "00";
+157            brthdtc = put(dob,yymmdd10.);
+158            age = floor ((intck('month',dob,firstdose) -
+159                  (day(firstdose) < day(dob))) / 12);
+160            if age ne . then
+161                ageu = 'YEARS';
+162            sex = put(gender,sex_demographic_gender.);
+163            race = put(_race,race_demographic_race.);
+164            armcd = put(trt,armcd_demographic_trt.);
+165            arm = put(trt,arm_demographic_trt.);
+166            country = "USA";
+167        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_DM.
+NOTE: There were 60 observations read from the data set WORK.DEMOG_DOSE.
+NOTE: The data set WORK.DM has 60 observations and 27 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+168        
+169        **** DEFINE SUPPDM FOR OTHER RACE page 59 IG;
+170        **** CREATE EMPTY SUPPDM DATASET CALLED EMPTY_DM;
+171        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=SUPPDM)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 10 observations read from the data set WORK._TEMP.
+      WHERE domain='SUPPDM';
+NOTE: The data set WORK._TEMP has 10 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 10 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+5 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+      
+
+
+NOTE: The data set WORK.EMPTY_SUPPDM has 0 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+172        
+173        data suppdm;
+174          set EMPTY_SUPPDM
+175              dm;
+176        
+177            keep &SUPPDMKEEPSTRING;
+178        
+179            **** OUTPUT OTHER RACE AS A SUPPDM VALUE;
+180            if orace ne '' then
+181              do;
+182                rdomain = 'DM';
+183                qnam = 'RACEOTH';
+184                qlabel = 'Race, Other';
+185                qval = left(orace);
+186                qorig = 'CRF';
+187                output;
+188              end;
+189        
+190            **** OUTPUT RANDOMIZATION DATE AS SUPPDM VALUE;
+191            if randdt ne . then
+192              do;
+193                rdomain = 'DM';
+194                qnam = 'RANDDTC';
+195                qlabel = 'Randomization Date';
+196                qval = left(put(randdt,yymmdd10.));
+197                qorig = 'CRF';
+198                output;
+199              end;
+200        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_SUPPDM.
+NOTE: There were 60 observations read from the data set WORK.DM.
+NOTE: The data set WORK.SUPPDM has 66 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+201        
+202        
+203        **** SORT DM ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+204        %include 'make_sort_order.sas';
+236        
+237        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=DM)
+6 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='DM';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+238        
+239        proc sort
+240          data=dm(keep = &DMKEEPSTRING)
+241          out=target.dm;
+242            by &DMSORTSTRING;
+243        run;
+
+NOTE: There were 60 observations read from the data set WORK.DM.
+NOTE: The data set TARGET.DM has 60 observations and 15 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+244        
+245        
+246        **** SORT SUPPDM ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+247        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=SUPPDM)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='SUPPDM';
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+248        
+249        proc sort
+250          data=suppdm
+7 The SAS System                                                                                                                                                                                                                  10:23 Sunday, December 6, 2015
+
+251          out=target.suppdm;
+252            by &SUPPDMSORTSTRING;
+253        run;
+
+NOTE: There were 66 observations read from the data set WORK.SUPPDM.
+NOTE: The data set TARGET.SUPPDM has 66 observations and 10 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.50 seconds
+      cpu time            0.20 seconds
+      

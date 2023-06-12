@@ -1,0 +1,83 @@
+1                                                     The SAS System                    17:41 Saturday, September 12, 2020
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to MICHIGAN STATE UNIVERSITY-T&R-SFA, Site 70082953.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.35 seconds
+      cpu time            0.20 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\CDISC\prog\appendix_a"'
+1        !                                                                             ;
+2          
+3          **** define common SAS setings;
+4          %include 'common.sas';
+12         
+13         %common
+NOTE: Libref SOURCE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\Main\Examples\SAS\CDISC\prog\appendix_a
+NOTE: Libref LIBRARY refers to the same physical library as SOURCE.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\Main\Examples\SAS\CDISC\prog\appendix_a
+NOTE: Libref TARGET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\Main\Examples\SAS\CDISC\sdtm
+14         
+15         **** INPUT SAMPLE ADVERSE EVENT DATA.;
+16         data source.adverse;
+17         label subject  = "Subject Number"
+18               bodysys = "Body System of Event"
+19               prefterm  = "Preferred Term for Event"
+20               aerel    = "Relatedness: 1=not,2=possibly,3=probably"
+21               aesev    = "Severity/Intensity:1=mild,2=moderate,3=severe"
+22               aeaction = "Action taken: 1=drug stopped, 2=dose reduced, 3=dose increased, 4=no dose change, 5=unknown"
+23               aestart  = "AE Start date"
+24               aeend    = "AE End date"
+25               serious  = "Serious AE?"
+26               aetext   = "Event Verbatim Text"
+27               uniqueid = "Company Wide Subject ID";
+28         serious = 'N';
+29         input subject aerel aesev aeaction aestart mmddyy10. +1 aeend mmddyy10. bodysys $ 33-63 prefterm $ 65-82 aetext $ 94-130;
+30         uniqueid = 'UNI' || put(subject,3.);
+31         datalines;
+
+ERROR: File SOURCE.ADVERSE.DATA is not a SAS data set.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: SAS set option OBS=0 and will continue to check statements. This might cause NOTE: No observations in data set.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+2 The SAS System                                                                                                                                                                                                              17:41 Saturday, September 12, 2020
+
+72         ;
+
+
+73         run;
+74         
+
+ERROR: Errors printed on page 1.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.40 seconds
+      cpu time            0.21 seconds
+      

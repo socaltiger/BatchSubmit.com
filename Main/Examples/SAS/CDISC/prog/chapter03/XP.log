@@ -1,0 +1,262 @@
+1                                         The SAS System            10:30 Sunday, December 6, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.25 seconds
+      cpu time            0.07 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03"'
+1        !                                                                            ;
+2          
+3          *---------------------------------------------------------------*;
+4          * XP.sas creates the SDTM XP dataset and saves it
+5          * as a permanent SAS datasets to the target libref.
+6          *---------------------------------------------------------------*;
+7          %include 'common.sas';
+15         
+16         %common
+NOTE: Libref SOURCE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref LIBRARY refers to the same physical library as SOURCE.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref TARGET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\sdtm
+17         
+18         **** CREATE EMPTY DM DATASET CALLED EMPTY_XP;
+19         %include 'make_empty_dataset.sas';
+101        
+102        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=XP)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+2 The SAS System                                                                                                                                                                                                                  10:30 Sunday, December 6, 2015
+
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK._TEMP.
+      WHERE domain='XP';
+NOTE: The data set WORK._TEMP has 13 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 13 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_XP has 0 observations and 13 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+103        
+104        proc format;
+105          value pain
+106            0='None'
+107            1='Mild'
+108            2='Moderate'
+109            3='Severe';
+NOTE: Format PAIN has been output.
+110        run;
+
+NOTE: PROCEDURE FORMAT used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.03 seconds
+      
+
+111        
+112        **** DERIVE THE MAJORITY OF SDTM XP VARIABLES;
+113        options missing = ' ';
+114        data xp;
+115          set EMPTY_XP
+116              source.pain;
+117        
+118            studyid = 'XYZ123';
+119            domain = 'XP';
+120            usubjid = left(uniqueid);
+121        
+122            xptest = 'Pain Score';
+3 The SAS System                                                                                                                                                                                                                  10:30 Sunday, December 6, 2015
+
+123            xptestcd = 'XPPAIN';
+124        
+125            **** transpose pain data;
+126            array dates {3} randomizedt month3dt month6dt;
+127            array scores {3} painbase pain3mo pain6mo;
+128        
+129            do i = 1 to 3;
+130              visitnum = i - 1;
+131              visit = put(visitnum,visit_labs_month.);
+132              if scores{i} ne . then
+133                do;
+134                  xporres = left(put(scores{i},pain.));
+135                  xpstresc = xporres;
+136                  xpstresn = scores{i};
+137                  xpdtc = put(dates{i},yymmdd10.);
+138                  output;
+139                end;
+140            end;
+141        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_XP.
+NOTE: There were 60 observations read from the data set SOURCE.PAIN.
+NOTE: The data set WORK.XP has 177 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+142        
+143        
+144        proc sort
+145          data=xp;
+146            by usubjid;
+147        run;
+
+NOTE: There were 177 observations read from the data set WORK.XP.
+NOTE: The data set WORK.XP has 177 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+148        
+149        **** CREATE SDTM STUDYDAY VARIABLES;
+150        %include 'make_sdtm_dy.sas';
+178        
+179        data xp;
+180          merge xp(in=inxp) target.dm(keep=usubjid rfstdtc);
+181            by usubjid;
+182        
+183            if inxp;
+184        
+185            %make_sdtm_dy(date=xpdtc)
+4 The SAS System                                                                                                                                                                                                                  10:30 Sunday, December 6, 2015
+
+186        run;
+
+NOTE: There were 177 observations read from the data set WORK.XP.
+NOTE: There were 60 observations read from the data set TARGET.DM.
+NOTE: The data set WORK.XP has 177 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+187        
+188        
+189        **** CREATE SEQ VARIABLE;
+190        proc sort
+191          data=xp;
+192            by studyid usubjid xptestcd visitnum;
+193        run;
+
+NOTE: There were 177 observations read from the data set WORK.XP.
+NOTE: The data set WORK.XP has 177 observations and 23 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+194        
+195        
+196        data xp;
+197          retain &XPKEEPSTRING;
+198          set xp(drop=xpseq);
+199            by studyid usubjid xptestcd visitnum;
+200        
+201            if not (first.visitnum and last.visitnum) then
+202              put "WARN" "ING: key variables do not define an unique record. " usubjid=;
+203        
+204            retain xpseq;
+205            if first.usubjid then
+206              xpseq = 1;
+207            else
+208              xpseq = xpseq + 1;
+209        		
+210            label xpseq = "Sequence Number";
+211        run;
+
+NOTE: There were 177 observations read from the data set WORK.XP.
+NOTE: The data set WORK.XP has 177 observations and 23 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+212        
+213        
+5 The SAS System                                                                                                                                                                                                                  10:30 Sunday, December 6, 2015
+
+214        **** SORT XP ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+215        %include 'make_sort_order.sas';
+247        
+248        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=XP)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='XP';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+249        
+250        
+251        proc sort
+252          data=xp(keep = &XPKEEPSTRING)
+253          out=target.xp;
+254            by &XPSORTSTRING;
+255        run;
+
+NOTE: There were 177 observations read from the data set WORK.XP.
+NOTE: The data set TARGET.XP has 177 observations and 13 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.40 seconds
+      cpu time            0.17 seconds
+      

@@ -1,0 +1,572 @@
+1                                         The SAS System            10:29 Sunday, December 6, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.29 seconds
+      cpu time            0.10 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03"'
+1        !                                                                            ;
+2          
+3          *---------------------------------------------------------------*;
+4          * TDM.sas creates the SDTM TA, TE, TI, TS, and TV datasets and
+5          * saves them as a permanent SAS datasets to the target libref.
+6          *---------------------------------------------------------------*;
+7          %include 'common.sas';
+15         
+16         %common
+NOTE: Libref SOURCE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref LIBRARY refers to the same physical library as SOURCE.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref TARGET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\sdtm
+17         
+18         **** CREATE EMPTY TA DATASET CALLED EMPTY_TA;
+19         %include 'make_empty_dataset.sas';
+101        
+102        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TA)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+2 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 10 observations read from the data set WORK._TEMP.
+      WHERE domain='TA';
+NOTE: The data set WORK._TEMP has 10 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 10 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_TA has 0 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+103        
+104        proc import
+105          datafile="trialdesign.xlsx"
+106          out=ta
+107          dbms=xlsx
+108          replace;
+109          sheet='TA';
+110        run;
+
+NOTE: The import data set has 4 observations and 10 variables.
+NOTE: WORK.TA data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+111        
+112        **** SET EMPTY DOMAIN WITH ACTUAL DATA;
+113        data ta;
+114          set EMPTY_TA
+115              ta;
+116        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_TA.
+NOTE: There were 4 observations read from the data set WORK.TA.
+NOTE: The data set WORK.TA has 4 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+3 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+117        
+118        **** SORT DOMAIN ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+119        %include 'make_sort_order.sas';
+151        
+152        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TA)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='TA';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+153        
+154        proc sort
+155          data=ta(keep = &TAKEEPSTRING)
+156          out=target.ta;
+157            by &TASORTSTRING;
+158        run;
+
+NOTE: There were 4 observations read from the data set WORK.TA.
+NOTE: The data set TARGET.TA has 4 observations and 10 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+159        
+160        
+161        
+162        **** CREATE EMPTY TE DATASET CALLED EMPTY_TE;
+163        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TE)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+4 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+NOTE: There were 7 observations read from the data set WORK._TEMP.
+      WHERE domain='TE';
+NOTE: The data set WORK._TEMP has 7 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 7 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_TE has 0 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+164        
+165        proc import
+166          datafile="trialdesign.xlsx"
+167          out=te
+168          dbms=xlsx
+169          replace;
+170          sheet='TE';
+171        run;
+
+NOTE: The import data set has 3 observations and 7 variables.
+NOTE: WORK.TE data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+172        
+173        **** SET EMPTY DOMAIN WITH ACTUAL DATA;
+174        data te;
+175          set EMPTY_TE
+176              te;
+177        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_TE.
+NOTE: There were 3 observations read from the data set WORK.TE.
+NOTE: The data set WORK.TE has 3 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+5 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+178        
+179        **** SORT DOMAIN ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+180        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TE)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='TE';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+181        
+182        proc sort
+183          data=te(keep = &TEKEEPSTRING)
+184          out=target.te;
+185            by &TESORTSTRING;
+186        run;
+
+NOTE: There were 3 observations read from the data set WORK.TE.
+NOTE: The data set TARGET.TE has 3 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+187        
+188        
+189        
+190        **** CREATE EMPTY TI DATASET CALLED EMPTY_TI;
+191        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TI)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 8 observations read from the data set WORK._TEMP.
+      WHERE domain='TI';
+NOTE: The data set WORK._TEMP has 8 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+6 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+      
+
+
+NOTE: There were 8 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_TI has 0 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+192        
+193        proc import
+194          datafile="trialdesign.xlsx"
+195          out=ti
+196          dbms=xlsx
+197          replace;
+198          sheet='TI';
+199        run;
+
+NOTE: The import data set has 9 observations and 8 variables.
+NOTE: WORK.TI data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+200        
+201        **** SET EMPTY DOMAIN WITH ACTUAL DATA;
+202        data ti;
+203          set EMPTY_TI
+204              ti;
+205        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_TI.
+NOTE: There were 9 observations read from the data set WORK.TI.
+NOTE: The data set WORK.TI has 9 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+206        
+207        **** SORT DOMAIN ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+208        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TI)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+7 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='TI';
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+209        
+210        proc sort
+211          data=ti(keep = &TIKEEPSTRING)
+212          out=target.ti;
+213            by &TISORTSTRING;
+214        run;
+
+NOTE: There were 9 observations read from the data set WORK.TI.
+NOTE: The data set TARGET.TI has 9 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+215        
+216        
+217        
+218        **** CREATE EMPTY TS DATASET CALLED EMPTY_TS;
+219        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TS)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.02 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 7 observations read from the data set WORK._TEMP.
+      WHERE domain='TS';
+NOTE: The data set WORK._TEMP has 7 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 7 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+8 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_TS has 0 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+220        
+221        proc import
+222          datafile="trialdesign.xlsx"
+223          out=ts
+224          dbms=xlsx
+225          replace;
+226          sheet='TS';
+227        run;
+
+NOTE: The import data set has 23 observations and 7 variables.
+NOTE: WORK.TS data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+228        
+229        **** SET EMPTY DOMAIN WITH ACTUAL DATA;
+230        data ts;
+231          set EMPTY_TS
+232              ts;
+233        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_TS.
+NOTE: There were 23 observations read from the data set WORK.TS.
+NOTE: The data set WORK.TS has 23 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+234        
+235        **** SORT DOMAIN ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+236        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TS)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+9 The SAS System                                                                                                                                                                                                                  10:29 Sunday, December 6, 2015
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='TS';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+237        
+238        proc sort
+239          data=ts(keep = &TSKEEPSTRING)
+240          out=target.ts;
+241            by &TSSORTSTRING;
+242        run;
+
+NOTE: There were 23 observations read from the data set WORK.TS.
+NOTE: The data set TARGET.TS has 23 observations and 7 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+243        
+244        
+245        
+246        **** CREATE EMPTY TV DATASET CALLED EMPTY_TV;
+247        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TV)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 8 observations read from the data set WORK._TEMP.
+      WHERE domain='TV';
+NOTE: The data set WORK._TEMP has 8 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 8 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_TV has 0 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+10 The SAS System                                                                                                                                                                                                                 10:29 Sunday, December 6, 2015
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+248        
+249        proc import
+250          datafile="trialdesign.xlsx"
+251          out=tv
+252          dbms=xlsx
+253          replace;
+254          sheet='TV';
+255        run;
+
+NOTE: The import data set has 8 observations and 8 variables.
+NOTE: WORK.TV data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.01 seconds
+      
+
+256        
+257        **** SET EMPTY DOMAIN WITH ACTUAL DATA;
+258        data tv;
+259          set EMPTY_TV
+260              tv;
+261        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_TV.
+NOTE: There were 8 observations read from the data set WORK.TV.
+NOTE: The data set WORK.TV has 8 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+262        
+263        **** SORT DOMAIN ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+264        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=TV)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='TV';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+11 The SAS System                                                                                                                                                                                                                 10:29 Sunday, December 6, 2015
+
+
+265        
+266        proc sort
+267          data=tv(keep = &TVKEEPSTRING)
+268          out=target.tv;
+269            by &TVSORTSTRING;
+270        run;
+
+NOTE: There were 8 observations read from the data set WORK.TV.
+NOTE: The data set TARGET.TV has 8 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.61 seconds
+      cpu time            0.29 seconds
+      

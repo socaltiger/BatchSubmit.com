@@ -1,0 +1,258 @@
+1                                         The SAS System            10:27 Sunday, December 6, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.28 seconds
+      cpu time            0.07 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03"'
+1        !                                                                            ;
+2          
+3          *---------------------------------------------------------------*;
+4          * LB.sas creates the SDTM LB dataset and saves it
+5          * as a permanent SAS datasets to the target libref.
+6          *---------------------------------------------------------------*;
+7          %include 'common.sas';
+15         
+16         %common
+NOTE: Libref SOURCE was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref LIBRARY refers to the same physical library as SOURCE.
+NOTE: Libref LIBRARY was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\prog\chapter03
+NOTE: Libref TARGET was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Examples\SAS\CDISC\sdtm
+17         
+18         **** CREATE EMPTY DM DATASET CALLED EMPTY_LB;
+19         %include 'make_empty_dataset.sas';
+101        
+102        %make_empty_dataset(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=LB)
+
+NOTE: The import data set has 128 observations and 16 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.01 seconds
+2 The SAS System                                                                                                                                                                                                                  10:27 Sunday, December 6, 2015
+
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 22 observations read from the data set WORK._TEMP.
+      WHERE domain='LB';
+NOTE: The data set WORK._TEMP has 22 observations and 16 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 22 observations read from the data set WORK._TEMP.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.EMPTY_LB has 0 observations and 22 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+103        
+104        
+105        **** DERIVE THE MAJORITY OF SDTM LB VARIABLES;
+106        options missing = ' ';
+107        data lb;
+108          set EMPTY_LB
+109              source.labs;
+110        
+111            studyid = 'XYZ123';
+112            domain = 'LB';
+113            usubjid = left(uniqueid);
+114            lbcat = put(labcat,$lbcat_labs_labcat.);
+115            lbtest = put(labtest,$lbtest_labs_labtest.);
+116            lbtestcd = put(labtest,$lbtestcd_labs_labtest.);
+117            lborres = left(put(nresult,best.));
+118            lborresu = left(colunits);
+119            lbornrlo = left(put(lownorm,best.));
+120            lbornrhi = left(put(highnorm,best.));
+121        
+122            **** create standardized results;
+123            lbstresc = lborres;
+124            lbstresn = nresult;
+125            lbstresu = lborresu;
+126            lbstnrlo = lownorm;
+127            lbstnrhi = highnorm;
+128        
+129            if lbstnrlo ne . and lbstresn ne . and
+3 The SAS System                                                                                                                                                                                                                  10:27 Sunday, December 6, 2015
+
+130               round(lbstresn,.0000001) < round(lbstnrlo,.0000001) then
+131              lbnrind = 'LOW';
+132            else if lbstnrhi ne . and lbstresn ne . and
+133               round(lbstresn,.0000001) > round(lbstnrhi,.0000001) then
+134              lbnrind = 'HIGH';
+135            else if lbstnrhi ne . and lbstresn ne . then
+136              lbnrind = 'NORMAL';
+137        
+138            visitnum = month;
+139            visit = put(month,visit_labs_month.);
+140            if visit = 'Baseline' then
+141              lbblfl = 'Y';
+142        	else
+143        	  lbblfl = ' ';
+144        
+145            lbdtc = put(labdate,yymmdd10.);
+146        run;
+
+NOTE: There were 0 observations read from the data set WORK.EMPTY_LB.
+NOTE: There were 300 observations read from the data set SOURCE.LABS.
+NOTE: The data set WORK.LB has 300 observations and 32 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+147        
+148        
+149        proc sort
+150          data=lb;
+151            by usubjid;
+152        run;
+
+NOTE: There were 300 observations read from the data set WORK.LB.
+NOTE: The data set WORK.LB has 300 observations and 32 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+153        
+154        **** CREATE SDTM STUDYDAY VARIABLES;
+155        %include 'make_sdtm_dy.sas';
+183        
+184        data lb;
+185          merge lb(in=inlb) target.dm(keep=usubjid rfstdtc);
+186            by usubjid;
+187        
+188            if inlb;
+189        
+190            %make_sdtm_dy(date=lbdtc)
+191        run;
+
+4 The SAS System                                                                                                                                                                                                                  10:27 Sunday, December 6, 2015
+
+NOTE: There were 300 observations read from the data set WORK.LB.
+NOTE: There were 60 observations read from the data set TARGET.DM.
+NOTE: The data set WORK.LB has 300 observations and 33 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+192        
+193        
+194        **** CREATE SEQ VARIABLE;
+195        proc sort
+196          data=lb;
+197            by studyid usubjid lbcat lbtestcd visitnum;
+198        run;
+
+NOTE: There were 300 observations read from the data set WORK.LB.
+NOTE: The data set WORK.LB has 300 observations and 33 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+199        
+200        data lb;
+201          retain &LBKEEPSTRING;
+202          set lb(drop=lbseq);
+203            by studyid usubjid lbcat lbtestcd visitnum;
+204        
+205            if not (first.visitnum and last.visitnum) then
+206              put "WARN" "ING: key variables do not define an unique record. " usubjid=;
+207        
+208            retain lbseq;
+209            if first.usubjid then
+210              lbseq = 1;
+211            else
+212              lbseq = lbseq + 1;
+213        		
+214            label lbseq = "Sequence Number";
+215        run;
+
+NOTE: There were 300 observations read from the data set WORK.LB.
+NOTE: The data set WORK.LB has 300 observations and 33 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+216        
+217        
+218        **** SORT LB ACCORDING TO METADATA AND SAVE PERMANENT DATASET;
+219        %include 'make_sort_order.sas';
+251        
+5 The SAS System                                                                                                                                                                                                                  10:27 Sunday, December 6, 2015
+
+252        %make_sort_order(metadatafile=..\appendix_b\SDTM_METADATA.xlsx,dataset=LB)
+
+NOTE: The import data set has 11 observations and 10 variables.
+NOTE: WORK._TEMP data set was successfully created.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 1 observations read from the data set WORK._TEMP.
+      WHERE name='LB';
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+253        
+254        proc sort
+255          data=lb(keep = &LBKEEPSTRING)
+256          out=target.lb;
+257            by &LBSORTSTRING;
+258        run;
+
+NOTE: There were 300 observations read from the data set WORK.LB.
+NOTE: The data set TARGET.LB has 300 observations and 22 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.39 seconds
+      cpu time            0.15 seconds
+      
