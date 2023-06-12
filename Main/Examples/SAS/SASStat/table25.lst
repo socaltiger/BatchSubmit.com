@@ -1,0 +1,113 @@
+                                          The SAS System      11:46 Tuesday, November 17, 2015   1
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                               Data Set              WORK.ABORTION
+                               Distribution                Poisson
+                               Link Function              Identity
+                               Dependent Variable            count
+
+
+                             Number of Observations Read           8
+                             Number of Observations Used           8
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       2          0.0000          0.0000
+                 Scaled Deviance                2          0.0000          0.0000
+                 Pearson Chi-Square             2       1153.0000        576.5000
+                 Scaled Pearson X2              2       1153.0000        576.5000
+                 Log Likelihood                      -1.79769E308                
+                 Full Log Likelihood                       0.0000                
+                 AIC (smaller is better)                  12.0000                
+                 AICC (smaller is better)                 96.0000                
+                 BIC (smaller is better)                  12.4766                
+
+
+           ERROR: The mean parameter is either invalid or at a limit of its range for 
+           some observations.                                                         
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     0    147.0000      0.0000    147.0000    147.0000           .           .    
+   m111          0    319.0000      0.0000    319.0000    319.0000           .           .    
+   m11p          0    178.1061      0.0000    178.1061    178.1061           .           .    
+   m1p1          0    194.7418      0.0000    194.7418    194.7418           .           .    
+   mp11          0    197.1291      0.0000    197.1291    197.1291           .           .    
+   m1pp          0    -89.0851      0.0000    -89.0851    -89.0851           .           .    
+   m222          0      0.0000      0.0000      0.0000      0.0000           .           .    
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:46 Tuesday, November 17, 2015   2
+
+                                       The CATMOD Procedure
+
+                                          Data Summary
+
+                      Response           a*b*c        Response Levels     8
+                      Weight Variable    count        Populations         1
+                      Data Set           ABORTION     Total Frequency  1153
+                      Frequency Missing  0            Observations        8
+
+
+                                       Population Profiles
+ 
+                                      Sample    Sample Size
+                                      ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                          1            1153
+
+
+                                        Response Profiles
+ 
+                                     Response    a    b    c
+                                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                         1       1    1    1
+                                         2       1    1    2
+                                         3       1    2    1
+                                         4       1    2    2
+                                         5       2    1    1
+                                         6       2    1    2
+                                         7       2    2    1
+                                         8       2    2    2
+
+
+                                       Response Frequencies
+ 
+                                              Response Number
+          Sample        1        2        3        4        5        6        7        8
+          ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+              1       466        3       71        3       39        1      423      147
+
+
+                                       Analysis of Variance
+ 
+                           Source         DF   Chi-Square    Pr > ChiSq
+                           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                           Intercept       1      2952.82        <.0001
+                           item            2       868.09        <.0001
+
+                           Residual        0          .           .    
+
+
+                                          The SAS System      11:46 Tuesday, November 17, 2015   3
+
+                                       The CATMOD Procedure
+
+                           Analysis of Weighted Least Squares Estimates
+ 
+                                                   Standard        Chi-
+             Effect        Parameter    Estimate      Error      Square    Pr > ChiSq
+             ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+             Intercept          1         0.5929     0.0109     2952.82        <.0001
+             item               2        -0.1220    0.00654      348.13        <.0001
+                                3        -0.1515    0.00658      530.21        <.0001

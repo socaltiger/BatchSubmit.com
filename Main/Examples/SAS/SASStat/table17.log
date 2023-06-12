@@ -1,0 +1,59 @@
+1                                                     The SAS System                        03:17 Tuesday, August 23, 2016
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNIV OF SCIENCE & TECHNOLOGY, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.24 seconds
+      cpu time            0.09 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data drugs;
+4            input a c m count @@;
+5            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.DRUGS has 8 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8          ;
+9          run;
+10         
+11         proc genmod; class a c m;
+12           model count = a c m a*m a*c c*m / dist=poi link=log lrci type3 obstats;
+13         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-3.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.33 seconds
+      cpu time            0.15 seconds
+      

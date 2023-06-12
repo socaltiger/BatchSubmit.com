@@ -1,0 +1,59 @@
+1                                                     The SAS System                       00:19 Wednesday, April 26, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.53 seconds
+      cpu time            0.17 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data example;
+4            input group $ outcome $ count @@;
+5            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.EXAMPLE has 4 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+7          ;
+8          run;
+9          
+10         proc freq order=data; weight count;
+11           tables group*outcome / riskdiff(CL=(WALD MN)) measures;
+12         * MN = Miettinen and Nurminen inverted score test;
+13         run;
+
+NOTE: There were 4 observations read from the data set WORK.EXAMPLE.
+NOTE: The PROCEDURE FREQ printed pages 1-2.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.11 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.75 seconds
+      cpu time            0.23 seconds
+      

@@ -1,0 +1,60 @@
+1                                         The SAS System          11:37 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.23 seconds
+      cpu time            0.04 seconds
+      
+1          data rake;
+2            input partyid polviews count;
+3            log_ct = log(count); pseudo = 100/3;
+4            datalines;
+
+NOTE: The data set WORK.RAKE has 9 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+      
+
+14         ;
+15         run;
+16         
+17         proc genmod; class partyid polviews;
+18           model pseudo = partyid polviews / dist=poi link=log offset=log_ct
+19           obstats;
+20         run;
+
+NOTE: Non-integer response values have been detected for the Poisson distribution.
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-4.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+2                                         The SAS System          11:37 Tuesday, November 17, 2015
+
+      real time           0.34 seconds
+      cpu time            0.07 seconds
+      

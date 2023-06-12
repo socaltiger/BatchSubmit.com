@@ -1,0 +1,549 @@
+                                          The SAS System      11:42 Tuesday, November 17, 2015   1
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                  Data Set              WORK.SEX
+                                  Distribution           Poisson
+                                  Link Function              Log
+                                  Dependent Variable       count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                                     Class Level Information
+ 
+                            Class      Levels    Values
+
+                            symm           10    1 2 3 4 5 6 7 8 9 10 
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       6        402.2029         67.0338
+                 Scaled Deviance                6        402.2029         67.0338
+                 Pearson Chi-Square             6        297.6110         49.6018
+                 Scaled Pearson X2              6        297.6110         49.6018
+                 Log Likelihood                         1378.6824                
+                 Full Log Likelihood                    -229.8458                
+                 AIC (smaller is better)                 479.6916                
+                 AICC (smaller is better)                523.6916                
+                 BIC (smaller is better)                 487.4175                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+Intercept           1      1.6094      0.4472      0.7329      2.4860         12.95        0.0003
+symm         1      1      3.3604      0.4549      2.4688      4.2520         54.57        <.0001
+symm         2      1      1.2528      0.4781      0.3157      2.1898          6.87        0.0088
+symm         3      1      2.1282      0.4603      1.2260      3.0305         21.37        <.0001
+symm         4      1      2.5337      0.4560      1.6400      3.4274         30.87        <.0001
+symm         5      1     -0.2231      0.6708     -1.5379      1.0916          0.11        0.7394
+symm         6      1      0.4700      0.5123     -0.5342      1.4742          0.84        0.3590
+symm         7      1      1.0647      0.4842      0.1156      2.0138          4.83        0.0279
+symm         8      1      0.1823      0.6055     -1.0045      1.3691          0.09        0.7633
+                                          The SAS System      11:42 Tuesday, November 17, 2015   2
+
+                                       The GENMOD Procedure
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+symm         9      1      0.9555      0.4883     -0.0016      1.9126          3.83        0.0504
+symm         10     0      0.0000      0.0000      0.0000      0.0000           .           .    
+Scale               0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015   3
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                  Data Set              WORK.SEX
+                                  Distribution           Poisson
+                                  Link Function              Log
+                                  Dependent Variable       count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                                     Class Level Information
+ 
+                          Class         Levels    Values
+
+                          extramar           4    1 2 3 4              
+                          premar             4    1 2 3 4              
+                          symm              10    1 2 3 4 5 6 7 8 9 10 
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       3          1.3646          0.4549
+                 Scaled Deviance                3          1.3646          0.4549
+                 Pearson Chi-Square             3          0.8683          0.2894
+                 Scaled Pearson X2              3          0.8683          0.2894
+                 Log Likelihood                         1579.1015                
+                 Full Log Likelihood                     -29.4267                
+                 AIC (smaller is better)                  84.8533                
+                 AICC (smaller is better)                266.8533                
+                 BIC (smaller is better)                  94.8970                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+Intercept           1      1.6094      0.4472      0.7329      2.4860         12.95        0.0003
+symm         1      1     -5.3351      1.4084     -8.0955     -2.5748         14.35        0.0002
+symm         2      1     -6.7957      1.4028     -9.5451     -4.0463         23.47        <.0001
+symm         3      1     -5.8789      1.4074     -8.6374     -3.1205         17.45        <.0001
+symm         4      1     -5.4688      1.4085     -8.2295     -2.7082         15.08        0.0001
+symm         5      1     -5.8656      1.3856     -8.5814     -3.1498         17.92        <.0001
+symm         6      1     -4.5760      1.2826     -7.0899     -2.0622         12.73        0.0004
+                                          The SAS System      11:42 Tuesday, November 17, 2015   4
+
+                                       The GENMOD Procedure
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+symm         7      1     -3.8881      1.3016     -6.4391     -1.3371          8.92        0.0028
+symm         8      1     -3.1733      1.1859     -5.4975     -0.8491          7.16        0.0075
+symm         9      1     -1.7413      1.0996     -3.8964      0.4139          2.51        0.1133
+symm         10     0      0.0000      0.0000      0.0000      0.0000           .           .    
+extramar     1      1      8.6955      1.3329      6.0831     11.3079         42.56        <.0001
+extramar     2      1      5.6424      1.2124      3.2661      8.0187         21.66        <.0001
+extramar     3      1      3.3556      1.0196      1.3572      5.3540         10.83        0.0010
+extramar     4      0      0.0000      0.0000      0.0000      0.0000           .           .    
+premar       1      0      0.0000      0.0000      0.0000      0.0000           .           .    
+premar       2      0      0.0000      0.0000      0.0000      0.0000           .           .    
+premar       3      0      0.0000      0.0000      0.0000      0.0000           .           .    
+premar       4      0      0.0000      0.0000      0.0000      0.0000           .           .    
+Scale               0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015   5
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                  Data Set              WORK.SEX
+                                  Distribution           Poisson
+                                  Link Function              Log
+                                  Dependent Variable       count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                                     Class Level Information
+ 
+                            Class      Levels    Values
+
+                            symm           10    1 2 3 4 5 6 7 8 9 10 
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       5          2.0972          0.4194
+                 Scaled Deviance                5          2.0972          0.4194
+                 Pearson Chi-Square             5          2.0844          0.4169
+                 Scaled Pearson X2              5          2.0844          0.4169
+                 Log Likelihood                         1578.7352                
+                 Full Log Likelihood                     -29.7930                
+                 AIC (smaller is better)                  81.5860                
+                 AICC (smaller is better)                147.5860                
+                 BIC (smaller is better)                  90.0845                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+Intercept           1     13.0357      1.7405      9.6244     16.4470         56.09        <.0001
+symm         1      1     -5.2093      1.3411     -7.8378     -2.5809         15.09        0.0001
+symm         2      1     -6.6797      1.3278     -9.2820     -4.0773         25.31        <.0001
+symm         3      1     -5.7516      1.3403     -8.3786     -3.1246         18.41        <.0001
+symm         4      1     -5.3430      1.3412     -7.9718     -2.7143         15.87        <.0001
+symm         5      1     -5.9363      1.0758     -8.0448     -3.8277         30.45        <.0001
+symm         6      1     -4.6059      0.9654     -6.4979     -2.7138         22.76        <.0001
+symm         7      1     -3.9586      0.9681     -5.8560     -2.0612         16.72        <.0001
+symm         8      1     -2.6742      0.7372     -4.1192     -1.2293         13.16        0.0003
+                                          The SAS System      11:42 Tuesday, November 17, 2015   6
+
+                                       The GENMOD Procedure
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+Parameter          DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+symm         9      1     -1.2638      0.6298     -2.4981     -0.0295          4.03        0.0448
+symm         10     0      0.0000      0.0000      0.0000      0.0000           .           .    
+extramar            1     -2.8566      0.4205     -3.6808     -2.0324         46.14        <.0001
+premar              0      0.0000      0.0000      0.0000      0.0000           .           .    
+Scale               0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015   7
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                  Data Set              WORK.SEX
+                                  Distribution           Poisson
+                                  Link Function              Log
+                                  Dependent Variable       count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                                     Class Level Information
+ 
+                                Class         Levels    Values
+
+                                extramar           4    1 2 3 4   
+                                premar             4    1 2 3 4   
+                                qi                 5    1 2 3 4 5 
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       5          7.0399          1.4080
+                 Scaled Deviance                5          7.0399          1.4080
+                 Pearson Chi-Square             5          5.5809          1.1162
+                 Scaled Pearson X2              5          5.5809          1.1162
+                 Log Likelihood                         1576.2638                
+                 Full Log Likelihood                     -32.2644                
+                 AIC (smaller is better)                  86.5287                
+                 AICC (smaller is better)                152.5287                
+                 BIC (smaller is better)                  95.0272                
+
+
+           Algorithm converged.                                                       
+
+
+                        Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+ Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+ Intercept          1      0.1199      1.0068     -1.8534      2.0931          0.01        0.9052
+ extramar     1     1      4.7598      1.0043      2.7914      6.7283         22.46        <.0001
+ extramar     2     1      3.1801      1.0136      1.1934      5.1668          9.84        0.0017
+ extramar     3     1      2.9388      1.0227      0.9343      4.9433          8.26        0.0041
+ extramar     4     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ premar       1     1     -3.2096      0.7181     -4.6171     -1.8021         19.97        <.0001
+ premar       2     1     -1.4817      0.1865     -1.8472     -1.1162         63.12        <.0001
+                                          The SAS System      11:42 Tuesday, November 17, 2015   8
+
+                                       The GENMOD Procedure
+
+                        Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+ Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+ premar       3     1     -0.4790      0.1277     -0.7292     -0.2287         14.07        0.0002
+ premar       4     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ qi           1     1      3.2997      0.7251      1.8786      4.7209         20.71        <.0001
+ qi           2     1     -0.4320      0.5526     -1.5150      0.6511          0.61        0.4344
+ qi           3     1     -0.7880      0.4685     -1.7061      0.1302          2.83        0.0926
+ qi           4     1      1.4896      1.1016     -0.6696      3.6488          1.83        0.1763
+ qi           5     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ Scale              0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015   9
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                  Data Set              WORK.SEX
+                                  Distribution           Poisson
+                                  Link Function              Log
+                                  Dependent Variable       count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                                     Class Level Information
+ 
+                                 Class         Levels    Values
+
+                                 extramar           4    1 2 3 4 
+                                 premar             4    1 2 3 4 
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       7          4.3809          0.6258
+                 Scaled Deviance                7          4.3809          0.6258
+                 Pearson Chi-Square             7          5.0348          0.7193
+                 Scaled Pearson X2              7          5.0348          0.7193
+                 Log Likelihood                         1577.5934                
+                 Full Log Likelihood                     -30.9348                
+                 AIC (smaller is better)                  79.8696                
+                 AICC (smaller is better)                109.8696                
+                 BIC (smaller is better)                  86.8229                
+
+
+           Algorithm converged.                                                       
+
+
+                        Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+ Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+ Intercept          1     -6.8788      1.9228    -10.6474     -3.1102         12.80        0.0003
+ extramar     1     1     10.3163      1.3936      7.5850     13.0477         54.80        <.0001
+ extramar     2     1      6.5652      1.0404      4.5261      8.6043         39.82        <.0001
+ extramar     3     1      4.0225      0.6613      2.7264      5.3186         37.00        <.0001
+ extramar     4     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ premar       1     1      1.1289      0.5605      0.0304      2.2274          4.06        0.0440
+ premar       2     1     -0.1417      0.3370     -0.8022      0.5187          0.18        0.6740
+ premar       3     1      0.2012      0.2015     -0.1937      0.5962          1.00        0.3180
+                                          The SAS System      11:42 Tuesday, November 17, 2015  10
+
+                                       The GENMOD Procedure
+
+                        Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+ Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+ premar       4     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ qi                 1     -0.1878      0.0954     -0.3747     -0.0008          3.88        0.0490
+ unif               1      0.5825      0.1158      0.3554      0.8095         25.28        <.0001
+ Scale              0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015  11
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                             Data Set                      WORK.SEX2
+                             Distribution                   Binomial
+                             Link Function                     Logit
+                             Response Variable (Events)        above
+                             Response Variable (Trials)       trials
+
+
+                             Number of Observations Read           6
+                             Number of Observations Used           6
+                             Number of Events                      5
+                             Number of Trials                    316
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event               5
+                                       2    Nonevent          311
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       6        402.2029         67.0338
+                 Scaled Deviance                6        402.2029         67.0338
+                 Pearson Chi-Square             6        297.6110         49.6018
+                 Scaled Pearson X2              6        297.6110         49.6018
+                 Log Likelihood                         -219.0345                
+                 Full Log Likelihood                    -204.6004                
+                 AIC (smaller is better)                 409.2007                
+                 AICC (smaller is better)                409.2007                
+                 BIC (smaller is better)                 409.2007                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     0      0.0000      0.0000      0.0000      0.0000           .           .    
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:42 Tuesday, November 17, 2015  12
+
+                                       The GENMOD Procedure
+
+                                  Lagrange Multiplier Statistics
+ 
+                              Parameter     Chi-Square    Pr > ChiSq
+
+                              Intercept       296.3165        <.0001
+                                          The SAS System      11:42 Tuesday, November 17, 2015  13
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                             Data Set                      WORK.SEX2
+                             Distribution                   Binomial
+                             Link Function                     Logit
+                             Response Variable (Events)        above
+                             Response Variable (Trials)       trials
+
+
+                             Number of Observations Read           6
+                             Number of Observations Used           6
+                             Number of Events                      5
+                             Number of Trials                    316
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event               5
+                                       2    Nonevent          311
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       5          2.0972          0.4194
+                 Scaled Deviance                5          2.0972          0.4194
+                 Pearson Chi-Square             5          2.0844          0.4169
+                 Scaled Pearson X2              5          2.0844          0.4169
+                 Log Likelihood                          -18.9817                
+                 Full Log Likelihood                      -4.5475                
+                 AIC (smaller is better)                  11.0951                
+                 AICC (smaller is better)                 12.0951                
+                 BIC (smaller is better)                  10.8868                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     0      0.0000      0.0000      0.0000      0.0000           .           .    
+   score         1     -2.8566      0.4205     -3.6808     -2.0324         46.14        <.0001
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+                                          The SAS System      11:42 Tuesday, November 17, 2015  14
+
+                                       The GENMOD Procedure
+
+NOTE: The scale parameter was held fixed.
+
+
+                                  Lagrange Multiplier Statistics
+ 
+                              Parameter     Chi-Square    Pr > ChiSq
+
+                              Intercept         0.5374        0.4635
+                                          The SAS System      11:42 Tuesday, November 17, 2015  15
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                             Data Set                      WORK.SEX2
+                             Distribution                   Binomial
+                             Link Function                     Logit
+                             Response Variable (Events)        above
+                             Response Variable (Trials)       trials
+
+
+                             Number of Observations Read           6
+                             Number of Observations Used           6
+                             Number of Events                      5
+                             Number of Trials                    316
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event               5
+                                       2    Nonevent          311
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       5         15.5174          3.1035
+                 Scaled Deviance                5         15.5174          3.1035
+                 Pearson Chi-Square             5         20.7825          4.1565
+                 Scaled Pearson X2              5         20.7825          4.1565
+                 Log Likelihood                          -25.6918                
+                 Full Log Likelihood                     -11.2576                
+                 AIC (smaller is better)                  24.5152                
+                 AICC (smaller is better)                 25.5152                
+                 BIC (smaller is better)                  24.3070                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     1     -4.1304      0.4508     -5.0139     -3.2468         83.95        <.0001
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.

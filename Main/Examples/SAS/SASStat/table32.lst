@@ -1,0 +1,76 @@
+                                          The SAS System      11:51 Tuesday, November 17, 2015   1
+
+                                      The NLMIXED Procedure
+
+                                          Specifications
+
+                 Data Set                                    WORK.ORDINAL        
+                 Dependent Variable                          resp                
+                 Distribution for Dependent Variable         General             
+                 Random Effects                              c b                 
+                 Distribution for Random Effects             Normal              
+                 Subject Variable                            center              
+                 Optimization Technique                      Dual Quasi-Newton   
+                 Integration Method                          Adaptive Gaussian   
+                                                             Quadrature          
+
+
+                                            Dimensions
+
+                             Observations Used                     48
+                             Observations Not Used                  0
+                             Total Observations                    48
+                             Subjects                               8
+                             Max Obs per Subject                    6
+                             Parameters                             6
+                             Quadrature Points                     15
+
+
+                                            Parameters
+ 
+          sig_cb          i2       gamma        beta       sig_c       sig_b    NegLogLike
+
+               0           1           1           1           1           1    293.625961
+
+
+                                         Iteration History
+ 
+                 Iter     Calls    NegLogLike        Diff     MaxGrad       Slope
+
+                    1        13      281.3815    12.24446    18.55001    -110.697
+                    2        17     280.79903    0.582471    7.735518    -90.9736
+                    3        22     280.53443      0.2646    5.898159    -11.1432
+                    4        24    280.402375    0.132055    3.431465    -9.37589
+                    5        27     280.33163    0.070745    3.340224    -1.03577
+                    6        29    280.248415    0.083215    1.844402    -0.31299
+                    7        32    280.207068    0.041347    0.221771    -0.51004
+                    8        35    280.204457    0.002611    0.103306    -0.00611
+                    9        38    280.204326    0.000131    0.039541    -0.00025
+                   10        41    280.204316    9.777E-6    0.009937    -0.00001
+                   11        44    280.204315    1.302E-6    0.000403    -2.27E-6
+
+
+                           NOTE: GCONV convergence criterion satisfied.          
+                                          The SAS System      11:51 Tuesday, November 17, 2015   2
+
+                                      The NLMIXED Procedure
+
+                                          Fit Statistics
+
+                             -2 Log Likelihood                  560.4
+                             AIC (smaller is better)            572.4
+                             AICC (smaller is better)           574.5
+                             BIC (smaller is better)            572.9
+
+
+                                       Parameter Estimates
+ 
+                        Standard
+   Parameter  Estimate     Error    DF  t Value  Pr > |t|   Alpha     Lower     Upper  Gradient
+
+   sig_cb      0.01642   0.09329     6     0.18    0.8661    0.05   -0.2118    0.2447  -0.00008
+   i2           1.3743    0.4847     6     2.84    0.0298    0.05    0.1882    2.5605   -0.0002
+   gamma      -0.00833    0.2669     6    -0.03    0.9761    0.05   -0.6614    0.6447  0.000279
+   beta         0.9652    0.3547     6     2.72    0.0346    0.05   0.09732    1.8331  0.000403
+   sig_c        0.3013    0.1026     6     2.94    0.0260    0.05   0.05029    0.5523  0.000118
+   sig_b        0.6160    0.2330     6     2.64    0.0383    0.05   0.04590    1.1861  0.000037

@@ -1,0 +1,239 @@
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   1
+
+                                                   The GENMOD Procedure
+
+                                                    Model Information
+
+                                       Data Set                      WORK.BINOMIAL
+                                       Distribution                       Binomial
+                                       Link Function                         Logit
+                                       Response Variable (Events)                y
+                                       Response Variable (Trials)                n
+
+
+                                         Number of Observations Read          16
+                                         Number of Observations Used          16
+                                         Number of Events                    102
+                                         Number of Trials                    273
+
+
+                                                 Class Level Information
+ 
+                                          Class       Levels    Values
+
+                                          center           8    1 2 3 4 5 6 7 8 
+
+
+                                                     Response Profile
+ 
+                                             Ordered    Binary          Total
+                                               Value    Outcome     Frequency
+
+                                                   1    Event             102
+                                                   2    Nonevent          171
+
+
+                                          Criteria For Assessing Goodness Of Fit
+ 
+                             Criterion                     DF           Value        Value/DF
+
+                             Deviance                       7          9.7463          1.3923
+                             Scaled Deviance                7          9.7463          1.3923
+                             Pearson Chi-Square             7          8.0256          1.1465
+                             Scaled Pearson X2              7          8.0256          1.1465
+                             Log Likelihood                         -138.5100                
+                             Full Log Likelihood                     -24.0681                
+                             AIC (smaller is better)                  66.1362                
+                             AICC (smaller is better)                 96.1362                
+                             BIC (smaller is better)                  73.0895                
+
+
+                       Algorithm converged.                                                       
+
+
+                                    Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                                 Standard     Wald 95% Confidence          Wald
+             Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+             Intercept          0      0.0000      0.0000      0.0000      0.0000           .           .    
+             treat              1      0.7769      0.3067      0.1758      1.3780          6.42        0.0113
+             center       1     1     -0.9336      0.2635     -1.4501     -0.4170         12.55        0.0004
+             center       2     1      1.1219      0.3227      0.4895      1.7543         12.09        0.0005
+             center       3     1      0.2193      0.3324     -0.4322      0.8709          0.44        0.5093
+             center       4     1     -2.3520      0.6107     -3.5489     -1.1551         14.83        0.0001
+             center       5     1     -1.4534      0.4672     -2.3692     -0.5377          9.68        0.0019
+             center       6     1     -3.0805      1.0295     -5.0982     -1.0627          8.95        0.0028
+             center       7     1     -1.7313      0.7710     -3.2424     -0.2201          5.04        0.0247
+             center       8     1      1.2744      0.6680     -0.0348      2.5836          3.64        0.0564
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   2
+
+                                                   The GENMOD Procedure
+
+                                    Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                                 Standard     Wald 95% Confidence          Wald
+             Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+             Scale              0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+
+
+                                              Lagrange Multiplier Statistics
+ 
+                                          Parameter     Chi-Square    Pr > ChiSq
+
+                                          Intercept          .             .    
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   3
+
+                                                  The NLMIXED Procedure
+
+                                                      Specifications
+
+                             Data Set                                    WORK.BINOMIAL       
+                             Dependent Variable                          y                   
+                             Distribution for Dependent Variable         Binomial            
+                             Random Effects                              a                   
+                             Distribution for Random Effects             Normal              
+                             Subject Variable                            center              
+                             Optimization Technique                      Dual Quasi-Newton   
+                             Integration Method                          Adaptive Gaussian   
+                                                                         Quadrature          
+
+
+                                                        Dimensions
+
+                                         Observations Used                     16
+                                         Observations Not Used                  0
+                                         Total Observations                    16
+                                         Subjects                               8
+                                         Max Obs per Subject                    2
+                                         Parameters                             3
+                                         Quadrature Points                     15
+
+
+                                                    Initial Parameters
+ 
+                                                                            Negative
+                                                                                 Log
+                                         alpha        beta         sig    Likelihood
+
+                                            -1           1           1    38.3534086
+
+
+                                                     Iteration History
+ 
+                                                 Negative
+                                                      Log                   Maximum
+                           Iteration Calls     Likelihood    Difference    Gradient       Slope
+
+                                  1      4     37.0743399      1.279069     0.80983    -38.5590
+                                  2      7     37.0550382      0.019302     0.56559    -0.23757
+                                  3      9     37.0375047      0.017533     0.31395    -0.06242
+                                  4     11     37.0202857      0.017219    0.093780    -0.04882
+                                  5     13     37.0191192      0.001166    0.015871    -0.00267
+                                  6     16     37.0190962      0.000023    0.000703    -0.00005
+                                  7     19     37.0190962      7.771E-8    0.000048    -1.66E-7
+
+
+                                       NOTE: GCONV convergence criterion satisfied.          
+
+
+                                                      Fit Statistics
+
+                                         -2 Log Likelihood                   74.0
+                                         AIC (smaller is better)             80.0
+                                         AICC (smaller is better)            82.0
+                                         BIC (smaller is better)             80.3
+
+
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   4
+
+                                                  The NLMIXED Procedure
+
+                                                   Parameter Estimates
+ 
+                                    Standard                                      95% Confidence
+           Parameter    Estimate       Error      DF    t Value    Pr > |t|           Limits           Gradient
+
+           alpha         -0.8284      0.5329       7      -1.55      0.1640     -2.0885      0.4317    -0.00005
+           beta           0.7385      0.3004       7       2.46      0.0436     0.02808      1.4489    0.000016
+           sig            1.4008      0.4261       7       3.29      0.0133      0.3934      2.4083    -2.28E-6
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   5
+
+                                                  The NLMIXED Procedure
+
+                                                      Specifications
+
+                             Data Set                                    WORK.BINOMIAL       
+                             Dependent Variable                          y                   
+                             Distribution for Dependent Variable         Binomial            
+                             Random Effects                              a b                 
+                             Distribution for Random Effects             Normal              
+                             Subject Variable                            center              
+                             Optimization Technique                      Dual Quasi-Newton   
+                             Integration Method                          Adaptive Gaussian   
+                                                                         Quadrature          
+
+
+                                                        Dimensions
+
+                                         Observations Used                     16
+                                         Observations Not Used                  0
+                                         Total Observations                    16
+                                         Subjects                               8
+                                         Max Obs per Subject                    2
+                                         Parameters                             4
+                                         Quadrature Points                     15
+
+
+                                                    Initial Parameters
+ 
+                                                                                  Negative
+                                                                                       Log
+                                   alpha        beta       sig_a       sig_b    Likelihood
+
+                                      -1           1           1           1     38.995237
+
+
+                                                     Iteration History
+ 
+                                                 Negative
+                                                      Log                   Maximum
+                           Iteration Calls     Likelihood    Difference    Gradient       Slope
+
+                                  1      4     37.5971670       1.39807     1.62902    -32.3205
+                                  2      7     37.0249138      0.572253     0.18710    -2.97126
+                                  3     10     37.0211845      0.003729     0.14701    -0.03308
+                                  4     13     37.0198361      0.001348     0.12171    -0.01542
+                                  5     17     37.0178638      0.001972    0.029180    -0.00208
+                                  6     22     37.0166225      0.001241    0.036975    -0.00040
+                                  7     25     37.0165238      0.000099    0.008314    -0.00021
+                                  8     28     37.0165113      0.000013    0.002061    -0.00005
+                                  9     31     37.0165108      5.078E-7    0.000024    -1.01E-6
+                                 10     34     37.0165108      4.21E-10    8.276E-7    -832E-12
+
+
+                                       NOTE: GCONV convergence criterion satisfied.          
+
+
+                                                      Fit Statistics
+
+                                         -2 Log Likelihood                   74.0
+                                         AIC (smaller is better)             82.0
+                                         AICC (smaller is better)            85.7
+                                         BIC (smaller is better)             82.4
+                                                      The SAS System                  17:55 Thursday, November 3, 2016   6
+
+                                                  The NLMIXED Procedure
+
+                                                   Parameter Estimates
+ 
+                                    Standard                                      95% Confidence
+           Parameter    Estimate       Error      DF    t Value    Pr > |t|           Limits           Gradient
+
+           alpha         -0.8304      0.5345       6      -1.55      0.1713     -2.1384      0.4775    1.219E-7
+           beta           0.7460      0.3247       6       2.30      0.0613    -0.04840      1.5404    -8.28E-7
+           sig_a          1.4031      0.4279       6       3.28      0.0168      0.3561      2.4501    -4.28E-8
+           sig_b          0.1485      1.0731       6       0.14      0.8945     -2.4773      2.7743      3.4E-8

@@ -1,0 +1,189 @@
+                                          The SAS System         09:12 Tuesday, March 29, 2016   1
+
+                                        The FREQ Procedure
+
+                                    Table of degree by belief
+
+             degree     belief
+
+             Frequency‚
+             Expected ‚
+             Percent  ‚
+             Row Pct  ‚
+             Col Pct  ‚1       ‚2       ‚3       ‚4       ‚5       ‚6       ‚  Total
+             ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                    1 ‚      9 ‚      8 ‚     27 ‚      8 ‚     47 ‚    236 ‚    335
+                      ‚  10.05 ‚ 15.913 ‚  34.17 ‚  12.73 ‚ 55.275 ‚ 206.86 ‚
+                      ‚   0.45 ‚   0.40 ‚   1.35 ‚   0.40 ‚   2.35 ‚  11.80 ‚  16.75
+                      ‚   2.69 ‚   2.39 ‚   8.06 ‚   2.39 ‚  14.03 ‚  70.45 ‚
+                      ‚  15.00 ‚   8.42 ‚  13.24 ‚  10.53 ‚  14.24 ‚  19.11 ‚
+             ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                    2 ‚     23 ‚     39 ‚     88 ‚     49 ‚    179 ‚    706 ‚   1084
+                      ‚  32.52 ‚  51.49 ‚ 110.57 ‚ 41.192 ‚ 178.86 ‚ 669.37 ‚
+                      ‚   1.15 ‚   1.95 ‚   4.40 ‚   2.45 ‚   8.95 ‚  35.30 ‚  54.20
+                      ‚   2.12 ‚   3.60 ‚   8.12 ‚   4.52 ‚  16.51 ‚  65.13 ‚
+                      ‚  38.33 ‚  41.05 ‚  43.14 ‚  64.47 ‚  54.24 ‚  57.17 ‚
+             ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                    3 ‚     28 ‚     48 ‚     89 ‚     19 ‚    104 ‚    293 ‚    581
+                      ‚  17.43 ‚ 27.598 ‚ 59.262 ‚ 22.078 ‚ 95.865 ‚ 358.77 ‚
+                      ‚   1.40 ‚   2.40 ‚   4.45 ‚   0.95 ‚   5.20 ‚  14.65 ‚  29.05
+                      ‚   4.82 ‚   8.26 ‚  15.32 ‚   3.27 ‚  17.90 ‚  50.43 ‚
+                      ‚  46.67 ‚  50.53 ‚  43.63 ‚  25.00 ‚  31.52 ‚  23.72 ‚
+             ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+             Total          60       95      204       76      330     1235     2000
+                          3.00     4.75    10.20     3.80    16.50    61.75   100.00
+
+
+                             Statistics for Table of degree by belief
+
+                      Statistic                     DF       Value      Prob
+                      ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                      Chi-Square                    10     76.1483    <.0001
+                      Likelihood Ratio Chi-Square   10     73.1879    <.0001
+                      Mantel-Haenszel Chi-Square     1     52.4861    <.0001
+                      Phi Coefficient                       0.1951          
+                      Contingency Coefficient               0.1915          
+                      Cramer's V                            0.1380          
+                                          The SAS System         09:12 Tuesday, March 29, 2016   2
+
+                                        The FREQ Procedure
+ 
+                             Statistics for Table of degree by belief
+
+                      Statistic                              Value       ASE
+                      ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                      Gamma                                -0.2483    0.0334
+                      Kendall's Tau-b                      -0.1475    0.0202
+                      Stuart's Tau-c                       -0.1295    0.0179
+
+                      Somers' D C|R                        -0.1454    0.0200
+                      Somers' D R|C                        -0.1497    0.0205
+
+                      Pearson Correlation                  -0.1620    0.0227
+                      Spearman Correlation                 -0.1644    0.0224
+
+                      Lambda Asymmetric C|R                 0.0000    0.0000
+                      Lambda Asymmetric R|C                 0.0164    0.0192
+                      Lambda Symmetric                      0.0089    0.0105
+
+                      Uncertainty Coefficient C|R           0.0152    0.0036
+                      Uncertainty Coefficient R|C           0.0185    0.0044
+                      Uncertainty Coefficient Symmetric     0.0167    0.0039
+
+                                        Sample Size = 2000
+
+
+                             Summary Statistics for degree by belief
+
+                   Cochran-Mantel-Haenszel Statistics (Based on Table Scores)
+ 
+                 Statistic    Alternative Hypothesis    DF       Value      Prob
+                 ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                     1        Nonzero Correlation        1     52.4861    <.0001
+
+
+                                     Total Sample Size = 2000
+                                          The SAS System         09:12 Tuesday, March 29, 2016   3
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                 Data Set              WORK.TABLE
+                                 Distribution             Poisson
+                                 Link Function                Log
+                                 Dependent Variable         count
+
+
+                             Number of Observations Read          18
+                             Number of Observations Used          18
+
+
+                                     Class Level Information
+ 
+                                Class       Levels    Values
+
+                                degree           3    1 2 3       
+                                belief           6    1 2 3 4 5 6 
+
+
+                                      Parameter Information
+ 
+                          Parameter       Effect       degree    belief
+
+                          Prm1            Intercept                    
+                          Prm2            degree       1               
+                          Prm3            degree       2               
+                          Prm4            degree       3               
+                          Prm5            belief                 1     
+                          Prm6            belief                 2     
+                          Prm7            belief                 3     
+                          Prm8            belief                 4     
+                          Prm9            belief                 5     
+                          Prm10           belief                 6     
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                      10         73.1879          7.3188
+                 Scaled Deviance               10         73.1879          7.3188
+                 Pearson Chi-Square            10         76.1480          7.6148
+                 Scaled Pearson X2             10         76.1480          7.6148
+                 Log Likelihood                         8817.0511                
+                 Full Log Likelihood                     -88.6113                
+                 AIC (smaller is better)                 193.2227                
+                 AICC (smaller is better)                209.2227                
+                 BIC (smaller is better)                 200.3457                
+                                          The SAS System         09:12 Tuesday, March 29, 2016   4
+
+                                       The GENMOD Procedure
+
+           Algorithm converged.                                                       
+
+
+                        Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                     Standard     Wald 95% Confidence          Wald
+ Parameter         DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+ Intercept          1      5.8827      0.0451      5.7943      5.9710       17039.8        <.0001
+ degree       1     1     -0.5506      0.0686     -0.6851     -0.4162         64.42        <.0001
+ degree       2     1      0.6237      0.0514      0.5229      0.7244        147.13        <.0001
+ degree       3     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ belief       1     1     -3.0245      0.1322     -3.2836     -2.7654        523.42        <.0001
+ belief       2     1     -2.5649      0.1065     -2.7736     -2.3563        580.36        <.0001
+ belief       3     1     -1.8007      0.0756     -1.9488     -1.6526        567.70        <.0001
+ belief       4     1     -2.7881      0.1182     -3.0197     -2.5565        556.53        <.0001
+ belief       5     1     -1.3197      0.0620     -1.4412     -1.1983        453.56        <.0001
+ belief       6     0      0.0000      0.0000      0.0000      0.0000           .           .    
+ Scale              0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+
+
+                                      Observation Statistics
+ 
+                                                                Std          Std
+                         Raw      Pearson     Deviance     Deviance      Pearson    Likelihood
+    Observation     Residual     Residual     Residual     Residual     Residual      Residual
+
+              1    -1.050027     -0.33122    -0.337255    -0.375301    -0.368586     -0.374018
+              2    -7.912722    -1.983598    -2.196043    -2.466133    -2.227559      -2.41867
+              3     -7.17002    -1.226585    -1.273736    -1.473157    -1.418624     -1.459585
+              4    -4.730002    -1.325706    -1.423967    -1.591184    -1.481383     -1.569931
+              5    -8.275002    -1.113022    -1.142684    -1.370537     -1.33496      -1.35979
+              6    29.137492    2.0258686    1.9809013    3.5103847    3.5900719     3.5648903
+              7    -9.520085    -1.669418    -1.762793    -2.644739    -2.504646     -2.567827
+              8    -12.49071    -1.740695    -1.819318    -2.754505    -2.635467     -2.688045
+              9    -22.56805    -2.146245    -2.226274    -3.471424    -3.346635     -3.398513
+             10    7.8079994    1.2165594    1.1808771    1.7790347    1.8327913     1.8093032
+             11    0.1400133    0.0104692    0.0104678     0.016927    0.0169292     0.0169284
+             12    36.630048    1.4158081     1.403181    3.3524702    3.3826387     3.3773731
+             13     10.56995    2.5317662    2.3247777    2.8023308    3.0518386     2.8824417
+             14    20.402111     3.883624      3.51114    4.2710987     4.724204     4.4230839
+             15    29.737956     3.862983    3.5931704    4.5015643    4.8395885     4.6270782
+             16    -3.078006    -0.655073    -0.671253    -0.812499    -0.792914     -0.806333
+             17    8.1349809    0.8308573    0.8195034    1.0647099    1.0794611     1.0707466
+             18    -65.76757    -3.472204    -3.587324     -6.88618    -6.665198     -6.725887

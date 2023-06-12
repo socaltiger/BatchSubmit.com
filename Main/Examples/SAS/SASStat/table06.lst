@@ -1,0 +1,180 @@
+                                          The SAS System      11:29 Tuesday, November 17, 2015   1
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                              Data Set                      WORK.GLM
+                              Distribution                  Binomial
+                              Link Function                 Identity
+                              Response Variable (Events)     disease
+                              Response Variable (Trials)       total
+
+
+                             Number of Observations Read           4
+                             Number of Observations Used           4
+                             Number of Events                    110
+                             Number of Trials                   2484
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event             110
+                                       2    Nonevent         2374
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       2          0.0692          0.0346
+                 Scaled Deviance                2          0.0692          0.0346
+                 Pearson Chi-Square             2          0.0688          0.0344
+                 Scaled Pearson X2              2          0.0688          0.0344
+                 Log Likelihood                         -417.4960                
+                 Full Log Likelihood                     -10.1609                
+                 AIC (smaller is better)                  24.3217                
+                 AICC (smaller is better)                 36.3217                
+                 BIC (smaller is better)                  23.0943                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     1      0.0172      0.0034      0.0105      0.0240         25.18        <.0001
+   snoring       1      0.0198      0.0028      0.0143      0.0253         49.97        <.0001
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+                                          The SAS System      11:29 Tuesday, November 17, 2015   2
+
+                                       The GENMOD Procedure
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:29 Tuesday, November 17, 2015   3
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                              Data Set                      WORK.GLM
+                              Distribution                  Binomial
+                              Link Function                    Logit
+                              Response Variable (Events)     disease
+                              Response Variable (Trials)       total
+
+
+                             Number of Observations Read           4
+                             Number of Observations Used           4
+                             Number of Events                    110
+                             Number of Trials                   2484
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event             110
+                                       2    Nonevent         2374
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       2          2.8089          1.4045
+                 Scaled Deviance                2          2.8089          1.4045
+                 Pearson Chi-Square             2          2.8743          1.4372
+                 Scaled Pearson X2              2          2.8743          1.4372
+                 Log Likelihood                         -418.8658                
+                 Full Log Likelihood                     -11.5307                
+                 AIC (smaller is better)                  27.0615                
+                 AICC (smaller is better)                 39.0615                
+                 BIC (smaller is better)                  25.8341                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard    Likelihood Ratio 95%          Wald
+   Parameter    DF    Estimate       Error      Confidence Limits     Chi-Square    Pr > ChiSq
+
+   Intercept     1     -3.8662      0.1662     -4.2072     -3.5544        541.06        <.0001
+   snoring       1      0.3973      0.0500      0.2999      0.4964         63.12        <.0001
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+                                          The SAS System      11:29 Tuesday, November 17, 2015   4
+
+                                       The GENMOD Procedure
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:29 Tuesday, November 17, 2015   5
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                              Data Set                      WORK.GLM
+                              Distribution                  Binomial
+                              Link Function                   Probit
+                              Response Variable (Events)     disease
+                              Response Variable (Trials)       total
+
+
+                             Number of Observations Read           4
+                             Number of Observations Used           4
+                             Number of Events                    110
+                             Number of Trials                   2484
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event             110
+                                       2    Nonevent         2374
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       2          1.8716          0.9358
+                 Scaled Deviance                2          1.8716          0.9358
+                 Pearson Chi-Square             2          1.9101          0.9550
+                 Scaled Pearson X2              2          1.9101          0.9550
+                 Log Likelihood                         -418.3971                
+                 Full Log Likelihood                     -11.0621                
+                 AIC (smaller is better)                  26.1241                
+                 AICC (smaller is better)                 38.1241                
+                 BIC (smaller is better)                  24.8967                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     1     -2.0606      0.0704     -2.1986     -1.9225        855.49        <.0001
+   snoring       1      0.1878      0.0236      0.1415      0.2341         63.14        <.0001
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+                                          The SAS System      11:29 Tuesday, November 17, 2015   6
+
+                                       The GENMOD Procedure
+
+NOTE: The scale parameter was held fixed.

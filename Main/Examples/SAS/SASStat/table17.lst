@@ -1,0 +1,178 @@
+                                                      The SAS System                    03:17 Tuesday, August 23, 2016   1
+
+                                                   The GENMOD Procedure
+
+                                                    Model Information
+
+                                             Data Set              WORK.DRUGS
+                                             Distribution             Poisson
+                                             Link Function                Log
+                                             Dependent Variable         count
+
+
+                                         Number of Observations Read           8
+                                         Number of Observations Used           8
+
+
+                                                 Class Level Information
+ 
+                                               Class      Levels    Values
+
+                                               a               2    1 2   
+                                               c               2    1 2   
+                                               m               2    1 2   
+
+
+                                                  Parameter Information
+ 
+                                         Parameter       Effect       a    c    m
+
+                                         Prm1            Intercept               
+                                         Prm2            a            1          
+                                         Prm3            a            2          
+                                         Prm4            c                 1     
+                                         Prm5            c                 2     
+                                         Prm6            m                      1
+                                         Prm7            m                      2
+                                         Prm8            a*m          1         1
+                                         Prm9            a*m          1         2
+                                         Prm10           a*m          2         1
+                                         Prm11           a*m          2         2
+                                         Prm12           a*c          1    1     
+                                         Prm13           a*c          1    2     
+                                         Prm14           a*c          2    1     
+                                         Prm15           a*c          2    2     
+                                         Prm16           c*m               1    1
+                                         Prm17           c*m               1    2
+                                         Prm18           c*m               2    1
+                                         Prm19           c*m               2    2
+
+
+                                          Criteria For Assessing Goodness Of Fit
+ 
+                             Criterion                     DF           Value        Value/DF
+
+                             Deviance                       1          0.3740          0.3740
+                             Scaled Deviance                1          0.3740          0.3740
+                             Pearson Chi-Square             1          0.4011          0.4011
+                             Scaled Pearson X2              1          0.4011          0.4011
+                             Log Likelihood                        12010.6124                
+                             Full Log Likelihood                     -24.7087                
+                             AIC (smaller is better)                  63.4174                
+                             AICC (smaller is better)                   .                    
+                             BIC (smaller is better)                  63.9735                
+
+
+                       Algorithm converged.                                                       
+                                                      The SAS System                    03:17 Tuesday, August 23, 2016   2
+
+                                                   The GENMOD Procedure
+
+                                   Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                                   Standard    Likelihood Ratio 95%          Wald
+          Parameter              DF    Estimate       Error      Confidence Limits     Chi-Square    Pr > ChiSq
+
+          Intercept               1      5.6334      0.0597      5.5141      5.7482       8903.96        <.0001
+          a            1          1      0.4877      0.0758      0.3400      0.6372         41.44        <.0001
+          a            2          0      0.0000      0.0000      0.0000      0.0000           .           .    
+          c            1          1     -1.8867      0.1627     -2.2183     -1.5791        134.47        <.0001
+          c            2          0      0.0000      0.0000      0.0000      0.0000           .           .    
+          m            1          1     -5.3090      0.4752     -6.3767     -4.4771        124.82        <.0001
+          m            2          0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*m          1    1     1      2.9860      0.4647      2.1762      4.0367         41.29        <.0001
+          a*m          1    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*m          2    1     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*m          2    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*c          1    1     1      2.0545      0.1741      1.7230      2.4067        139.32        <.0001
+          a*c          1    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*c          2    1     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          a*c          2    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          c*m          1    1     1      2.8479      0.1638      2.5373      3.1809        302.14        <.0001
+          c*m          1    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          c*m          2    1     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          c*m          2    2     0      0.0000      0.0000      0.0000      0.0000           .           .    
+          Scale                   0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+
+
+                                            LR Statistics For Type 3 Analysis
+ 
+                                                                 Chi-
+                                       Source           DF     Square    Pr > ChiSq
+
+                                       a                 1    1115.73        <.0001
+                                       c                 1      25.49        <.0001
+                                       m                 1     371.06        <.0001
+                                       a*m               1      91.64        <.0001
+                                       a*c               1     187.38        <.0001
+                                       c*m               1     497.00        <.0001
+
+
+                                                  Observation Statistics
+ 
+                                                                Standard
+                                                                Error of
+                                                                     the
+                                       Predicted      Linear      Linear                                             Raw
+ Observation       count   a   c   m       Value   Predictor   Predictor     HessWgt       Lower       Upper    Residual
+                                                         Std         Std
+                             Pearson    Deviance    Deviance     Pearson   Likelihood                             DFBETA_
+                            Residual    Residual    Residual    Residual     Residual    Leverage       CookD   Intercept
+                                                                 DFBETA_     DFBETA_     DFBETA_    DFBETAS_    DFBETAS_
+                           DFBETA_a1   DFBETA_c1   DFBETA_m1        a1m1        a1c1        c1m1   Intercept          a1
+                            DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_
+                                  c1          m1        a1m1        a1c1        c1m1
+
+           1         911   1   1   1   910.38317   6.8138656   0.0331254   910.38317   853.15473   971.45041   0.6168304
+                           0.0204434   0.0204411   0.6332534   0.6333249    0.6333248    0.998958   54.934889    0.002206
+                           -0.003561    -0.01676    -0.44816   0.4633397   0.0192594   0.6332582   0.0369506   -0.046993
+                           -0.103011   -0.943104   0.9971201   0.1106452   3.8651156
+                                                      The SAS System                    03:17 Tuesday, August 23, 2016   3
+
+                                                   The GENMOD Procedure
+
+                                                  Observation Statistics
+ 
+                                                                Standard
+                                                                Error of
+                                                                     the
+                                       Predicted      Linear      Linear                                             Raw
+ Observation       count   a   c   m       Value   Predictor   Predictor     HessWgt       Lower       Upper    Residual
+                                                         Std         Std
+                             Pearson    Deviance    Deviance     Pearson   Likelihood                             DFBETA_
+                            Residual    Residual    Residual    Residual     Residual    Leverage       CookD   Intercept
+                                                                 DFBETA_     DFBETA_     DFBETA_    DFBETAS_    DFBETAS_
+                           DFBETA_a1   DFBETA_c1   DFBETA_m1        a1m1        a1c1        c1m1   Intercept          a1
+                            DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_
+                                  c1          m1        a1m1        a1c1        c1m1
+
+           2         538   1   1   2   538.61683   6.2890044   0.0430504   538.61683   495.03436   586.03627    -0.61683
+                           -0.026578   -0.026583   -0.633446   -0.633325    -0.633325   0.9982388   32.478142    0.002206
+                           -0.003561    -0.01676    -0.44816   0.4633397   -0.631001   0.6332582   0.0369506   -0.046993
+                           -0.103011   -0.943104   0.9971201   -3.625103   3.8651156
+           3          44   1   2   1    44.61683   3.7981111   0.1481099    44.61683   33.375465   59.644459    -0.61683
+                           -0.092346    -0.09256   -0.634793   -0.633325    -0.633356   0.9787392   2.6378038    0.002206
+                           -0.003561    -0.01676    -0.44816   -0.186921   0.0192594   0.6332582   0.0369506   -0.046993
+                           -0.103011   -0.943104   -0.402259   0.1106452   3.8651156
+           4         456   1   2   2   455.38317   6.1211392   0.0468122   455.38317   415.46112   499.14136   0.6168304
+                           0.0289053   0.0288988    0.633182   0.6333249    0.6333246   0.9979169   27.450367    0.002206
+                              0.6467    -0.01676    -0.44816   -0.186921   -0.631001   0.6332582   0.0369506   8.5353557
+                           -0.103011   -0.943104   -0.402259   -3.625103   3.8651156
+           5           3   2   1   1    3.616831   1.2855982   0.4516316    3.616831   1.4924462   8.7651178   -0.616831
+                           -0.324341   -0.334285   -0.652742   -0.633326    -0.638475   0.7377291   0.1611769    0.002206
+                           -0.003561    -0.01676   -0.448161   0.4633402   0.0192594   -0.017002   0.0369507   -0.046993
+                           -0.103012   -0.943105   0.9971212   0.1106454   -0.103775
+           6          43   2   1   2    42.38317   3.7467513   0.1518756    42.38317   31.471445   57.078189   0.6168304
+                           0.0947478   0.0945193    0.631798   0.6333249    0.6332908   0.9776187   2.5028783    0.002206
+                           -0.003561   0.6335009    -0.44816   0.4633397   -0.631001   -0.017002   0.0369506   -0.046993
+                           3.8937473   -0.943104   0.9971201   -3.625103   -0.103775
+           7           2   2   2   1   1.3831699   0.3243779    0.476606   1.3831699   0.5434852   3.5201674   0.6168301
+                           0.5244786    0.491342   0.5933111   0.6333247    0.6061677   0.3141916    0.026251    0.002206
+                           -0.003561    -0.01676   0.2021004   -0.186921   0.0192594   -0.017002   0.0369506   -0.046993
+                           -0.103011   0.4252981   -0.402259   0.1106452   -0.103774
+           8         279   2   2   2   279.61683   5.6334202   0.0597008   279.61683   248.74013   314.32632    -0.61683
+                           -0.036888   -0.036901   -0.633558   -0.633325    -0.633326   0.9966075   16.833106   -0.648055
+                              0.6467   0.6335009   0.2021004   -0.186921   -0.631001   -0.017002   -10.85503   8.5353557
+                           3.8937473   0.4252982   -0.402259   -3.625103   -0.103775

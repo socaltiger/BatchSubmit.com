@@ -1,0 +1,100 @@
+1                                                     The SAS System                     23:45 Thursday, February 16, 2017
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNIV OF SCIENCE & TECHNOLOGY, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.28 seconds
+      cpu time            0.09 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data aids;
+4            input race $ azt $ y n @@;
+5            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.AIDS has 4 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+7          ;
+8          run;
+9          
+10         proc genmod; class race azt;
+11           model y/n = azt race / dist=bin type3 lrci residuals obstats;
+12         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-2.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.37 seconds
+      cpu time            0.03 seconds
+      
+
+13         
+14         proc logistic; class race azt / param=reference;
+15           model y/n = azt race / aggregate scale=none clparm=both clodds=both;
+16           output out=predict p=pi_hat lower=lower upper=upper;
+17         run;
+
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: There were 4 observations read from the data set WORK.AIDS.
+NOTE: The data set WORK.PREDICT has 4 observations and 7 variables.
+NOTE: The PROCEDURE LOGISTIC printed pages 3-5.
+NOTE: PROCEDURE LOGISTIC used (Total process time):
+      real time           0.13 seconds
+      cpu time            0.00 seconds
+      
+2                                                     The SAS System                     23:45 Thursday, February 16, 2017
+
+
+18         
+19         proc print data=predict;
+20         run;
+
+NOTE: There were 4 observations read from the data set WORK.PREDICT.
+NOTE: The PROCEDURE PRINT printed page 6.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+21         
+22         proc logistic; class race azt (ref=first) / param=ref;
+23           model y/n = azt / aggregate=(azt race) scale=none;
+24         run;
+
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: There were 4 observations read from the data set WORK.PREDICT.
+NOTE: The PROCEDURE LOGISTIC printed pages 7-8.
+NOTE: PROCEDURE LOGISTIC used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.19 seconds
+      cpu time            0.17 seconds
+      

@@ -1,0 +1,90 @@
+                                                      The SAS System                       19:23 Monday, July 18, 2016   1
+
+                                                    The FREQ Procedure
+
+                                                 Table of first by second
+
+                                           first     second
+
+                                           Frequency|
+                                           Percent  |
+                                           Row Pct  |
+                                           Col Pct  |       1|       2|  Total
+                                           ---------+--------+--------+
+                                                  1 |    175 |     16 |    191
+                                                    |  40.42 |   3.70 |  44.11
+                                                    |  91.62 |   8.38 |
+                                                    |  76.42 |   7.84 |
+                                           ---------+--------+--------+
+                                                  2 |     54 |    188 |    242
+                                                    |  12.47 |  43.42 |  55.89
+                                                    |  22.31 |  77.69 |
+                                                    |  23.58 |  92.16 |
+                                           ---------+--------+--------+
+                                           Total         229      204      433
+                                                       52.89    47.11   100.00
+
+
+                                         Statistics for Table of first by second
+
+                                                     McNemar's Test
+                                              -----------------------------
+                                              Statistic (S)         20.6286
+                                              DF                          1
+                                              Asymptotic Pr >  S     <.0001
+                                              Exact      Pr >= S     <.0001
+
+
+                                                 Simple Kappa Coefficient
+                                             --------------------------------
+                                             Kappa                     0.6789
+                                             ASE                       0.0346
+                                             95% Lower Conf Limit      0.6110
+                                             95% Upper Conf Limit      0.7467
+
+                                                    Sample Size = 433
+                                                      The SAS System                       19:23 Monday, July 18, 2016   2
+
+                                                   The CATMOD Procedure
+
+                                                       Data Summary
+
+                                 Response           first*second     Response Levels    4
+                                 Weight Variable    count            Populations        1
+                                 Data Set           MATCHED          Total Frequency  433
+                                 Frequency Missing  0                Observations       4
+
+
+                                                   Population Profiles
+ 
+                                                  Sample    Sample Size
+                                                  ---------------------
+                                                      1             433
+
+
+                                                    Response Profiles
+ 
+                                               Response    first    second
+                                               ---------------------------
+                                                   1       1        1     
+                                                   2       1        2     
+                                                   3       2        1     
+                                                   4       2        2     
+
+
+                                                   Analysis of Variance
+ 
+                                       Source         DF   Chi-Square    Pr > ChiSq
+                                       --------------------------------------------
+                                       Model|Mean      1        21.66        <.0001
+
+                                       Residual        0          .           .    
+
+
+                                       Analysis of Weighted Least Squares Estimates
+ 
+                                                             Standard        Chi-
+                           Effect    Parameter    Estimate      Error      Square    Pr > ChiSq
+                           --------------------------------------------------------------------
+                           Model          1         0.4411     0.0239      341.75        <.0001
+                                          2         0.0878     0.0189       21.66        <.0001

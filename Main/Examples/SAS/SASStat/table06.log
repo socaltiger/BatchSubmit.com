@@ -1,0 +1,81 @@
+1                                         The SAS System          11:29 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.28 seconds
+      cpu time            0.06 seconds
+      
+1          data glm;
+2            input snoring disease total @@;
+3            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.GLM has 4 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+5          ;
+6          run;
+7          
+8          proc genmod; model disease/total = snoring / dist=bin link=identity;
+9          run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-2.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+10         
+11         proc genmod; model disease/total = snoring / dist=bin link=logit LRCI;
+12         run;
+
+NOTE: Algorithm converged.
+2                                         The SAS System          11:29 Tuesday, November 17, 2015
+
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 3-4.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+13         
+14         proc genmod; model disease/total = snoring / dist=bin link=probit;
+15         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 5-6.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.50 seconds
+      cpu time            0.09 seconds
+      

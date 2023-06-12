@@ -1,0 +1,72 @@
+1                                         The SAS System         20:37 Thursday, November 26, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.84 seconds
+      cpu time            0.07 seconds
+      
+1          data example;
+2            input group $ outcome $ count @@;
+3            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.EXAMPLE has 4 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.01 seconds
+      
+
+5          ;
+6          run;
+7          
+8          proc freq order=data; weight count;
+9            tables group*outcome ;
+10           exact or riskdiff ; * conservative Santner-Snell approach;
+11         run;
+
+NOTE: There were 4 observations read from the data set WORK.EXAMPLE.
+NOTE: The PROCEDURE FREQ printed pages 1-2.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.27 seconds
+      cpu time            0.15 seconds
+      
+
+12         
+13         proc freq order=data; weight count;
+14           tables group*outcome ;
+15           exact riskdiff(method=fmscore);
+2                                         The SAS System         20:37 Thursday, November 26, 2015
+
+16         * exact unconditional inverting two one-sided score tests;
+17         run;
+
+NOTE: There were 4 observations read from the data set WORK.EXAMPLE.
+NOTE: The PROCEDURE FREQ printed pages 3-4.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           1.54 seconds
+      cpu time            1.51 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.89 seconds
+      cpu time            1.76 seconds
+      

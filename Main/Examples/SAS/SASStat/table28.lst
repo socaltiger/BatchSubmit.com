@@ -1,0 +1,77 @@
+                                                      The SAS System                     20:13 Thursday, June 30, 2016   1
+
+                                                  The NLMIXED Procedure
+
+                                                      Specifications
+
+                             Data Set                                    WORK.KERRYOBAMA     
+                             Dependent Variable                          response            
+                             Distribution for Dependent Variable         Binary              
+                             Random Effects                              u                   
+                             Distribution for Random Effects             Normal              
+                             Subject Variable                            case                
+                             Replicate Variable                          count               
+                             Optimization Technique                      Dual Quasi-Newton   
+                             Integration Method                          Adaptive Gaussian   
+                                                                         Quadrature          
+
+
+                                                        Dimensions
+
+                                         Observations Used                      8
+                                         Observations Not Used                  0
+                                         Total Observations                     8
+                                         Subjects                             433
+                                         Max Obs per Subject                    2
+                                         Parameters                             3
+                                         Quadrature Points                   1000
+
+
+                                                    Initial Parameters
+ 
+                                                                            Negative
+                                                                                 Log
+                                         alpha        beta       sigma    Likelihood
+
+                                             1           1           1    705.458536
+
+
+                                                     Iteration History
+ 
+                                                 Negative
+                                                      Log                   Maximum
+                           Iteration Calls     Likelihood    Difference    Gradient       Slope
+
+                                  1      6       513.3536       192.105     29.7949    -2068.39
+                                  2     10       491.1551      22.19844     13.8845    -13.4767
+                                  3     14       481.7469      9.408212     4.01368    -6.04929
+                                  4     18       480.5991      1.147755     0.70706    -1.06101
+                                  5     20       480.5837      0.015407     0.39815    -0.02233
+                                  6     23       480.5775      0.006198     0.15742    -0.00862
+                                  7     26       480.5743      0.003235    0.036392    -0.00218
+                                  8     29       480.5743      0.000054    0.007746    -0.00005
+                                  9     32       480.5742      9.022E-6    0.000049    -0.00001
+                                 10     35       480.5742      1.78E-10    4.671E-7    -358E-12
+
+
+                                       NOTE: GCONV convergence criterion satisfied.          
+
+
+                                                      Fit Statistics
+
+                                         -2 Log Likelihood                  961.1
+                                         AIC (smaller is better)            967.1
+                                         AICC (smaller is better)           973.1
+                                         BIC (smaller is better)            979.4
+                                                      The SAS System                     20:13 Thursday, June 30, 2016   2
+
+                                                  The NLMIXED Procedure
+
+                                                   Parameter Estimates
+ 
+                                    Standard                                      95% Confidence
+           Parameter    Estimate       Error      DF    t Value    Pr > |t|           Limits           Gradient
+
+           alpha         -0.8170      0.3427     432      -2.38      0.0176     -1.4906     -0.1434    7.914E-8
+           beta           1.2164      0.2846     432       4.27      <.0001      0.6569      1.7758    4.671E-7
+           sigma          5.2169      0.6976     432       7.48      <.0001      3.8457      6.5881    -2.67E-7

@@ -1,0 +1,55 @@
+1                                                     The SAS System                           19:17 Friday, April 7, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.36 seconds
+      cpu time            0.20 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph"'
+1        !                                                                ;
+2          
+3          option gstyle;
+4          
+5          ods listing style=statistical;
+6          
+7          filename sasgraph 'gchart.png';
+8          goptions gsfname=sasgraph dev=png xpixels=500 ypixels=400;
+9          
+10         proc gchart data=sashelp.cars;
+11            vbar Make;
+12               where MPG_Highway >= 37;
+13            run;
+
+NOTE: 8406 bytes written to C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph\gchart.png.
+14         quit;
+
+NOTE: There were 19 observations read from the data set SASHELP.CARS.
+      WHERE MPG_Highway>=37;
+NOTE: PROCEDURE GCHART used (Total process time):
+      real time           1.59 seconds
+      cpu time            0.23 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.68 seconds
+      cpu time            0.51 seconds
+      

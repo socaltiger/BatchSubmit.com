@@ -1,0 +1,139 @@
+                                          The SAS System      11:40 Tuesday, November 17, 2015   1
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                                Data Set              WORK.MIGRATE
+                                Distribution               Poisson
+                                Link Function             Identity
+                                Dependent Variable           count
+
+
+                             Number of Observations Read          16
+                             Number of Observations Used          16
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       3         93.6362         31.2121
+                 Scaled Deviance                3         93.6362         31.2121
+                 Pearson Chi-Square             3         86.1641         28.7214
+                 Scaled Pearson X2              3         86.1641         28.7214
+                 Log Likelihood                         8488.6432                
+                 Full Log Likelihood                     -91.1037                
+                 AIC (smaller is better)                 208.2075                
+                 AICC (smaller is better)                390.2075                
+                 BIC (smaller is better)                 218.2511                
+
+
+           Algorithm converged.                                                       
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     1    168.4061      6.2712    156.1149    180.6973        721.14        <.0001
+   m11           1     97.5939     17.4736     63.3462    131.8416         31.19        <.0001
+   m12           1    -155.786      7.0045    -169.514    -142.057        494.65        <.0001
+   m13           1    -132.752      7.0556    -146.580    -118.923        354.01        <.0001
+   m21           1    -156.083      7.2381    -170.269    -141.897        465.01        <.0001
+   m22           1    245.5939     21.2915    203.8633    287.3244        133.05        <.0001
+   m23           1    -135.562      7.0495    -149.379    -121.745        369.80        <.0001
+   m31           1    -140.738      8.4673    -157.333    -124.142        276.27        <.0001
+   m32           1    -122.348      8.2948    -138.606    -106.091        217.56        <.0001
+   m33           1    409.5939     18.1198    374.0797    445.1081        510.98        <.0001
+   m44           1    132.5939     18.4480     96.4365    168.7512         51.66        <.0001
+   m1            1    -343.028     29.9322    -401.694    -284.362        131.34        <.0001
+   m2            1    -188.262     32.3047    -251.578    -124.946         33.96        <.0001
+   m3            0      0.0000      0.0000      0.0000      0.0000           .           .    
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+                                          The SAS System      11:40 Tuesday, November 17, 2015   2
+
+                                       The GENMOD Procedure
+
+NOTE: The scale parameter was held fixed.
+                                          The SAS System      11:40 Tuesday, November 17, 2015   3
+
+                                       The CATMOD Procedure
+
+                                          Data Summary
+
+                      Response           then*now     Response Levels    16
+                      Weight Variable    count        Populations         1
+                      Data Set           MIGRATE      Total Frequency  1855
+                      Frequency Missing  0            Observations       16
+
+
+                                       Population Profiles
+ 
+                                      Sample    Sample Size
+                                      ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                          1            1855
+
+
+                                        Response Profiles
+ 
+                                     Response    then    now
+                                     ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                         1       mw      mw 
+                                         2       mw      ne 
+                                         3       mw      s  
+                                         4       mw      w  
+                                         5       ne      mw 
+                                         6       ne      ne 
+                                         7       ne      s  
+                                         8       ne      w  
+                                         9       s       mw 
+                                        10       s       ne 
+                                        11       s       s  
+                                        12       s       w  
+                                        13       w       mw 
+                                        14       w       ne 
+                                        15       w       s  
+                                        16       w       w  
+
+
+                                       Response Frequencies
+ 
+                                              Response Number
+ Sample        1        2        3        4        5        6        7        8        9       10
+ ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+     1       414       10       50       40       15      266       61       28       22        8
+
+                                       Response Frequencies
+ 
+                                              Response Number
+                   Sample       11       12       13       14       15       16
+                   ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                       1       578       22        6        7       27      301
+                                          The SAS System      11:40 Tuesday, November 17, 2015   4
+
+                                       The CATMOD Procedure
+
+                                       Analysis of Variance
+ 
+                           Source         DF   Chi-Square    Pr > ChiSq
+                           ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                           Intercept       3      8486.05        <.0001
+                           time            3        90.44        <.0001
+
+                           Residual        0          .           .    
+
+
+                           Analysis of Weighted Least Squares Estimates
+ 
+                                                   Standard        Chi-
+             Effect        Parameter    Estimate      Error      Square    Pr > ChiSq
+             ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+             Intercept          1         0.2617    0.00968      730.47        <.0001
+                                2         0.1782    0.00834      456.33        <.0001
+                                3         0.3628     0.0105     1187.75        <.0001
+             time               4         0.0154    0.00320       23.00        <.0001
+                                5         0.0213    0.00302       49.68        <.0001
+                                6        -0.0232    0.00368       39.76        <.0001

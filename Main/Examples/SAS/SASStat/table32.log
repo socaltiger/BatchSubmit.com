@@ -1,0 +1,82 @@
+1                                         The SAS System          11:51 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.22 seconds
+      cpu time            0.07 seconds
+      
+1          data ordinal;
+2            do center = 1 to 8;
+3              do trt = 1 to 0 by -1;
+4                do resp = 3 to 1 by -1;
+5                  input count @@;
+6                  output;
+7                end;
+8              end;
+9            end;
+10         datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.ORDINAL has 48 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+15         run;
+16         
+17         proc nlmixed data=ordinal qpoints=15;
+18         ** To maintain the threshold ordering define thresholds such that **;
+19         ** threshold 1 = 0 and threshold 2 = i2, where i2 > 0. **;
+20         ** Use starting value of 0 for sig_cb. **;
+21           bounds i2>0; parms sig_cb=0;
+22           eta1 = c - b*trt;
+23           eta2 = i2 - c - b*trt;
+24           if (resp=1) then z = 1/(1+exp(-eta1));
+25           else if (resp=2) then z = 1/(1+exp(-eta2)) - 1/(1+exp(-eta1));
+26           else z = 1 - 1/(1+exp(-eta2));
+2                                         The SAS System          11:51 Tuesday, November 17, 2015
+
+27         
+28           if (z > 1e-8) then ll = count*log(z); ** Check for small values of z **;
+29           else ll=-1e100;
+30         
+31           model resp ~ general(ll); ** Define general log-likelihood. **;
+32           random c b ~ normal([gamma,beta],[sig_c*sig_c, sig_cb, sig_b*sig_b])
+33           subject = center out = out1; ** OUT1 contains predicted center- **;
+34         ** specific cumulative log odds ratios **;
+35         run;
+
+NOTE: The parameters i2, gamma, beta, sig_c, sig_b are assigned the default starting value of 
+      1.0, because they are not assigned initial values with the PARMS statement.
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: The data set WORK.OUT1 has 16 observations and 10 variables.
+NOTE: The PROCEDURE NLMIXED printed pages 1-2.
+NOTE: PROCEDURE NLMIXED used (Total process time):
+      real time           0.55 seconds
+      cpu time            0.50 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.81 seconds
+      cpu time            0.59 seconds
+      

@@ -1,0 +1,199 @@
+                                          The SAS System     20:09 Saturday, December 26, 2015   1
+
+                                       The GENMOD Procedure
+
+                                        Model Information
+
+                           Data Set                      WORK.BASEBALL
+                           Distribution                       Binomial
+                           Link Function                         Logit
+                           Response Variable (Events)             wins
+                           Response Variable (Trials)            games
+
+
+                             Number of Observations Read          10
+                             Number of Observations Used          10
+                             Number of Events                    104
+                             Number of Trials                    180
+
+
+                                         Response Profile
+ 
+                                 Ordered    Binary          Total
+                                   Value    Outcome     Frequency
+
+                                       1    Event             104
+                                       2    Nonevent           76
+
+
+                                      Parameter Information
+ 
+                                    Parameter       Effect
+
+                                    Prm1            Intercept
+                                    Prm2            boston   
+                                    Prm3            newyork  
+                                    Prm4            tampabay 
+                                    Prm5            toronto  
+                                    Prm6            baltimore
+
+
+                              Criteria For Assessing Goodness Of Fit
+ 
+                 Criterion                     DF           Value        Value/DF
+
+                 Deviance                       6          7.7035          1.2839
+                 Scaled Deviance                6          7.7035          1.2839
+                 Pearson Chi-Square             6          7.6677          1.2779
+                 Scaled Pearson X2              6          7.6677          1.2779
+                 Log Likelihood                         -122.0283                
+                 Full Log Likelihood                     -20.3322                
+                 AIC (smaller is better)                  48.6644                
+                 AICC (smaller is better)                 56.6644                
+                 BIC (smaller is better)                  49.8747                
+                                          The SAS System     20:09 Saturday, December 26, 2015   2
+
+                                       The GENMOD Procedure
+
+           Algorithm converged.                                                       
+
+
+                                   Estimated Covariance Matrix
+ 
+                                Prm2           Prm3           Prm4           Prm5
+
+                 Prm2        0.09252        0.04752        0.04780        0.04696
+                 Prm3        0.04752        0.09282        0.04793        0.04700
+                 Prm4        0.04780        0.04793        0.09412        0.04713
+                 Prm5        0.04696        0.04700        0.04713        0.09192
+
+
+                       Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                  Standard     Wald 95% Confidence          Wald
+   Parameter    DF    Estimate       Error           Limits           Chi-Square    Pr > ChiSq
+
+   Intercept     0      0.0000      0.0000      0.0000      0.0000           .           .    
+   boston        1      0.4539      0.3042     -0.1422      1.0501          2.23        0.1356
+   newyork       1      0.4991      0.3047     -0.0981      1.0962          2.68        0.1014
+   tampabay      1      0.6354      0.3068      0.0342      1.2367          4.29        0.0383
+   toronto       1      0.2287      0.3032     -0.3656      0.8229          0.57        0.4507
+   baltimore     0      0.0000      0.0000      0.0000      0.0000           .           .    
+   Scale         0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+
+
+                                  Lagrange Multiplier Statistics
+ 
+                              Parameter     Chi-Square    Pr > ChiSq
+
+                              Intercept         1.4797        0.2238
+
+
+                                          The SAS System     20:09 Saturday, December 26, 2015   3
+
+                                       The GENMOD Procedure
+
+                                      Observation Statistics
+ 
+ Observation        wins       games      boston     newyork    tampabay     toronto   baltimore
+                                                                Standard
+                                                                Error of
+                                                                     the
+                                       Predicted      Linear      Linear
+                                           Value   Predictor   Predictor     HessWgt       Lower
+                                                                                             Std
+                                                         Raw     Pearson    Deviance    Deviance
+                                           Upper    Residual    Residual    Residual    Residual
+                                             Std
+                                         Pearson   Likelihood                             DFBETA_
+                                        Residual     Residual    Leverage       CookD   Intercept
+                                         DFBETA_     DFBETA_     DFBETA_     DFBETA_    DFBETAS_
+                                          boston     newyork    tampabay     toronto   Intercept
+                                        DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_
+                                          boston     newyork    tampabay     toronto
+
+           1          12          18           1          -1           0           0           0
+                                       0.4887179   -0.045136   0.3004818   4.4977088   0.3465883
+                                       0.6326954   3.2030781     1.51033   1.5227515   1.9759256
+                                       1.9598074     1.969396   0.4060951   0.6565649           .
+                                       0.2426582   -0.244295   -0.000708   -0.000244           .
+                                       0.7977806   -0.801847   -0.002307   -0.000806
+           2           6          18           1           0          -1           0           0
+                                       0.4547449   -0.181517   0.3017279   4.4631355   0.3158536
+                                        0.601054   -2.185408   -1.034457   -1.047736   -1.359805
+                                       -1.342571    -1.352829   0.4063228   0.3084148           .
+                                       -0.164624   0.0014843   0.1705059   0.0006504           .
+                                        -0.54123   0.0048718   0.5557885   0.0021451
+           3          10          18           1           0           0          -1           0
+                                       0.5560781   0.2252602   0.3008726   4.4433944   0.4098853
+                                       0.6931654   -0.009406   -0.004462   -0.004462   -0.005771
+                                       -0.005771    -0.005771   0.4022354   5.6035E-6           .
+                                       -0.000717    -8.21E-6    -0.00001   0.0007075           .
+                                       -0.002357   -0.000027   -0.000034   0.0023337
+           4          10          18           1           0           0           0          -1
+                                       0.6115702   0.4539175   0.3041666   4.2759375   0.4645003
+                                       0.7407889   -1.008264   -0.487594   -0.483921    -0.62246
+                                       -0.627185    -0.624334   0.3955983   0.0643666           .
+                                       -0.154338    -0.07928   -0.079734   -0.078334           .
+                                       -0.507411   -0.260221   -0.259904   -0.258371
+           5           9          18           0           1          -1           0           0
+                                       0.4659575   -0.136381   0.3017959   4.4791399   0.3256579
+                                       0.6118577   0.6127657   0.2895324   0.2891961   0.3758531
+                                       0.3762901    0.3760315   0.4079634   0.0243926           .
+                                       -0.000282    0.046465   -0.047805   -0.000136           .
+                                       -0.000926   0.1525119   -0.155826   -0.000448
+                                          The SAS System     20:09 Saturday, December 26, 2015   4
+
+                                       The GENMOD Procedure
+
+                                      Observation Statistics
+ 
+ Observation        wins       games      boston     newyork    tampabay     toronto   baltimore
+                                                                Standard
+                                                                Error of
+                                                                     the
+                                       Predicted      Linear      Linear
+                                           Value   Predictor   Predictor     HessWgt       Lower
+                                                                                             Std
+                                                         Raw     Pearson    Deviance    Deviance
+                                           Upper    Residual    Residual    Residual    Residual
+                                             Std
+                                         Pearson   Likelihood                             DFBETA_
+                                        Residual     Residual    Leverage       CookD   Intercept
+                                         DFBETA_     DFBETA_     DFBETA_     DFBETA_    DFBETAS_
+                                          boston     newyork    tampabay     toronto   Intercept
+                                        DFBETAS_    DFBETAS_    DFBETAS_    DFBETAS_
+                                          boston     newyork    tampabay     toronto
+
+           6          11          18           0           1           0          -1           0
+                                       0.5671902   0.2703963   0.3012262   4.4187386   0.4206767
+                                       0.7028254   0.7905766   0.3760926   0.3778682   0.4882099
+                                       0.4859158    0.4872914    0.400944   0.0395074           .
+                                       0.0007483   0.0604663   0.0010473    -0.05928           .
+                                       0.0024602   0.1984683   0.0034137   -0.195523
+           7          13          18           0           1           0           0          -1
+                                       0.6222369   0.4990536    0.304665   4.2310465   0.4754999
+                                       0.7495448   1.7997359   0.8749533   0.8943452   1.1476617
+                                       1.1227772    1.1379538    0.392729   0.2038157           .
+                                       0.1408454   0.2750878   0.1420404   0.1392992           .
+                                       0.4630535    0.902919   0.4630011   0.4594513
+           8          12          18           0           0           1          -1           0
+                                       0.6003149   0.4067774   0.3029337   4.3188645   0.4533952
+                                       0.7311601   1.1943315   0.5746985   0.5810779    0.747889
+                                       0.7396783    0.7446456   0.3963372   0.0898041           .
+                                         0.00166     0.00183    0.092951   -0.088611           .
+                                       0.0054574   0.0060065   0.3029871   -0.292267
+           9           9          18           0           0           1           0          -1
+                                       0.6537207   0.6354347   0.3067819   4.0746588   0.5085375
+                                       0.7749919   -2.766973   -1.370754   -1.336872   -1.702624
+                                       -1.745775      -1.7193   0.3834872   0.4739422           .
+                                       -0.214515   -0.215104   -0.422399   -0.211542           .
+                                       -0.705255   -0.706034   -1.376869   -0.697732
+          10          12          18           0           0           0           1          -1
+                                       0.5569166   0.2286573    0.303186   4.4416891   0.4096104
+                                       0.6948497    1.975502   0.9373535   0.9495328   1.2343966
+                                       1.2185634    1.2279567   0.4082878   0.2561487           .
+                                       0.1567728    0.156924   0.1573626   0.3068917           .
+                                       0.5154174   0.5150706   0.5129461   1.0122226

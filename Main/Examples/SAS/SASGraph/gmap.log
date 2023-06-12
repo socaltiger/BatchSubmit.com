@@ -1,0 +1,81 @@
+1                                                     The SAS System                           19:19 Friday, April 7, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.34 seconds
+      cpu time            0.17 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph"'
+1        !                                                                ;
+2          
+3          proc template;
+4             define style styles.colorramp;
+5             parent=styles.default;
+6          
+7             /* Define a lighter and darker shade of blue for the starting and ending colors. */
+8             style twocolorramp / startcolor=cxF3F7FE endcolor=cx6497EB;
+9          
+10            /* When there are fewer than 3 response levels, GraphData1 and GraphData2
+11               are used for the colors */
+12            style graphdata1 from graphdata1 / color=cxF3F7FE;
+13            style graphdata2 from graphdata2 / color=cx6497EB;
+14            end;
+NOTE: Overwriting existing template/link: Styles.Colorramp
+NOTE: STYLE 'Styles.Colorramp' has been saved to: SASUSER.TEMPLAT
+15         run;
+NOTE: PROCEDURE TEMPLATE used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.01 seconds
+      
+
+16         
+17         /* Reference the style using the STYLE= option in the ODS destination statement */
+18         ods listing style=styles.colorramp;
+19         
+20         title 'Map with colors defined from a color ramp';
+21         
+22         filename sasgraph 'gmap.png';
+23         goptions gsfname=sasgraph dev=png xpixels=500;
+24         
+25         proc gmap data=maps.us map=maps.us;
+26            id state;
+27            choro state;
+28         run;
+
+WARNING: Some observations were discarded when charting STATE.  Only first matching observation was used.  Use STATISTIC= 
+         option for summary statistics.
+NOTE: 54748 bytes written to C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph\gmap.png.
+29         
+30         quit;
+
+2                                                     The SAS System                           19:19 Friday, April 7, 2023
+
+NOTE: PROCEDURE GMAP used (Total process time):
+      real time           0.45 seconds
+      cpu time            0.20 seconds
+      
+
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.14 seconds
+      cpu time            0.48 seconds
+      

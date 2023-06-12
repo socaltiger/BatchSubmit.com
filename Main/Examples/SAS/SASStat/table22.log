@@ -1,0 +1,169 @@
+1                                         The SAS System          11:42 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.26 seconds
+      cpu time            0.07 seconds
+      
+1          data sex;
+2            input premar extramar symm qi count @@;
+3            unif = premar*extramar;
+4            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.SEX has 16 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+9          ;
+10         run;
+11         
+12         proc genmod; class symm;
+13           model count = symm / dist=poi link=log; * symmetry;
+14         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-2.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+15         
+16         proc genmod; class extramar premar symm;
+17           model count = symm extramar premar / dist=poi link=log; * QS;
+2                                         The SAS System          11:42 Tuesday, November 17, 2015
+
+18         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 3-4.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+19         
+20         proc genmod; class symm;
+21           model count = symm extramar premar / dist=poi link=log; * ordinal QS;
+22         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 5-6.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+23         
+24         proc genmod; class extramar premar qi;
+25           model count = extramar premar qi / dist=poi link=log; * quasi indep;
+26         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 7-8.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+27         
+28         proc genmod; class extramar premar;
+29           model count = extramar premar qi unif / dist=poi link=log;
+30         * quasi unif. assoc. ;
+31         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 9-10.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+32         
+33         data sex2;
+34           input score below above @@; trials = below + above;
+3                                         The SAS System          11:42 Tuesday, November 17, 2015
+
+35           datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.SEX2 has 6 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+37         ;
+38         run;
+39         
+40         proc genmod data=sex2;
+41           model above/trials = / dist=bin link=logit noint; * symmetry;
+42         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 11-12.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+43         
+44         proc genmod data=sex2;
+45           model above/trials = score / dist=bin link=logit noint; * ordinal QS;
+46         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 13-14.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+47         
+48         proc genmod data=sex2;
+49           model above/trials = / dist=bin link=logit; * conditional symm;
+50         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed page 15.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.59 seconds
+4                                         The SAS System          11:42 Tuesday, November 17, 2015
+
+      cpu time            0.17 seconds
+      

@@ -1,0 +1,76 @@
+1                                         The SAS System          11:46 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.21 seconds
+      cpu time            0.07 seconds
+      
+1          data abortion;
+2            input a b c count m111 m11p m1p1 mp11 m1pp m222 @@;
+3            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.ABORTION has 8 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8          ;
+9          run;
+10         
+11         proc genmod;
+12           model count = m111 m11p m1p1 mp11 m1pp m222 / dist=poi link=identity;
+13         run;
+
+WARNING: The specified model did not converge.
+ERROR: The mean parameter is either invalid or at a limit of its range for some observations.
+NOTE: The scale parameter was held fixed.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: The PROCEDURE GENMOD printed page 1.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+14         
+
+
+2                                         The SAS System          11:46 Tuesday, November 17, 2015
+
+15         proc catmod; weight count; response marginals;
+16           model a*b*c = _response_ / freq;
+17           repeated item 3;
+18         run;
+
+NOTE: There were 8 observations read from the data set WORK.ABORTION.
+NOTE: The PROCEDURE CATMOD printed pages 2-3.
+NOTE: PROCEDURE CATMOD used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+ERROR: Errors printed on page 1.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.31 seconds
+      cpu time            0.10 seconds
+      

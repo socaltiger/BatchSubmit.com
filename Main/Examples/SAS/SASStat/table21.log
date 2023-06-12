@@ -1,0 +1,71 @@
+1                                         The SAS System          11:40 Tuesday, November 17, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.20 seconds
+      cpu time            0.06 seconds
+      
+1          data migrate;
+2            input then $ now $ count m11 m12 m13 m21 m22 m23 m31 m32 m33 m44 m1 m2 m3;
+3            datalines;
+
+NOTE: The data set WORK.MIGRATE has 16 observations and 16 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20         ;
+21         run;
+22         
+23         proc genmod;
+24           model count = m11 m12 m13 m21 m22 m23 m31 m32 m33 m44 m1 m2 m3 /
+25           dist=poi link=identity;
+26         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-2.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+27         
+28         proc catmod; weight count; response marginals;
+29           model then*now = _response_ / freq;
+30           repeated time 2;
+2                                         The SAS System          11:40 Tuesday, November 17, 2015
+
+31         run;
+
+NOTE: There were 16 observations read from the data set WORK.MIGRATE.
+NOTE: The PROCEDURE CATMOD printed pages 3-4.
+NOTE: PROCEDURE CATMOD used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.28 seconds
+      cpu time            0.07 seconds
+      

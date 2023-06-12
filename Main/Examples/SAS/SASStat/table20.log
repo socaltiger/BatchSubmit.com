@@ -1,0 +1,74 @@
+1                                                     The SAS System                           19:23 Monday, July 18, 2016
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNIV OF SCIENCE & TECHNOLOGY, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.25 seconds
+      cpu time            0.14 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data matched;
+4            input first second count @@;
+5            datalines;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.MATCHED has 4 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+7          ;
+8          run;
+9          
+10         proc freq; weight count;
+11           tables first*second / agree; exact mcnem;
+12         run;
+
+NOTE: There were 4 observations read from the data set WORK.MATCHED.
+NOTE: The PROCEDURE FREQ printed page 1.
+NOTE: PROCEDURE FREQ used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+      
+
+13         
+14         proc catmod; weight count;
+15           response marginals;
+16           model first*second = (1 0 ,
+17                                 1 1 ) ;
+18         run;
+
+NOTE: There were 4 observations read from the data set WORK.MATCHED.
+NOTE: The PROCEDURE CATMOD printed page 2.
+NOTE: PROCEDURE CATMOD used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+2                                                     The SAS System                           19:23 Monday, July 18, 2016
+
+NOTE: The SAS System used:
+      real time           0.50 seconds
+      cpu time            0.17 seconds
+      

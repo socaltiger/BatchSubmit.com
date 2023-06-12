@@ -1,0 +1,104 @@
+1                                                     The SAS System                       21:56 Tuesday, October 29, 2019
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNI OF SCIENCE&TECH, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.32 seconds
+      cpu time            0.17 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data divorce;
+4            input state $ incompat cruelty desertn non_supp alcohol
+5                  felony impotenc insanity separate ;
+6            datalines;
+
+NOTE: The data set WORK.DIVORCE has 8 observations and 10 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.06 seconds
+      cpu time            0.01 seconds
+      
+
+15         ;
+16         run;
+17         
+18         title Grounds for Divorce;
+19         
+20         proc distance data=divorce method=djaccard absent=0 out=distjacc;
+21           var anominal(incompat--separate);
+22           id state;
+23         run;
+
+NOTE: The data set WORK.DISTJACC has 8 observations and 9 variables.
+NOTE: PROCEDURE DISTANCE used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+24         
+25         proc print data=distjacc(obs=8);
+26           id state;
+27           title2 Only 8 states;
+28         run;
+
+NOTE: There were 8 observations read from the data set WORK.DISTJACC.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.03 seconds
+      
+
+2                                                     The SAS System                       21:56 Tuesday, October 29, 2019
+
+29         
+30         proc cluster data=distjacc method=average
+31           pseudo outtree=tree;
+32           id state;
+33         run;
+
+NOTE: The input data set is a TYPE=DISTANCE data set. For such a data set, the procedure requires that the order of the 
+      rows match the order of the variables.
+NOTE: Input distances have been squared.
+WARNING: Ties for minimum distance between clusters have been detected at 1 level(s) in the cluster history.
+NOTE: The data set WORK.TREE has 15 observations and 11 variables.
+NOTE: The PROCEDURE CLUSTER printed page 2.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+34         
+35         proc tree data=tree horizontal n=7 out=out ;
+36           id state;
+37         run;
+
+NOTE: 18152 bytes written to C:\Apache\htdocs\casper2\Main\Examples\SAS\SASStat\sasgraph.png.
+NOTE: The data set WORK.OUT has 8 observations and 3 variables.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.31 seconds
+      cpu time            0.18 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.45 seconds
+      cpu time            0.45 seconds
+      

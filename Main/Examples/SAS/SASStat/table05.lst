@@ -1,0 +1,148 @@
+                                          The SAS System     20:37 Thursday, November 26, 2015   1
+
+                                        The FREQ Procedure
+
+                                    Table of group by outcome
+
+                               group     outcome
+
+                               Frequency‚
+                               Percent  ‚
+                               Row Pct  ‚
+                               Col Pct  ‚yes     ‚no      ‚  Total
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               placebo  ‚      2 ‚     18 ‚     20
+                                        ‚   5.00 ‚  45.00 ‚  50.00
+                                        ‚  10.00 ‚  90.00 ‚
+                                        ‚  22.22 ‚  58.06 ‚
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               active   ‚      7 ‚     13 ‚     20
+                                        ‚  17.50 ‚  32.50 ‚  50.00
+                                        ‚  35.00 ‚  65.00 ‚
+                                        ‚  77.78 ‚  41.94 ‚
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               Total           9       31       40
+                                           22.50    77.50   100.00
+
+
+                             Statistics for Table of group by outcome
+
+                                     Column 1 Risk Estimates
+ 
+                                                (Asymptotic) 95%         (Exact) 95%
+                            Risk        ASE     Confidence Limits     Confidence Limits
+          ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+          Row 1           0.1000     0.0671     0.0000     0.2315     0.0123     0.3170
+          Row 2           0.3500     0.1067     0.1410     0.5590     0.1539     0.5922
+          Total           0.2250     0.0660     0.0956     0.3544     0.1084     0.3845
+
+          Difference     -0.2500     0.1260    -0.4969    -0.0031    -0.5455     0.0840
+
+                                  Difference is (Row 1 - Row 2)
+
+
+                                     Column 2 Risk Estimates
+ 
+                                                (Asymptotic) 95%         (Exact) 95%
+                            Risk        ASE     Confidence Limits     Confidence Limits
+          ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+          Row 1           0.9000     0.0671     0.7685     1.0000     0.6830     0.9877
+          Row 2           0.6500     0.1067     0.4410     0.8590     0.4078     0.8461
+          Total           0.7750     0.0660     0.6456     0.9044     0.6155     0.8916
+
+          Difference      0.2500     0.1260     0.0031     0.4969    -0.0840     0.5455
+
+                                  Difference is (Row 1 - Row 2)
+                                          The SAS System     20:37 Thursday, November 26, 2015   2
+
+                                        The FREQ Procedure
+ 
+                             Statistics for Table of group by outcome
+
+                                  Odds Ratio and Relative Risks
+ 
+                Statistic                        Value       95% Confidence Limits
+                ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                Odds Ratio                      0.2063        0.0367        1.1591
+                Relative Risk (Column 1)        0.2857        0.0674        1.2108
+                Relative Risk (Column 2)        1.3846        0.9726        1.9712
+
+
+                                           Odds Ratio
+                               ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                               Odds Ratio                   0.2063
+                                                                  
+                               Asymptotic Conf Limits             
+                               95% Lower Conf Limit         0.0367
+                               95% Upper Conf Limit         1.1591
+                                                                  
+                               Exact Conf Limits                  
+                               95% Lower Conf Limit         0.0188
+                               95% Upper Conf Limit         1.3765
+
+                                         Sample Size = 40
+                                          The SAS System     20:37 Thursday, November 26, 2015   3
+
+                                        The FREQ Procedure
+
+                                    Table of group by outcome
+
+                               group     outcome
+
+                               Frequency‚
+                               Percent  ‚
+                               Row Pct  ‚
+                               Col Pct  ‚yes     ‚no      ‚  Total
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               placebo  ‚      2 ‚     18 ‚     20
+                                        ‚   5.00 ‚  45.00 ‚  50.00
+                                        ‚  10.00 ‚  90.00 ‚
+                                        ‚  22.22 ‚  58.06 ‚
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               active   ‚      7 ‚     13 ‚     20
+                                        ‚  17.50 ‚  32.50 ‚  50.00
+                                        ‚  35.00 ‚  65.00 ‚
+                                        ‚  77.78 ‚  41.94 ‚
+                               ƒƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆƒƒƒƒƒƒƒƒˆ
+                               Total           9       31       40
+                                           22.50    77.50   100.00
+
+
+                             Statistics for Table of group by outcome
+
+                                     Column 1 Risk Estimates
+ 
+                                                (Asymptotic) 95%         (Exact) 95%
+                            Risk        ASE     Confidence Limits     Confidence Limits
+          ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+          Row 1           0.1000     0.0671     0.0000     0.2315     0.0123     0.3170
+          Row 2           0.3500     0.1067     0.1410     0.5590     0.1539     0.5922
+          Total           0.2250     0.0660     0.0956     0.3544     0.1084     0.3845
+
+          Difference     -0.2500     0.1260    -0.4969    -0.0031    -0.5046     0.0241
+
+                                  Difference is (Row 1 - Row 2)
+      The exact confidence limits for the risk difference are based on the score statistic.
+
+
+                                          The SAS System     20:37 Thursday, November 26, 2015   4
+
+                                        The FREQ Procedure
+ 
+                             Statistics for Table of group by outcome
+
+                                     Column 2 Risk Estimates
+ 
+                                                (Asymptotic) 95%         (Exact) 95%
+                            Risk        ASE     Confidence Limits     Confidence Limits
+          ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+          Row 1           0.9000     0.0671     0.7685     1.0000     0.6830     0.9877
+          Row 2           0.6500     0.1067     0.4410     0.8590     0.4078     0.8461
+          Total           0.7750     0.0660     0.6456     0.9044     0.6155     0.8916
+
+          Difference      0.2500     0.1260     0.0031     0.4969    -0.0241     0.5046
+
+                                  Difference is (Row 1 - Row 2)
+      The exact confidence limits for the risk difference are based on the score statistic.
+
+                                         Sample Size = 40

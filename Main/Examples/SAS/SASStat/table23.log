@@ -1,0 +1,61 @@
+1                                         The SAS System         20:09 Saturday, December 26, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.26 seconds
+      cpu time            0.10 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data baseball;
+4            input wins games boston newyork tampabay toronto baltimore ;
+5            datalines;
+
+NOTE: The data set WORK.BASEBALL has 10 observations and 7 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+16         ;
+17         run;
+18         
+19         proc genmod;
+20           model wins/games = boston newyork tampabay toronto baltimore /
+21           dist=bin link=logit noint covb obstats;
+22         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-4.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.20 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+2                                         The SAS System         20:09 Saturday, December 26, 2015
+
+NOTE: The SAS System used:
+      real time           0.51 seconds
+      cpu time            0.14 seconds
+      

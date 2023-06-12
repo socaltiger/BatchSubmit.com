@@ -1,0 +1,372 @@
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   1
+
+                                                   The GENMOD Procedure
+
+                                                    Model Information
+
+                                         Data Set                      WORK.AIDS
+                                         Distribution                   Binomial
+                                         Link Function                     Logit
+                                         Response Variable (Events)            y
+                                         Response Variable (Trials)            n
+
+
+                                         Number of Observations Read           4
+                                         Number of Observations Used           4
+                                         Number of Events                     69
+                                         Number of Trials                    338
+
+
+                                                 Class Level Information
+ 
+                                            Class      Levels    Values
+
+                                            race            2    Black White 
+                                            azt             2    No Yes      
+
+
+                                                     Response Profile
+ 
+                                             Ordered    Binary          Total
+                                               Value    Outcome     Frequency
+
+                                                   1    Event              69
+                                                   2    Nonevent          269
+
+
+                                                  Parameter Information
+ 
+                                        Parameter       Effect       race     azt
+
+                                        Prm1            Intercept                
+                                        Prm2            azt                   No 
+                                        Prm3            azt                   Yes
+                                        Prm4            race         Black       
+                                        Prm5            race         White       
+
+
+                                          Criteria For Assessing Goodness Of Fit
+ 
+                             Criterion                     DF           Value        Value/DF
+
+                             Deviance                       1          1.3835          1.3835
+                             Scaled Deviance                1          1.3835          1.3835
+                             Pearson Chi-Square             1          1.3910          1.3910
+                             Scaled Pearson X2              1          1.3910          1.3910
+                             Log Likelihood                         -167.5756                
+                             Full Log Likelihood                      -9.4299                
+                             AIC (smaller is better)                  24.8598                
+                             AICC (smaller is better)                   .                    
+                             BIC (smaller is better)                  23.0187                
+
+
+                       Algorithm converged.                                                       
+
+
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   2
+
+                                                   The GENMOD Procedure
+
+                                    Analysis Of Maximum Likelihood Parameter Estimates
+ 
+                                                   Standard    Likelihood Ratio 95%          Wald
+           Parameter             DF    Estimate       Error      Confidence Limits     Chi-Square    Pr > ChiSq
+
+           Intercept              1     -1.7375      0.2404     -2.2318     -1.2860         52.25        <.0001
+           azt          No        1      0.7195      0.2790      0.1799      1.2773          6.65        0.0099
+           azt          Yes       0      0.0000      0.0000      0.0000      0.0000           .           .    
+           race         Black     1     -0.0555      0.2886     -0.6334      0.5023          0.04        0.8476
+           race         White     0      0.0000      0.0000      0.0000      0.0000           .           .    
+           Scale                  0      1.0000      0.0000      1.0000      1.0000                            
+
+NOTE: The scale parameter was held fixed.
+
+
+                                            LR Statistics For Type 3 Analysis
+ 
+                                                                 Chi-
+                                       Source           DF     Square    Pr > ChiSq
+
+                                       azt               1       6.87        0.0088
+                                       race              1       0.04        0.8473
+
+
+                                                  Observation Statistics
+ 
+                                                                             Standard
+                                                                             Error of
+                                                                                  the
+                                                    Predicted      Linear      Linear
+Observation           y           n   race    azt       Value   Predictor   Predictor     HessWgt       Lower       Upper
+                                                                                Std         Std
+                                            Raw     Pearson    Deviance    Deviance     Pearson   Likelihood
+                                       Residual    Residual    Residual    Residual    Residual     Residual    Leverage
+                                                    DFBETA_     DFBETA_     DFBETA_    DFBETAS_    DFBETAS_    DFBETAS_
+                                          CookD   Intercept       aztNo   raceBlack   Intercept       aztNo   raceBlack
+
+          1          14         107   White   Yes   0.1496245   -1.737549   0.2403848   13.614362   0.0989724   0.2198735
+                                      -2.009824   -0.544703   -0.554665   -1.200988   -1.179418    -1.184051   0.7867036
+                                      1.7101789   -0.544488     0.45326    0.283718   -2.265069   1.6247096   0.9830389
+          2          32         113   White   No    0.2653998   -1.018089   0.1985145    22.03079   0.1966808   0.3477355
+                                       2.009824   0.4281964   0.4252503    1.171303   1.1794176    1.1783512   0.8681893
+                                      3.0540602   0.1476253     0.45326   -0.408395   0.6141208   1.6247096   -1.415026
+          3          11          63   Black   Yes   0.1427012   -1.793034   0.2843628    7.707267    0.087036   0.2251866
+                                       2.009824   0.7239488   0.7034699   1.1460546   1.1794176    1.1669593   0.6232264
+                                      0.7669718   0.1476253   -0.238853    0.283718   0.6141208   -0.856169   0.9830389
+          4          12          55   Black   No    0.2547241   -1.073574   0.2629407   10.441185   0.1695348   0.3639596
+                                      -2.009824    -0.62199    -0.63259   -1.199517   -1.179418    -1.185042   0.7218807
+                                      1.2035062   0.1476253   -0.238853   -0.408395   0.6141208   -0.856169   -1.415026
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   3
+
+                                                  The LOGISTIC Procedure
+
+                                                    Model Information
+
+                                     Data Set                       WORK.AIDS       
+                                     Response Variable (Events)     y               
+                                     Response Variable (Trials)     n               
+                                     Model                          binary logit    
+                                     Optimization Technique         Fisher's scoring
+
+
+                                         Number of Observations Read           4
+                                         Number of Observations Used           4
+                                         Sum of Frequencies Read             338
+                                         Sum of Frequencies Used             338
+
+
+                                                     Response Profile
+ 
+                                            Ordered     Binary           Total
+                                              Value     Outcome      Frequency
+
+                                                  1     Event               69
+                                                  2     Nonevent           269
+
+
+                                                 Class Level Information
+ 
+                                                                    Design
+                                              Class     Value     Variables
+
+                                              race      Black             1
+                                                        White             0
+
+                                              azt       No                1
+                                                        Yes               0
+
+
+                                                 Model Convergence Status
+
+                                      Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                     Deviance and Pearson Goodness-of-Fit Statistics
+ 
+                              Criterion          Value       DF     Value/DF     Pr > ChiSq
+
+                              Deviance          1.3835        1       1.3835         0.2395
+                              Pearson           1.3910        1       1.3910         0.2382
+
+                                               Number of unique profiles: 4
+
+
+                                                  Model Fit Statistics
+ 
+                                                               Intercept and Covariates
+                                                Intercept            Log       Full Log
+                                  Criterion          Only     Likelihood     Likelihood
+
+                                  AIC             344.118        341.151         24.860
+                                  SC              347.941        352.620         36.329
+                                  -2 Log L        342.118        335.151         18.860
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   4
+
+                                                  The LOGISTIC Procedure
+
+                                         Testing Global Null Hypothesis: BETA=0
+ 
+                                 Test                 Chi-Square       DF     Pr > ChiSq
+
+                                 Likelihood Ratio         6.9664        2         0.0307
+                                 Score                    6.8957        2         0.0318
+                                 Wald                     6.7402        2         0.0344
+
+
+                                                Type 3 Analysis of Effects
+ 
+                                                                Wald
+                                        Effect      DF    Chi-Square    Pr > ChiSq
+
+                                        azt          1        6.6507        0.0099
+                                        race         1        0.0370        0.8476
+
+
+                                        Analysis of Maximum Likelihood Estimates
+ 
+                                                             Standard          Wald
+                        Parameter          DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                        Intercept           1     -1.7375      0.2404       52.2469        <.0001
+                        azt       No        1      0.7195      0.2790        6.6507        0.0099
+                        race      Black     1     -0.0555      0.2886        0.0370        0.8476
+
+
+                              Association of Predicted Probabilities and Observed Responses
+
+                                    Percent Concordant     45.7    Somers' D    0.183
+                                    Percent Discordant     27.5    Gamma        0.250
+                                    Percent Tied           26.8    Tau-a        0.060
+                                    Pairs                 18561    c            0.591
+
+
+                                        Parameter Estimates and Profile-Likelihood
+                                                   Confidence Intervals
+ 
+                                  Parameter           Estimate     95% Confidence Limits
+
+                                  Intercept            -1.7375      -2.2318      -1.2860
+                                  azt       No          0.7195       0.1799       1.2773
+                                  race      Black      -0.0555      -0.6334       0.5023
+
+
+                                    Parameter Estimates and Wald Confidence Intervals
+ 
+                                  Parameter           Estimate     95% Confidence Limits
+
+                                  Intercept            -1.7375      -2.2087      -1.2664
+                                  azt       No          0.7195       0.1727       1.2662
+                                  race      Black      -0.0555      -0.6212       0.5102
+
+
+                            Odds Ratio Estimates and Profile-Likelihood Confidence Intervals
+ 
+                         Effect                      Unit     Estimate     95% Confidence Limits
+
+                         azt  No vs Yes            1.0000        2.053        1.197        3.587
+                         race Black vs White       1.0000        0.946        0.531        1.653
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   5
+
+                                                  The LOGISTIC Procedure
+
+                                   Odds Ratio Estimates and Wald Confidence Intervals
+ 
+                         Effect                      Unit     Estimate     95% Confidence Limits
+
+                         azt  No vs Yes            1.0000        2.053        1.188        3.548
+                         race Black vs White       1.0000        0.946        0.537        1.666
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   6
+
+                            Obs    race     azt     y     n      pi_hat     lower      upper
+
+                             1     White    Yes    14    107    0.14962    0.09897    0.21987
+                             2     White    No     32    113    0.26540    0.19668    0.34774
+                             3     Black    Yes    11     63    0.14270    0.08704    0.22519
+                             4     Black    No     12     55    0.25472    0.16953    0.36396
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   7
+
+                                                  The LOGISTIC Procedure
+
+                                                    Model Information
+
+              Data Set                       WORK.PREDICT         Predicted Values and Diagnostic Statistics
+              Response Variable (Events)     y                                                              
+              Response Variable (Trials)     n                                                              
+              Model                          binary logit                                                   
+              Optimization Technique         Fisher's scoring                                               
+
+
+                                         Number of Observations Read           4
+                                         Number of Observations Used           4
+                                         Sum of Frequencies Read             338
+                                         Sum of Frequencies Used             338
+
+
+                                                     Response Profile
+ 
+                                            Ordered     Binary           Total
+                                              Value     Outcome      Frequency
+
+                                                  1     Event               69
+                                                  2     Nonevent           269
+
+
+                                                 Class Level Information
+ 
+                                                                    Design
+                                              Class     Value     Variables
+
+                                              azt       No                0
+                                                        Yes               1
+
+
+                                                 Model Convergence Status
+
+                                      Convergence criterion (GCONV=1E-8) satisfied.          
+
+
+                                     Deviance and Pearson Goodness-of-Fit Statistics
+ 
+                              Criterion          Value       DF     Value/DF     Pr > ChiSq
+
+                              Deviance          1.4206        2       0.7103         0.4915
+                              Pearson           1.4141        2       0.7070         0.4931
+
+                                               Number of unique profiles: 4
+
+
+                                                  Model Fit Statistics
+ 
+                                                               Intercept and Covariates
+                                                Intercept            Log       Full Log
+                                  Criterion          Only     Likelihood     Likelihood
+
+                                  AIC             344.118        339.188         22.897
+                                  SC              347.941        346.834         30.543
+                                  -2 Log L        342.118        335.188         18.897
+
+
+                                                      The SAS System                 23:45 Thursday, February 16, 2017   8
+
+                                                  The LOGISTIC Procedure
+
+                                         Testing Global Null Hypothesis: BETA=0
+ 
+                                 Test                 Chi-Square       DF     Pr > ChiSq
+
+                                 Likelihood Ratio         6.9293        1         0.0085
+                                 Score                    6.8597        1         0.0088
+                                 Wald                     6.7056        1         0.0096
+
+
+                                                Type 3 Analysis of Effects
+ 
+                                                                Wald
+                                        Effect      DF    Chi-Square    Pr > ChiSq
+
+                                        azt          1        6.7056        0.0096
+
+
+                                        Analysis of Maximum Likelihood Estimates
+ 
+                                                            Standard          Wald
+                         Parameter        DF    Estimate       Error    Chi-Square    Pr > ChiSq
+
+                         Intercept         1     -1.0361      0.1755       34.8628        <.0001
+                         azt       Yes     1     -0.7218      0.2787        6.7056        0.0096
+
+
+                                                  Odds Ratio Estimates
+                                                            
+                                                        Point          95% Wald
+                                    Effect           Estimate      Confidence Limits
+
+                                    azt Yes vs No       0.486       0.281       0.839
+
+
+                              Association of Predicted Probabilities and Observed Responses
+
+                                    Percent Concordant     34.4    Somers' D    0.177
+                                    Percent Discordant     16.7    Gamma        0.346
+                                    Percent Tied           48.9    Tau-a        0.058
+                                    Pairs                 18561    c            0.588

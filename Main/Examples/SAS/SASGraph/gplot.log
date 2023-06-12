@@ -1,0 +1,75 @@
+1                                                     The SAS System                          20:27 Thursday, May 28, 2020
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to MICHIGAN STATE UNIVERSITY-T&R-SFA, Site 70082953.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.31 seconds
+      cpu time            0.15 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph"'
+1        !                                                                ;
+2          
+3          goptions reset=all border;
+4          
+5          data jobs;
+6             length eng $5;
+7             input eng dollars num;
+8             datalines;
+
+NOTE: The data set WORK.JOBS has 6 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+15         ;
+16         run;
+17         
+18         title1 "Member Profile";
+19         title2 "Salaries and Number of Member Engineers";
+20         footnote j=r "GPLBUBL1";
+21         
+22         axis1 offset=(5,5);
+23         
+24         filename sasgraph 'gplot.png';
+25         goptions gsfname=sasgraph dev=png xpixels=500 ypixels=400;
+26         
+27         proc gplot data=jobs;
+28            format dollars dollar9.;
+29            bubble dollars*eng=num / haxis=axis1;
+30         run;
+
+NOTE: 22212 bytes written to C:\Apache\htdocs\casper2\Main\Examples\SAS\SASGraph\gplot.png.
+31         
+32         quit;
+
+NOTE: There were 6 observations read from the data set WORK.JOBS.
+NOTE: PROCEDURE GPLOT used (Total process time):
+      real time           0.31 seconds
+      cpu time            0.26 seconds
+      
+
+2                                                     The SAS System                          20:27 Thursday, May 28, 2020
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.68 seconds
+      cpu time            0.45 seconds
+      

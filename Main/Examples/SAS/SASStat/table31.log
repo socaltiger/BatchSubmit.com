@@ -1,0 +1,95 @@
+1                                                     The SAS System                      17:55 Thursday, November 3, 2016
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNIV OF SCIENCE & TECHNOLOGY, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.21 seconds
+      cpu time            0.10 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Examples\SAS\SASStat"'
+1        !                                                               ;
+2          
+3          data binomial;
+4            input center treat y n @@ ; * y successes out of n trials;
+5            if treat = 1 then treat = .5; else treat = -.5;
+6          cards;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.BINOMIAL has 16 observations and 4 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+11         ;
+12         run;
+13         
+14         proc genmod data=binomial; * fixed effects, no interaction model;
+15           class center;
+16           model y/n = treat center / dist=bin link=logit noint;
+17         run;
+
+NOTE: Algorithm converged.
+NOTE: The scale parameter was held fixed.
+NOTE: The PROCEDURE GENMOD printed pages 1-2.
+NOTE: PROCEDURE GENMOD used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.04 seconds
+      
+
+18         
+19         proc nlmixed data=binomial qpoints=15; * random effects, no interaction;
+20           parms alpha=-1 beta=1 sig=1; * initial values for parameter estimates;
+21           pi = exp(a + beta*treat)/(1+exp(a + beta*treat)); * logistic formula for prob;
+22           model y ~ binomial(n, pi);
+23           random a ~ normal(alpha, sig*sig) subject=center;
+24           predict a + beta*treat out=OUT1;
+25         run;
+
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: The data set WORK.OUT1 has 16 observations and 12 variables.
+NOTE: The PROCEDURE NLMIXED printed pages 3-4.
+2                                                     The SAS System                      17:55 Thursday, November 3, 2016
+
+NOTE: PROCEDURE NLMIXED used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+26         
+27         proc nlmixed data=binomial qpoints=15; * random effects, interaction;
+28           parms alpha=-1 beta=1 sig_a=1 sig_b=1; * initial values;
+29           pi = exp(a + b*treat)/(1+exp(a + b*treat));
+30           model y ~ binomial(n, pi);
+31           random a b ~ normal([alpha,beta], [sig_a*sig_a,0,sig_b*sig_b]) subject=center;
+32         run;
+
+NOTE: Convergence criterion (GCONV=1E-8) satisfied.
+NOTE: The PROCEDURE NLMIXED printed pages 5-6.
+NOTE: PROCEDURE NLMIXED used (Total process time):
+      real time           0.16 seconds
+      cpu time            0.17 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.53 seconds
+      cpu time            0.39 seconds
+      
