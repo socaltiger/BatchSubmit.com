@@ -1,0 +1,2415 @@
+1                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNI OF SCIENCE&TECH, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.35 seconds
+      cpu time            0.13 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler"'
+1        !                                                                  ;
+2          
+3          data work.links_to_crawl;
+4             length url $256;
+5             input url $;
+6             datalines;
+
+NOTE: The data set WORK.LINKS_TO_CRAWL has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+10         ;
+11         run;
+12         
+13         
+14         %macro crawler();
+15            %let html_num = 1;
+16         
+17            data work.links_crawled;
+18               length url $256;
+19            run;
+20         
+21         %next_crawl:
+22            /* pop the next url off */
+23            %let next_url = ;
+24         
+25            data work.links_to_crawl;
+26               set work.links_to_crawl;
+27               if _n_ eq 1 then call symput("next_url", url);
+28               else output;
+29            run;
+30         
+31            %let next_url = %trim(%left(&next_url));
+32         
+33            %if "&next_url" ne "" %then %do;
+34         
+35               %put crawling &next_url ... ;
+36         
+37               /* crawl the url */
+38               filename _nexturl url "&next_url";
+2                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+39         
+40               /* put the file we crawled here */
+41               filename htmlfile "Output\file%trim(&html_num).html";
+42         
+43               /* find more urls */
+44               data work._urls(keep=url);
+45                  length url $256 ;
+46                  file htmlfile;
+47                  infile _nexturl length=len;
+48                  input text $varying2000. len;
+49         
+50                  put text;
+51         
+52                  start = 1;
+53                  stop = length(text);
+54         
+55                  if _n_ = 1 then do;
+56                     retain patternID;
+57                     pattern = '/href="([^"]+)"/i';
+58                     patternID = prxparse(pattern);
+59                  end;
+60         
+61                  /* Use PRXNEXT to find the first instance of the pattern, */
+62                  /* then use DO WHILE to find all further instances.       */
+63                  /* PRXNEXT changes the start parameter so that searching  */
+64                  /* begins again after the last match.                     */
+65                  call prxnext(patternID, start, stop, text, position, length);
+66                  do while (position ^= 0);
+67                     url = substr(text, position+6, length-7);
+68                     * put url=;
+69                     output;
+70                     call prxnext(patternID, start, stop, text, position, length);
+71                  end;
+72               run;
+73         
+74               /* add the current link to the list of urls we have already crawled */
+75               data work._old_link;
+76                  url = "&next_url";
+77               run;
+78               proc append base=work.links_crawled data=work._old_link;
+79               run;
+80         
+81               /* only add urls that we haven't already crawled or that aren't queued up to be crawled */
+82               proc sql noprint;
+83                  create table work._append as
+84                     select url
+85                     from work._urls
+86                     where url not in (select url from work.links_crawled)
+87                           and url not in (select url from work.links_to_crawl);
+88               quit;
+89         
+90               /* only add urls that are absolute (http://...) */
+91               data work._append;
+92                  set work._append;
+93                  absolute_url = substrn(url, 1, 7);
+94                  put absolute_url=;
+95                  if absolute_url eq "http://" ;
+96                  drop absolute_url;
+97               run;
+98         
+99               /* add new links */
+100              proc append base=work.links_to_crawl data=work._append force;
+101              run;
+102        
+103              /* increment our file number */
+104              %let html_num = %eval(&html_num + 1);
+3                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+105        
+106              /* loop */
+107              %goto next_crawl;
+108           %end;
+109        
+110        %mend crawler;
+111        
+112        %crawler();
+
+NOTE: Variable url is uninitialized.
+NOTE: The data set WORK.LINKS_CRAWLED has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 3 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 2 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://www.yahoo.com ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file1.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:20,
+      Create Time=04Feb2019:10:02:48
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://www.yahoo.com,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=media-router-fp1.prod1.media.vip.gq1.yahoo.com,
+      Service IP addr=98.137.246.7,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 3675 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 2000.
+NOTE: 3675 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 32767.
+      One or more lines were truncated.
+NOTE: The data set WORK._URLS has 132 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           4.74 seconds
+      cpu time            0.15 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 20).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 2 observations and 1 variables.
+4                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.10 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 132 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.32 seconds
+      cpu time            0.01 seconds
+      
+
+
+absolute_url=//s.yim
+absolute_url=//s.yim
+absolute_url=//searc
+absolute_url=//searc
+absolute_url=//csc.b
+absolute_url=//csc.b
+absolute_url=//geo.y
+absolute_url=//geo.y
+absolute_url=//video
+absolute_url=//video
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mega-b
+absolute_url=#Main
+absolute_url=#Aside
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+5                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=javascr
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+6                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+NOTE: There were 132 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.09 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 3 observations read from the data set WORK._APPEND.
+NOTE: 3 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 5 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 5 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 4 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://www.sas.com ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file2.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:25,
+      Create Time=04Feb2019:10:02:49
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://www.sas.com,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=a23-213-13-115.deploy.static.akamaitechnologies.com,
+      Service IP addr=23.213.13.115,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 2761 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 696.
+NOTE: 2761 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 696.
+NOTE: The data set WORK._URLS has 128 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           2.84 seconds
+      cpu time            0.01 seconds
+      
+
+7                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 18).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 3 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 128 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-in
+absolute_url=https:/
+absolute_url=#mdd-so
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-le
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=#mdd-su
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=#mdd-cs
+absolute_url=https:/
+absolute_url=https:/
+8                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=#mdd-pa
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-ab
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+9                                                     The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#modal1
+absolute_url=#conten
+NOTE: There were 128 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 12 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 12 observations read from the data set WORK._APPEND.
+NOTE: 12 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 16 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 16 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 15 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://www.google.com ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file3.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:28,
+      Create Time=04Feb2019:10:02:49
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://www.google.com,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=lax17s34-in-f4.1e100.net,
+      Service IP addr=172.217.11.68,
+      Service Name=httpd,Service Portno=80,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 6 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+10                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      The maximum record length was 2000.
+NOTE: 6 records were read from the infile _NEXTURL.
+      The minimum record length was 1.
+      The maximum record length was 5541.
+NOTE: The data set WORK._URLS has 11 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.18 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 21).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 4 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 11 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=/prefer
+absolute_url=https:/
+NOTE: There were 11 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 5 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 5 observations read from the data set WORK._APPEND.
+NOTE: 5 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 20 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 20 observations read from the data set WORK.LINKS_TO_CRAWL.
+11                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: The data set WORK.LINKS_TO_CRAWL has 19 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://info.yahoo.com/legal/us/yahoo/utos/terms/ ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file4.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:29,
+      Create Time=04Feb2019:10:02:50
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://info.yahoo.com/legal/us/yahoo/utos/terms/,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=e1.ycpi.vip.laa.yahoo.com,
+      Service IP addr=209.73.190.11,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 778 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 1619.
+NOTE: 778 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 1619.
+NOTE: The data set WORK._URLS has 114 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.87 seconds
+      cpu time            0.06 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 48).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 5 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 114 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/js/man
+absolute_url=https:/
+absolute_url=https:/
+12                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=#14.2
+absolute_url=/us/en/
+absolute_url=#9
+absolute_url=#14.2
+absolute_url=https:/
+absolute_url=http://
+absolute_url=/us/en/
+absolute_url=/us/es/
+absolute_url=/us/en/
+absolute_url=/us/en/
+absolute_url=../../i
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#11
+absolute_url=/us/en/
+absolute_url=#14.2
+absolute_url=#14.2
+absolute_url=#14.6
+absolute_url=#14.13
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/us/en/
+absolute_url=/us/es/
+absolute_url=https:/
+13                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/us/es/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/ie/it/
+absolute_url=/ie/de/
+absolute_url=https:/
+NOTE: There were 114 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 5 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 5 observations read from the data set WORK._APPEND.
+NOTE: 5 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 24 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: There were 24 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 23 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+14                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+
+crawling http://info.yahoo.com/privacy/us/yahoo/relevantads.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file5.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:29,
+      Create Time=04Feb2019:10:02:50
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://info.yahoo.com/privacy/us/yahoo/relevantads.html,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=e1.ycpi.vip.laa.yahoo.com,
+      Service IP addr=209.73.190.11,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 271 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 727.
+NOTE: 271 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 727.
+NOTE: The data set WORK._URLS has 54 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.53 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 55).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 6 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 54 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/js/man
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+15                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=../topi
+absolute_url=https:/
+absolute_url=../topi
+absolute_url=../prod
+absolute_url=../dash
+absolute_url=../cont
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+NOTE: There were 54 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 3 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 3 observations read from the data set WORK._APPEND.
+NOTE: 3 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 26 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 26 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 25 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+16                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      
+
+crawling http://help.yahoo.com/l/us/yahoo/helpcentral/ ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file6.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:30,
+      Create Time=04Feb2019:10:02:51
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://help.yahoo.com/l/us/yahoo/helpcentral/,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=e1.ycpi.vip.laa.yahoo.com,
+      Service IP addr=209.73.190.11,Service Name=N/A,
+      Service Portno=443,Lrecl=32767,Recfm=Variable
+
+NOTE: 2364 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 2000.
+NOTE: 2364 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 18107.
+NOTE: The data set WORK._URLS has 138 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           1.25 seconds
+      cpu time            0.04 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 45).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 7 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 138 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.01 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+17                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/kb/ena
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=/kb/acc
+absolute_url=/kb/new
+absolute_url=/kb/fan
+absolute_url=/kb/fin
+absolute_url=/kb/sub
+absolute_url=#
+absolute_url=/kb/acc
+absolute_url=/kb/ans
+absolute_url=/kb/cel
+absolute_url=/kb/dig
+absolute_url=/kb/ext
+absolute_url=/kb/fin
+absolute_url=/kb/gro
+absolute_url=/kb/hom
+absolute_url=/kb/new
+absolute_url=/kb/mob
+absolute_url=/kb/mov
+absolute_url=/kb/mus
+absolute_url=/kb/my-
+absolute_url=/kb/new
+absolute_url=/kb/pla
+absolute_url=/kb/pos
+absolute_url=/kb/sea
+absolute_url=/kb/sho
+absolute_url=/kb/sma
+absolute_url=/kb/fan
+absolute_url=/kb/sub
+absolute_url=/kb/tv
+absolute_url=/kb/yah
+absolute_url=/kb/wea
+absolute_url=/kb/yah
+absolute_url=/kb/yah
+absolute_url=/kb/yah
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+18                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=#
+absolute_url=TOP_FAQ
+absolute_url=#
+absolute_url=TOP_ACC
+absolute_url=#
+absolute_url=TOP_ACC
+absolute_url=#
+absolute_url=TOP_REG
+absolute_url=#
+absolute_url=TOP_MAN
+absolute_url=#
+absolute_url=TOP_PAS
+absolute_url=#
+absolute_url=TOP_YPO
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#
+absolute_url=#
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=/kb/acc
+absolute_url=#
+absolute_url=#
+absolute_url=#
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#
+NOTE: There were 138 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 0 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+19                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 0 observations read from the data set WORK._APPEND.
+NOTE: 0 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 25 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 25 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 24 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://support.sas.com/rnd/index.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file7.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:31,
+      Create Time=04Feb2019:10:02:52
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/rnd/index.html,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=httpd,Service Portno=80,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 277 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 1076.
+NOTE: 277 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 1076.
+NOTE: The data set WORK._URLS has 23 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.14 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 37).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 8 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+20                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      
+
+NOTE: Table WORK._APPEND created, with 23 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+absolute_url=/css/sa
+absolute_url=/css/gr
+absolute_url=/css/su
+absolute_url=/css/pr
+absolute_url=/css/li
+absolute_url=/profil
+absolute_url=https:/
+absolute_url=/rnd/in
+absolute_url=/rnd/ba
+absolute_url=/rnd/da
+absolute_url=/rnd/em
+absolute_url=/rnd/mi
+absolute_url=/rnd/sc
+absolute_url=/rnd/co
+absolute_url=/rnd/ap
+absolute_url=/rnd/ba
+absolute_url=datavis
+absolute_url=emi/ind
+absolute_url=migrati
+absolute_url=contain
+absolute_url=scalabi
+absolute_url=app/ind
+absolute_url=https:/
+NOTE: There were 23 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 0 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 0 observations read from the data set WORK._APPEND.
+NOTE: 0 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 24 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 24 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 23 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+crawling http://support.sas.com/en/support-home.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file8.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:37,
+      Create Time=04Feb2019:10:02:52
+
+21                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/en/support-home.html,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=N/A,Service Portno=443,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 1531 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 562.
+NOTE: 1531 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 562.
+NOTE: The data set WORK._URLS has 61 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.81 seconds
+      cpu time            0.04 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 43).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 9 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 50 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-su
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-le
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+22                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-co
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=#
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=#conten
+NOTE: There were 50 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 7 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 7 observations read from the data set WORK._APPEND.
+NOTE: 7 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 30 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 30 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 29 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://support.sas.com/software/index.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file9.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:48,
+      Create Time=04Feb2019:10:02:52
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/software/index.html,
+23                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=httpd,Service Portno=80,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 628 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 1076.
+NOTE: 628 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 1076.
+NOTE: The data set WORK._URLS has 210 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           5.00 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 42).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 10 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 209 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=/css/sa
+absolute_url=/css/gr
+absolute_url=/css/su
+absolute_url=/css/pr
+absolute_url=/css/li
+absolute_url=/profil
+absolute_url=https:/
+absolute_url=/softwa
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=/resour
+absolute_url=/rnd/in
+absolute_url=/softwa
+absolute_url=#a
+absolute_url=#b
+absolute_url=#c
+absolute_url=#D
+absolute_url=#e
+24                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=#f
+absolute_url=#g
+absolute_url=#h
+absolute_url=#I
+absolute_url=#j
+absolute_url=#l
+absolute_url=#m
+absolute_url=#o
+absolute_url=#p
+absolute_url=#q
+absolute_url=#r
+absolute_url=#s
+absolute_url=#T
+absolute_url=#U
+absolute_url=#v
+absolute_url=#w
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+25                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+26                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=/softwa
+absolute_url=/softwa
+absolute_url=#backto
+absolute_url=https:/
+NOTE: There were 209 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 2 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 2 observations read from the data set WORK._APPEND.
+27                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: 2 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 31 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 31 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 30 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://support.sas.com/downloads/index.htm ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file10.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:13:53,
+      Create Time=04Feb2019:10:02:48
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/downloads/index.htm,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=N/A,Service Portno=443,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 510 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 1076.
+NOTE: 510 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 1076.
+NOTE: The data set WORK._URLS has 95 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           9.90 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 42).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 11 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.04 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 95 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+28                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      cpu time            0.01 seconds
+      
+
+
+absolute_url=/css/sa
+absolute_url=/css/gr
+absolute_url=/css/su
+absolute_url=/css/su
+absolute_url=/css/pr
+absolute_url=/includ
+absolute_url=/css/li
+absolute_url=/profil
+absolute_url=/lib/jq
+absolute_url=/css/do
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=/techsu
+absolute_url=/en/sas
+absolute_url=http://
+absolute_url=/techsu
+absolute_url=/admins
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=/downlo
+absolute_url=http://
+absolute_url=https:/
+absolute_url=#tabs-1
+absolute_url=pkglist
+absolute_url=pkglist
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+29                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=browse.
+absolute_url=https:/
+NOTE: There were 95 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 5 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 5 observations read from the data set WORK._APPEND.
+NOTE: 5 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 35 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 35 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 34 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://support.sas.com/en/sas-administrators.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file11.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:14:03,
+      Create Time=04Feb2019:10:02:48
+
+30                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/en/sas-administrators.html,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=N/A,Service Portno=443,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 1840 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 551.
+NOTE: 1840 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 551.
+NOTE: The data set WORK._URLS has 77 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.82 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 49).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 12 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 61 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-su
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-le
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+31                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-co
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#conten
+NOTE: There were 61 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 19 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 19 observations read from the data set WORK._APPEND.
+NOTE: 19 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 53 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 53 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 52 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+32                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+
+crawling http://support.sas.com/ctx/supportform/createForm ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file12.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:14:14,
+      Create Time=04Feb2019:10:02:48
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/ctx/supportform/createForm,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=N/A,Service Portno=443,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 2325 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 1076.
+NOTE: 2325 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 1076.
+NOTE: The data set WORK._URLS has 16 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.96 seconds
+      cpu time            0.03 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 49).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 13 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 16 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=/css/sa
+absolute_url=/css/gr
+absolute_url=/css/su
+absolute_url=/css/pr
+absolute_url=/css/li
+absolute_url=/profil
+absolute_url=//suppo
+absolute_url=https:/
+absolute_url=updateF
+absolute_url=/ctx/tr
+33                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+absolute_url=//suppo
+absolute_url=//suppo
+absolute_url=javascr
+absolute_url=javascr
+absolute_url=//suppo
+absolute_url=https:/
+NOTE: There were 16 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 0 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 0 observations read from the data set WORK._APPEND.
+NOTE: 0 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 52 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 52 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 51 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+crawling http://support.sas.com/en/product-resources.html ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file13.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:14:25,
+      Create Time=04Feb2019:10:02:48
+
+NOTE: The infile _NEXTURL is:
+      Filename=http://support.sas.com/en/product-resources.html,
+      Local Host Name=DESKTOP-R1KKJ06,
+      Local Host IP addr=fe80::bc20:2c45:96fc:24f2%14,
+      Service Hostname Name=support.sas.com,
+      Service IP addr=149.173.160.38,
+      Service Name=N/A,Service Portno=443,
+      Lrecl=32767,Recfm=Variable
+
+NOTE: 1380 records were written to the file HTMLFILE.
+      The minimum record length was 1.
+      The maximum record length was 671.
+NOTE: 1380 records were read from the infile _NEXTURL.
+      The minimum record length was 0.
+      The maximum record length was 671.
+NOTE: The data set WORK._URLS has 61 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           10.56 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK._OLD_LINK has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+34                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+
+
+NOTE: Appending WORK._OLD_LINK to WORK.LINKS_CRAWLED.
+WARNING: Variable url has different lengths on BASE and DATA files (BASE 256 DATA 48).
+NOTE: There were 1 observations read from the data set WORK._OLD_LINK.
+NOTE: 1 observations added.
+NOTE: The data set WORK.LINKS_CRAWLED has 14 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 46 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-su
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-le
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#mdd-co
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=http://
+absolute_url=https:/
+absolute_url=http://
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=https:/
+absolute_url=#conten
+35                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+NOTE: There were 46 observations read from the data set WORK._APPEND.
+NOTE: The data set WORK._APPEND has 15 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: Appending WORK._APPEND to WORK.LINKS_TO_CRAWL.
+NOTE: There were 15 observations read from the data set WORK._APPEND.
+NOTE: 15 observations added.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 66 observations and 1 variables.
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: There were 66 observations read from the data set WORK.LINKS_TO_CRAWL.
+NOTE: The data set WORK.LINKS_TO_CRAWL has 65 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+crawling http://communities.sas.com ...
+
+NOTE: The file HTMLFILE is:
+      Filename=C:\Apache\htdocs\casper2\Main\Examples\SAS\Webcrawler\Output\file14.html,
+      RECFM=V,LRECL=32767,File Size (bytes)=0,
+      Last Modified=04Feb2019:12:14:35,
+      Create Time=04Feb2019:10:02:48
+
+ERROR: Windows SSL error -2146893018 (0x80090326) occurred at line 2320, the error message is "The message received was 
+       unexpected or badly formatted. "
+ERROR: Windows SSL error -2146893018 (0x80090326) occurred at line 2320, the error message is "The message received was 
+       unexpected or badly formatted. ".
+NOTE: 0 records were written to the file HTMLFILE.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: SAS set option OBS=0 and will continue to check statements. This might cause NOTE: No observations in data set.
+WARNING: The data set WORK._URLS may be incomplete.  When this step was stopped there were 0 observations and 1 variables.
+WARNING: Data set WORK._URLS was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.31 seconds
+      cpu time            0.01 seconds
+      
+
+
+
+NOTE: The data set WORK._OLD_LINK has 0 observations and 1 variables.
+WARNING: Data set WORK._OLD_LINK was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: Table WORK._APPEND created, with 0 rows and 1 columns.
+
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.01 seconds
+36                                                    The SAS System                        12:13 Monday, February 4, 2019
+
+      cpu time            0.01 seconds
+      
+
+
+NOTE: The data set WORK._APPEND has 0 observations and 1 variables.
+WARNING: Data set WORK._APPEND was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: PROCEDURE APPEND used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+NOTE: The data set WORK.LINKS_TO_CRAWL has 0 observations and 1 variables.
+WARNING: Data set WORK.LINKS_TO_CRAWL was not replaced because this step was stopped.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+ERROR: Errors printed on page 35.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1:16.32
+      cpu time            1.01 seconds
+      
