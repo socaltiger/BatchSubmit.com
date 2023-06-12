@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Apache\htdocs\casper2\Main\Examples\Python\.python_input.py", line 12, in <module>
+    print("Hi",parm.parm1,", you are",parm.parm2, "years old.")
+AttributeError: module 'parm' has no attribute 'parm1'
