@@ -1,4 +1,4 @@
-With BatchSubmit.com, you are able to:
+With <a href="http://BatchSubmit.com">BatchSubmit.com</a>, you are able to:
 
 run programs that take hours, even days to complete, loss of connection won't affect the execution.<br>
 submit multiple programs at once, they will run sequentially.<br>
