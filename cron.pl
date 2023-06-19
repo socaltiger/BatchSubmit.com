@@ -5,7 +5,7 @@
 
 $basedir = $ARGV[0];
 
-open(DIR, "/usr/bin/find /$basedir/home -name '*.par' |");
+open(DIR, "/usr/bin/find /Apache/htdocs/Casper2/Main -name '*.par' |");
 @dir = sort <DIR>;
 close(DIR);
 
@@ -17,7 +17,7 @@ $mon =$mon + 1;
 if ($mon < 10) { $mon = "0$mon";}
 if ($year < 10) { $year = "0$year";}
 
-open (LOG, ">/$basedir/html/departments/cdm/casper/cronlog/cron$year$mon$mday.log") || die $!;
+open (LOG, ">/usr/bin/find /Apache/htdocs/Casper2/cronlog/cron$year$mon$mday.log") || die $!;
 
 foreach $spf (@dir) {
 
