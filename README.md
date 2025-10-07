@@ -9,5 +9,5 @@ take advantage of fully integrated file management system.<p>
 access library of sample code and public data.<p>
 run programs from mobile devices, anywhere.<p>
 schedule cron jobs. (coming soon)<p>
-although it is designed to run SAS/R/Python, it can run any command line based programs.<p>
+although it is designed to run SAS/R/Python, it can be modified run any command line based programs.<p>
 and more ...<p>
