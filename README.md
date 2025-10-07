@@ -1,5 +1,8 @@
-With <a href="http://BatchSubmit.com">BatchSubmit.com</a>, you are able to:
+It's a open source Task as Service/Job as Service solution<p>
 
+With BatchSubmit.com, you are able to:<p>
+
+obtain similar functionalities as AWS Batch/AWS Step Functions, Google Cloud Workflows/Cloud Tasks, Azure batch, IBM Cloud Schematics/DataStage<p>
 run programs that take hours, even days to complete, loss of connection won't affect the execution.<p>
 submit multiple programs at once, they will run sequentially.<p>
 easily build a web interface for user input and memorize it, integrate with other web tools.<p>
