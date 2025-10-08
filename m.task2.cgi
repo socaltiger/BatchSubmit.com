@@ -233,13 +233,14 @@ sub main_page {
       print "</Table><br>\n";
 
       print "<table cellspacing=0 cellpadding=0 width=100% border=0>\n";
-      print "    <tr><td bgcolor=#dbe6e0 align=center><br>All Rights Reserved</td></tr>\n";
+      print "    <tr><td bgcolor=#dbe6e0 align=center><br>Open Source Code</td></tr>\n";
       print "    <tr><td bgcolor=#dbe6e0 align=center><br></td></tr>\n";
       print "</table>\n";
       print "</center>\n";
 
 	print "</body></html>\n";
 }
+
 
 
 
