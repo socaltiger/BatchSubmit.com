@@ -1,0 +1,128 @@
+1                                                     The SAS System                          04:57 Monday, March 25, 2019
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNI OF SCIENCE&TECH, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.95 seconds
+      cpu time            0.26 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Users\guest\20160328"'
+1        !                                                               ;
+2          
+3          data A;
+4              length player $4 itemtype $13;
+5              input region player $ itemtype $ itemcount itemamount;
+6              cards;
+
+NOTE: The data set WORK.A has 12 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.17 seconds
+      cpu time            0.03 seconds
+      
+
+19         ;
+20         run;
+21         
+22         %macro do_work;
+23         
+24             %local i next_name;
+25         
+26             %do i=1 %to %sysfunc(countw(&itlist));
+27         
+28                 %let next_name = %scan(&itlist, &i);
+29         
+30                 create table a_&next_name as
+31                     select region, player,
+32                            sum(itemcount) as &next_name._itemcount,
+33                            sum(itemamount) as &next_name._itemamount
+34                     from a
+35                     where itemtype eq "&next_name"
+36                     group by region, player, itemtype;
+37         
+38                 create table t as
+39                     select * from b left join a_&next_name
+40                     on (b.region = a_&next_name..region and b.player eq a_&next_name..player);
+41         
+42                 drop table b;
+43         
+44                 create table b as select * from t;
+45         
+46                 drop table t;
+47         
+2                                                     The SAS System                          04:57 Monday, March 25, 2019
+
+48             %end;
+49         
+50         %mend do_work;
+51         
+52         proc sql;
+53         
+54         select distinct itemtype into :itlist separated by ' ' from a order by itemtype;
+55         
+56         create table b as select distinct region, player from a;
+NOTE: Table WORK.B created, with 6 rows and 2 columns.
+
+57         
+58         %do_work;
+NOTE: Table WORK.A_FNB created, with 4 rows and 4 columns.
+
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 4 columns.
+
+NOTE: Table WORK.B has been dropped.
+NOTE: Table WORK.B created, with 6 rows and 4 columns.
+
+NOTE: Table WORK.T has been dropped.
+NOTE: Table WORK.A_PROGAMECREDIT created, with 3 rows and 4 columns.
+
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 6 columns.
+
+NOTE: Table WORK.B has been dropped.
+NOTE: Table WORK.B created, with 6 rows and 6 columns.
+
+NOTE: Table WORK.T has been dropped.
+NOTE: Table WORK.A_PROOTHER created, with 2 rows and 4 columns.
+
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 8 columns.
+
+NOTE: Table WORK.B has been dropped.
+NOTE: Table WORK.B created, with 6 rows and 8 columns.
+
+NOTE: Table WORK.T has been dropped.
+59         
+60         select * from b;
+61         
+62         quit;
+NOTE: The PROCEDURE SQL printed pages 1-2.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.81 seconds
+      cpu time            0.04 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.20 seconds
+      cpu time            0.37 seconds
+      

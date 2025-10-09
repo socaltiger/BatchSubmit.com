@@ -1,0 +1,2 @@
+ 1|A parameter file (.par) enables user to execute the underlying scripts without being exposed to the dreadful code, it also preserves the parameter values to avoid repeat entry.<p><b>/Main/Users/guest/SAS/c4_3_input.sas: Display admit dataset</b>|hidden|program|/Main/Users/guest/SAS/c4_3_input.sas||<P>|
+ 2|Specify Age Criteria<font color=#dbe6e0></font>: |text|parm1|35|5|<p>|

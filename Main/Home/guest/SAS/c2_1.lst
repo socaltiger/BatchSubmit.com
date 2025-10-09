@@ -1,0 +1,12 @@
+                                                      The SAS System                     04:57 Tuesday, April 13, 2021   1
+
+                                                                                          Act
+                 Obs     ID        Name        Sex    Age    Date    Height    Weight    Level        Fee
+
+                  1     2458    Murray, W       M      27      1       72        168     HIGH       85.20
+                  2     2462    Almers, C       F      34      3       66        152     HIGH      124.80
+                  3     2544    Jones, M        M      29      6       76        193     HIGH      124.80
+                  4     2571    Nunnelly, A     F      44     19       66        140     HIGH      149.75
+                  5     2575    Quigley, M      F      40      8       69        163     HIGH      124.80
+                  6     2586    Derber, B       M      25     23       75        188     HIGH       85.20
+                  7     2589    Wilcox, E       F      41     16       67        141     HIGH      149.75

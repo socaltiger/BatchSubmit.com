@@ -1,0 +1,68 @@
+                                                      The SAS System                    05:26 Saturday, March 21, 2020   1
+
+                                                  The CONTENTS Procedure
+
+                         Data Set Name        WORK.MYSTRESS2            Observations          21
+                         Member Type          DATA                      Variables             8 
+                         Engine               V9                        Indexes               0 
+                         Created              03/21/2020 05:26:27       Observation Length    72
+                         Last Modified        03/21/2020 05:26:27       Deleted Observations  0 
+                         Protection                                     Compressed            NO
+                         Data Set Type                                  Sorted                NO
+                         Label                                                                  
+                         Data Representation  WINDOWS_64                                        
+                         Encoding             utf-8  Unicode (UTF-8)                            
+
+
+                                            Engine/Host Dependent Information
+
+Data Set Page Size          65536                                                                                         
+Number of Data Set Pages    1                                                                                             
+First Data Page             1                                                                                             
+Max Obs per Page            908                                                                                           
+Obs in First Data Page      21                                                                                            
+Number of Data Set Repairs  0                                                                                             
+ExtendObsCounter            YES                                                                                           
+Filename                    C:\Users\Dad\AppData\Local\Temp\SAS Temporary                                                 
+                            Files\_TD6244_DESKTOP-R1KKJ06_\mystress2.sas7bdat                                             
+Release Created             9.0401M2                                                                                      
+Host Created                X64_8HOME                                                                                     
+
+
+                                       Alphabetic List of Variables and Attributes
+ 
+                                              #    Variable     Type    Len
+
+                                              1    id           Num       8
+                                              4    maxhr        Num       8
+                                              2    name         Char     20
+                                              5    rechr        Num       8
+                                              3    resthr       Num       8
+                                              6    timemin      Num       8
+                                              7    timesec      Num       8
+                                              8    tolerance    Char      1
+                                                      The SAS System                    05:26 Saturday, March 21, 2020   2
+
+               Obs     id     name              resthr    maxhr    rechr    timemin    timesec    tolerance
+
+                 1    2458    Murray, W           72       185      128        12         38          D    
+                 2    2462    Almers, C           68       171      133        10          5          I    
+                 3    2501    Bonaventure, T      78       177      139        11         13          I    
+                 4    2523    Johnson, R          69       162      114         9         42          S    
+                 5    2539    LaMance, K          75       168      141        11         46          D    
+                 6    2544    Jones, M            79       187      136        12         26          N    
+                 7    2552    Reberson, P         69       158      139        15         41          D    
+                 8    2555    King, E             70       167      122        13         13          I    
+                 9    2563    Pitts, D            71       159      116        10         22          S    
+                10    2568    Eberhardt, S        72       182      122        16         49          N    
+                11    2571    Nunnelly, A         65       181      141        15          2          I    
+                12    2572    Oberon, M           74       177      138        12         11          D    
+                13    2574    Peterson, V         80       164      137        14          9          D    
+                14    2575    Quigley, M          74       152      113        11         26          I    
+                15    2578    Cameron, L          75       158      108        14         27          I    
+                16    2579    Underwood, K        72       165      127        13         19          S    
+                17    2584    Takahashi, Y        76       163      135        16          7          D    
+                18    2586    Derber, B           68       176      119        17         35          N    
+                19    2588    Ivan, H             70       182      126        15         41          N    
+                20    2589    Wilcox, E           78       189      138        14         57          I    
+                21    2595    Warren, C           77       170      136        12         10          S    

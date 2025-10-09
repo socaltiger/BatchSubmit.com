@@ -1,0 +1,67 @@
+1                                                     The SAS System                       21:27 Monday, November 11, 2019
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNI OF SCIENCE&TECH, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           1.14 seconds
+      cpu time            0.24 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Users\guest\SAS"'
+1        !                                                          ;
+2          
+3          OPTIONS nocenter;
+4          
+5          DATA hsb25;
+6            INPUT id female race ses schtype $ prog
+7                  read write math science socst;
+8          DATALINES;
+
+NOTE: The data set WORK.HSB25 has 25 observations and 11 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.12 seconds
+      cpu time            0.00 seconds
+      
+
+34         ;
+35         RUN;
+36         
+37         filename outgraph 'graph.gif';
+38         goptions gsfname=outgraph dev=gif373;
+39         symbol c=black v=circle h=0.8;
+40         proc gplot data=hsb25;
+41           plot read*math =1;
+42         run;
+
+WARNING: Invalid device 'GIF373' for LISTING destination. Using default device 'PNG'.
+NOTE: 10015 bytes written to C:\Apache\htdocs\casper2\Main\Users\guest\SAS\graph.gif.
+43         
+44         quit;
+
+NOTE: There were 25 observations read from the data set WORK.HSB25.
+NOTE: PROCEDURE GPLOT used (Total process time):
+      real time           0.84 seconds
+      cpu time            0.14 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.40 seconds
+      cpu time            0.42 seconds
+      
