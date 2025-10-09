@@ -1,1 +1,1 @@
-19 01 * * * cd /www_prod/html/departments/cdm/casper/crondir; /www_prod/html/departments/cdm/casper/cron.pl www_prod
+19 01 * * * cd C:\Apache\htdocs\casper2\Main/cronlog; C:\Apache\htdocs\casper2\Main\cron.pl C:\Apache\htdocs\casper2\Main\home
