@@ -1,4 +1,4 @@
-It's a lightweight open source Distributed Asynchronous Job Scheduling Platform, a Task as Service/Job as Service solution<p>
+It's a lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a Task as Service/Job as Service solution<p>
 
 With BatchSubmit.com, you are able to:<p>
 
