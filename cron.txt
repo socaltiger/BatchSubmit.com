@@ -1,1 +1,1 @@
-19 01 * * * cd C:\Apache\htdocs\casper2\Main/cronlog; C:\Apache\htdocs\casper2\Main\cron.pl C:\Apache\htdocs\casper2\Main\home
+19 01 * * * cd C:\Apache\htdocs\casper2\Main\cronlog; C:\Apache\htdocs\casper2\cron.pl C:\Apache\htdocs\casper2\Main\home
