@@ -1,0 +1,1 @@
+19 01 * * * cd /www_prod/html/departments/cdm/casper/crondir; /www_prod/html/departments/cdm/casper/cron.pl www_prod
