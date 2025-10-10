@@ -14,4 +14,4 @@ run programs from mobile devices, anywhere.<p>
 schedule cron jobs.<p>
 although it is designed to run SAS/R/Python, it can be easily modified to run any command line based programs, such as Oracle Sqlplus Scripts or SQL server scripts, and much more ...<p>
 
-this project is fully functional in Perl CGI, I am looking for Contributores who can help port it to Python (Flask/FastAPI)<p>
+this project is fully functional in Perl CGI, I am looking for Contributors who can help port it to Python (Flask/FastAPI)<p>
