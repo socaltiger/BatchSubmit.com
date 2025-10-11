@@ -1,0 +1,124 @@
+Turn your programs into web applications, the simple way
+
+
+ABSTRACT
+
+BatchSubmit.com is a web based application that provides a simple and effective way to build web fronts for command line programs. The system employs CGI (Perl) technology to deliver web based functionality in a consistent fashion. The directory structure of the underlying operating system (Windows or UNIX) is built into the application. It also employs clickable icons for parameter files that store parameter values, which can be modified and saved. This paper is targeted at SAS programmers who are interested in expanding the usage of their SAS programs to non-SAS users, as well as managing SAS programs in an efficient and intuitive way.
+
+INTRODUCTION
+
+SAS has long been a programmer's tool. SAS programs developed by programmers are usually used by their developers or others who have at least some basic knowledge of the SAS environment. In real world situations, such as within a drug development team at a pharmaceutical or biotech company, not all members have the necessary SAS knowledge. They must rely on SAS programmers to execute the programs for them. This often creates an extra layer of task handoff, which can result in miscommunication. It also reduces efficiency and causes delays.
+
+CASPER allows users to execute SAS programs directly from the web, with no SAS knowledge required. Since it employs the directory structure of the underlying operating system (Windows or UNIX), it inherits the look and feel of the Windows File Browser, which users are already familiar with. Very little, if any, training is needed before users can start to use the application.
+
+What is unique about this application is that it separates the development of the web front from the development of SAS programs. It utilizes existing SAS programs as they are with little or with minimal modification, and adds a front- end to make it web accessible in a standardized fashion. Between the SAS program and end user, is a parameter file, which is accessible from the web browser, that stores the values for the parameters. Users can modify these values and save for later use, or save with a different name to create a new parameter file.
+
+DESIGN AND IMPLEMENTATION
+
+Web Server:
+
+Perl was chosen to develop the CGI (Common Gateway Interface) programs, because of its wide availability on Unix and Windows at no cost. In addition, since it is the scripting language that many SAS programmers use to automate the execution of their SAS programs, there are plenty of technical resources available for maintenance and customization requirements.
+
+Five Perl modules have been designed to work together within CASPER:
+
+Main: This is the directory navigator, working similar to the Windows File Browser. It allows user to navigate through directories to get to the work area where program files (actually the parameter files) reside.
+
+Ctrl: The role of this module is to open the parameter file in XML format (we currently use a Pseudo XML file as a temporary work around while working on the XML parser), which encapsulates the parameter values required to run a program (or a SAS macro call, to be more specific). When the user clicks on the parameter file icon, the Ctrl module parses the parameter names and values and display on the web browser as a form on the fly. Users can modify the parameter values, save the values to the original file or to a new file, or click the "exec" button to execute the program with the parameters currently supplied from the web.
+
+Exec: This module performs two different tasks, depending on the user action. When the user clicks the "save as" button on the form, it saves the parameter values into the specified file, which can be used later; or when the user clicks the "exec" button on the form, it saves the parameters in a temp file, and creates a task file which is a command to run the specified SAS program.
+
+C:\PROGRA~1\SAS\SAS9~1.1\sas.exe -sysin $progdir\$program-log $taskdir\$tasklog -print $taskdir\$tasktxt
+
+This module is not responsible for the execution of the SAS program. That job is performed by a demon on the application server where SAS is installed.
+
+View: This module enables the user to view the contents of log files, output files, etc.
+
+Task: This module lets the user monitor the status of submitted tasks.
+
+Application Server:
+
+SAS is installed on the application server along with connectivity components that are also installed to allow SAS to access databases through views, and send emails.
+
+A daemon, Cspr, runs on the server nonstop, checking for the existence of the task file created by the Exec module on the web server side. If the task file does not exist, which means no task has been submitted, it goes back to sleep for a short period of time (usually from a fraction of a second to a few seconds, to reduce CPU load), then wakes up and checks again. When it detects the existence of the task file, it will read its contents, then execute the command to run the SAS program. The SAS program, includes the temporary parm file created by Exec. The SAS program performs its designated duty and creates a log file and output files. When the SAS program is completed, it deletes the task file and temp parm file and the process starts over again.
+
+
+
+A SIMPLE EXAMPLE
+
+In the following example, we will explain how CASPER is used.
+
+First, we developed a simple SAS program in the conventional SAS environment called simple.sas:
+
+*** simple.sas ***;
+
+%macro simple(var1=,var2=,var3=);
+    data null;
+		file print;
+		put "var1 = &var1";
+		put "var2 = &var2";
+		put "var3 = &var3";
+		sum = &var1 + &var2 + &var3;
+		put "sum = " sum;
+	run;
+%mend simple;
+
+%simple(var1=6, var2=8, var3=10)	
+
+We add and modify the following lines in the program, and place the program in the program folder (directory).
+
+*** simple.sas ***;
+
+%macro simple(var1=,var2=,var3=);
+    data null;
+		file print;
+		put "var1 = &var1";
+		put "var2 = &var2";
+		put "var3 = &var3";
+		sum = &var1 + &var2 + &var3;
+		put "sum = " sum;
+	run;
+%mend simple;
+
+%simple(var1=&parm1, var2=&parm2, var3=&parm3)
+
+The included parm.sas file which contains the assignment for the macro variables, is created on the fly with values supplied from the web browser form when we submit the program for execution.
+
+*** parm.sas ***;
+
+%let parm1 = 6;
+%let parm2 = 8;
+%let parm3 = 10;
+
+Second, we make a parameter file named simple_ex01.xml, and deploy it in the directory accessible from the web. This file contains all the information needed to construct the web front end (text fields, checkboxes, pull down selections, etc.), as well as stores the parameter values the user enters from the web. A tool is currently being developed to enable the user to create this file by filling out and submit a web form instead of making it manually.
+
+That's it! Now the program has become a web application.
+
+To run this program, Open the web browser, and go to the BatchSubmit.com main page:
+
+
+Logon and navigate to the directory where the simple_ex01.par is located.
+
+
+Click on the simple_ex01.par icon, the input form appears. Fill in the values, then click "save as" to save the parameters in current file name or a different name. When ready, click "exec" to run the program.
+
+
+You can monitor the execution status of the program by clicking the "Tasks" link. When the task entry moved from execution area to the completed area, the job is complete.
+
+
+Return to the directory, two new files appeared: simple_ex01.log and simpl_ex01.txt.
+
+
+Click on the icons so that you can view the log file as well as output file.
+
+
+When finished, click logout and return to the first screen.
+
+CONCLUSION
+
+This application has successfully demonstrated both its flexibly and capability in building web front ends for existing SAS programs that have been developed in a conventional SAS environment. Using the technologies described in this paper enables non-programmers to execute SAS programs in their everyday work. It also makes the work of managing SAS programs more intuitive and less stressful. Although desirable, CGI (Perl) and html knowledge is not required for SAS programmers to build the web front ends for their SAS programs in CASPER.
+
+SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
+
+Other brand and product names are trademarks of their respective companies.
+
+
