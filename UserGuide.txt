@@ -9,7 +9,7 @@ INTRODUCTION
 
 SAS has long been a programmer's tool. SAS programs developed by programmers are usually used by their developers or others who have at least some basic knowledge of the SAS environment. In real world situations, such as within a drug development team at a pharmaceutical or biotech company, not all members have the necessary SAS knowledge. They must rely on SAS programmers to execute the programs for them. This often creates an extra layer of task handoff, which can result in miscommunication. It also reduces efficiency and causes delays.
 
-CASPER allows users to execute SAS programs directly from the web, with no SAS knowledge required. Since it employs the directory structure of the underlying operating system (Windows or UNIX), it inherits the look and feel of the Windows File Browser, which users are already familiar with. Very little, if any, training is needed before users can start to use the application.
+BatchSubmit allows users to execute SAS programs directly from the web, with no SAS knowledge required. Since it employs the directory structure of the underlying operating system (Windows or UNIX), it inherits the look and feel of the Windows File Browser, which users are already familiar with. Very little, if any, training is needed before users can start to use the application.
 
 What is unique about this application is that it separates the development of the web front from the development of SAS programs. It utilizes existing SAS programs as they are with little or with minimal modification, and adds a front- end to make it web accessible in a standardized fashion. Between the SAS program and end user, is a parameter file, which is accessible from the web browser, that stores the values for the parameters. Users can modify these values and save for later use, or save with a different name to create a new parameter file.
 
@@ -45,7 +45,7 @@ A daemon, Cspr, runs on the server nonstop, checking for the existence of the ta
 
 A SIMPLE EXAMPLE
 
-In the following example, we will explain how CASPER is used.
+In the following example, we will explain how BatchSubmit is used.
 
 First, we developed a simple SAS program in the conventional SAS environment called simple.sas:
 
