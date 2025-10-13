@@ -17,3 +17,9 @@ although it is designed to run SAS/R/Python, it can be easily modified to run an
 this project is fully functional in Perl CGI, I am looking for contributors who can help port it to Python (Flask/FastAPI)<p>
 
 If you installed a copy of the platform on the web, could you please share the URL with me? I am compiling a list of installed bases.
+
+This is an open-source platform designed to make running complex programs simple for end users.  
+The core technology works — now the next step is helping more people see its value.  
+
+If you’re interested in joining as a collaborator (UX, documentation, community, or outreach),  
+please reach out via GitHub Issues or email: BatchSubmit@gmail.com .
