@@ -22,4 +22,4 @@ This is an open-source platform designed to make running complex programs simple
 The core technology works — now the next step is helping more people see its value.  
 
 If you’re interested in joining as a collaborator (UX, documentation, community, or outreach),  
-please reach out via GitHub Issues or email: BatchSubmit@gmail.com .
+please reach out via GitHub Issues or email: omnitiger@gmail.com .
