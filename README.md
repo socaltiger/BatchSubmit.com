@@ -18,6 +18,8 @@ this project is fully functional in Perl CGI, I am looking for contributors who 
 
 If you installed a copy of the platform on the web, could you please share the URL with me? I am compiling a list of installed bases.
 
+ ⭐ If you find this project interesting, please consider giving it a star!
+
 This is an open-source platform designed to make running complex programs simple for end users.  
 The core technology works — now the next step is helping more people see its value.  
 
