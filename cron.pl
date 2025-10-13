@@ -83,7 +83,7 @@ foreach $spf (@dir) {
 	   	    s/par/txt/;
 		    $tasktxt = $_;
 
-		    system("/usr/local/bin/sas -9.1.4 -noterminal -sysin /$basedir/html/departments/cdm/casper/program/$program -log $tasklog -print $tasktxt");
+		    system("C:\PROGRA~1\SAS\SAS9~1.1\sas.exe -9.1.4 -noterminal -sysin /$basedir/casper/program/$program -log $tasklog -print $tasktxt");
 
 		    print LOG "$par\n";	
 
