@@ -11,7 +11,7 @@ SAS has long been a programmer's tool. SAS programs developed by programmers are
 
 BatchSubmit allows users to execute SAS programs directly from the web, with no SAS knowledge required. Since it employs the directory structure of the underlying operating system (Windows or UNIX), it inherits the look and feel of the Windows File Browser, which users are already familiar with. Very little, if any, training is needed before users can start to use the application.
 
-What is unique about this application is that it separates the development of the web front from the development of SAS programs. It utilizes existing SAS programs as they are with little or with minimal modification, and adds a front- end to make it web accessible in a standardized fashion. Between the SAS program and end user, is a parameter file, which is accessible from the web browser, that stores the values for the parameters. Users can modify these values and save for later use, or save with a different name to create a new parameter file.
+What is unique about this application is that it separates the development of the web front from the development of SAS programs. It utilizes existing SAS programs as they are with little or with minimal modification, and adds a front- end to make it web accessible in a standardized fashion. Between the SAS program and end user, is a parameter file (par), which is accessible from the web browser, that stores the values for the parameters. Users can modify these values and save for later use, or save with a different name to create a new parameter file.
 
 DESIGN AND IMPLEMENTATION
 
@@ -23,7 +23,7 @@ Five Perl modules have been designed to work together within CASPER:
 
 Main: This is the directory navigator, working similar to the Windows File Browser. It allows user to navigate through directories to get to the work area where program files (actually the parameter files) reside.
 
-Ctrl: The role of this module is to open the parameter file in XML format (we currently use a Pseudo XML file as a temporary work around while working on the XML parser), which encapsulates the parameter values required to run a program (or a SAS macro call, to be more specific). When the user clicks on the parameter file icon, the Ctrl module parses the parameter names and values and display on the web browser as a form on the fly. Users can modify the parameter values, save the values to the original file or to a new file, or click the "exec" button to execute the program with the parameters currently supplied from the web.
+Ctrl: The role of this module is to open the parameter file (.par), which encapsulates the parameter values required to run a program (or a SAS macro call, to be more specific). When the user clicks on the parameter file icon, the Ctrl module parses the parameter names and values and display on the web browser as a form on the fly. Users can modify the parameter values, save the values to the original file or to a new file, or click the "exec" button to execute the program with the parameters currently supplied from the web.
 
 Exec: This module performs two different tasks, depending on the user action. When the user clicks the "save as" button on the form, it saves the parameter values into the specified file, which can be used later; or when the user clicks the "exec" button on the form, it saves the parameters in a temp file, and creates a task file which is a command to run the specified SAS program.
 
@@ -120,6 +120,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
