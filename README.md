@@ -1,11 +1,13 @@
 It's a lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a Task as Service/Job as Service solution<p>
 
-The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.
+Our mission:<p>
 
-This platform makes it easy for developers to build small, ready-to-run cloud environments that end users can immediately use without technical knowledge.
+To liberate program execution from the hands of programmers,<p>
+and turn it into a sharp, empowering tool for ordinary users.<p>
 
-Each application is defined by a simple parameter file — once uploaded, it becomes a live, interactive tool on the web.
-
+The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.<p>
+This platform makes it easy for developers to build small, ready-to-run cloud environments that end users can immediately use without technical knowledge.<p>
+Each application is defined by a simple parameter file — once uploaded, it becomes a live, interactive tool on the web.<p>
 In short, this is not just another cloud platform — it’s a platform for instantly usable applications.<p>
 
 With BatchSubmit.com, you can:<p>
