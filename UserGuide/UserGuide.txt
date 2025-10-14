@@ -95,21 +95,30 @@ That's it! Now the program has become a web application.
 
 To run this program, Open the web browser, and go to the BatchSubmit.com main page:
 
+Logon and navigate to the directory where the input.par is located.
 
-Logon and navigate to the directory where the simple_ex01.par is located.
+UserGuide2.png
 
+input.par looks like this:
 
-Click on the simple_ex01.par icon, the input form appears. Fill in the values, then click "save as" to save the parameters in current file name or a different name. When ready, click "exec" to run the program.
+ 1|<img src="http://batchsubmit.com/casper2/Main/Examples/SAS/Input/Rectangularprism2.png"><p><b>/Main/Examples/SAS/Input/volume.sas: calculate volume</b>|hidden|program|/Main/Examples/SAS/Input/volume.sas||<P>|
+ 2|l: |select|parm1|#6:7:8||<BR>|
+ 3|b: |radio|parm2|8:9:#10||<BR>|
+ 4|h: |text|parm3|2|5|<P>|
 
+Click on the input.par icon, the input form appears. Fill in the values, then click "save as" to save the parameters in current file name or a different name. When ready, click "exec" to run the program.
+
+UserGuide3.png
 
 You can monitor the execution status of the program by clicking the "Tasks" link. When the task entry moved from execution area to the completed area, the job is complete.
 
+UserGuide4.png
 
-Return to the directory, two new files appeared: simple_ex01.log and simpl_ex01.txt.
-
+Return to the directory, two new files appeared: input.log and inout.lst.
 
 Click on the icons so that you can view the log file as well as output file.
 
+UserGuide5.png
 
 When finished, click logout and return to the first screen.
 
@@ -120,6 +129,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
