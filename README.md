@@ -2,8 +2,7 @@ It's a lightweight open source Distributed Asynchronous Job Submitting/Schedulin
 
 Our mission:<p>
 
-To liberate program execution from the hands of programmers,<p>
-and turn it into a empowering tool for ordinary users.<p>
+To liberate program execution from the hands of programmers, and turn it into a empowering tool for ordinary users.<p>
 
 The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.<p>
 This platform makes it easy for developers to build small, ready-to-run cloud environments that end users can immediately use without technical knowledge.<p>
