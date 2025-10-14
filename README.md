@@ -8,7 +8,7 @@ Each application is defined by a simple parameter file — once uploaded, it bec
 
 In short, this is not just another cloud platform — it’s a platform for instantly usable applications.<p>
 
-With BatchSubmit.com, you are able to:<p>
+With BatchSubmit.com, you can:<p>
 
 obtain similar functionalities as AWS Batch/AWS Step Functions, Google Cloud Workflows/Cloud Tasks, Azure batch, IBM Cloud Schematics/DataStage<p>
 run programs that take hours, even days to complete, loss of connection won't affect the execution.<p>
