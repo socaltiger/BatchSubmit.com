@@ -1,0 +1,39 @@
+Abstract
+
+This paper presents a conceptual framework that interprets the Parameter-as-File (PaF) paradigm through the lens of object-oriented design. The model positions traditional computational applications (such as SAS, R, or Python programs) as abstract classes that encapsulate reusable logic, while parameter files serve as concrete instances of these classes. This abstraction enables a unified, lightweight mechanism for instantiating and executing programs within a cloud-like environment, effectively bridging the gap between programming and end-user execution.
+
+
+---
+
+1. Introduction
+
+In conventional software systems, execution of analytical or computational scripts requires technical intervention—users must configure parameters within code or scripts. The Parameter-as-File (PaF) model decouples configuration from implementation by externalizing parameters into a standalone file format (.par). When combined with a runtime platform capable of reading and executing these files, the result is an architecture that behaves analogously to object instantiation in object-oriented programming.
+
+
+---
+
+2. Object-Oriented Interpretation
+
+Object-Oriented Concept	PaF Correspondence	Description
+
+Class	Program (SAS, R, Python script)	Defines generic computation logic and methods.
+Object (Instance)	Parameter File (.par)	Represents a concrete execution context with specific input values.
+Constructor	Platform Execution Mechanism	Reads the parameter file and initializes program execution.
+Method Invocation	Runtime Execution and Output Generation	Performs computation and produces results.
+
+
+This mapping suggests that each parameter file acts as an instantiation of an abstract computational class, resulting in a distinct runtime object. In this sense, the PaF model operationalizes late binding of data and configuration to logic.
+
+
+---
+
+3. Systemic Implications
+
+The PaF paradigm introduces a novel abstraction layer between end users and executable code. It encapsulates the “what” (logic) and “how” (execution parameters) into discrete, composable entities. The execution platform serves as a lightweight instantiation engine, comparable to a simplified cloud runtime environment. Unlike traditional programming environments that require direct code manipulation, PaF allows end users to generate new program instances without modifying source code—mirroring object creation through configuration rather than compilation.
+
+
+---
+
+4. Discussion
+
+This model generalizes beyond single applications. Any computational framework capable of accepting structured parameter files can participate as an abstract class within the PaF ecosystem. The approach enhances modularity, reproducibility, and usability by formalizing a uniform instantiation process. Conceptually, it transforms “program execution” into “object creation,” thus reinterpreting batch computing as a form of dynamic object-oriented interaction within a distributed or cloud context.
