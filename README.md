@@ -4,6 +4,17 @@ Our mission:<p>
 
 To liberate program execution from the hands of programmers, and turn it into a empowering tool for ordinary users.<p>
 
+
+Core Value Proposition
+
+Traditional program execution environments are developer-centric. They require users to understand programming languages, command lines, or configuration scripts in order to run or modify computational tasks. This paradigm has long limited the accessibility and reusability of complex software systems.
+
+The platform introduces a new model that fully separates program logic from the user interface. Through the Parameter-as-File (PAF) mechanism, the program’s inputs, options, and execution context are exposed in a structured file format. End users can configure and execute programs through a graphical or form-based interface—without ever interacting with source code.
+
+At its core, this mechanism represents an abstraction of program complexity. It allows professional developers to focus on algorithms and logic, while enabling non-technical users to control and apply these capabilities in an intuitive, semantic way. This layered architecture effectively dissolves the boundary between “programmer” and “user,” bringing advanced computational functions into everyday workflows.
+
+From a platform perspective, this is more than a technical convenience—it is a paradigm shift in computational interaction. It transforms executable knowledge from a developer’s toolbox into a broadly accessible operational resource.
+
 The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.<p>
 This platform makes it easy for developers to build small, ready-to-run cloud environments that end users can immediately use without technical knowledge.<p>
 Each application is defined by a simple parameter file — once uploaded, it becomes a live, interactive tool on the web.<p>
