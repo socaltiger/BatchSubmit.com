@@ -15,6 +15,9 @@ At its core, this mechanism represents an abstraction of program complexity. It 
 
 From a platform perspective, this is more than a technical convenience—it is a paradigm shift in computational interaction. It transforms executable knowledge from a developer’s toolbox into a broadly accessible operational resource.
 
+Although the implementation of the Parameter-as-File model is remarkably simple — essentially a structured parameter file rendered into a user-facing interface — the conceptual implications are profound.
+It redefines how programs are executed, parameterized, and shared, shifting computational control from programmers to end users.
+
 The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.<p>
 This platform makes it easy for developers to build small, ready-to-run cloud environments that end users can immediately use without technical knowledge.<p>
 Each application is defined by a simple parameter file — once uploaded, it becomes a live, interactive tool on the web.<p>
