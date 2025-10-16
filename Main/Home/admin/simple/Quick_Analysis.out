@@ -1,0 +1,166 @@
+
+R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(dplyr)
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+> 
+> library(magrittr)
+> 
+> library(MASS)
+
+Attaching package: 'MASS'
+
+The following object is masked from 'package:dplyr':
+
+    select
+
+> 
+> data <- read.csv("workingdata.csv")
+>  
+> # remove numbering column
+> #data <- data %>% select(-no)
+> 
+> hist(data$y) # right skewed
+> hist(data$x1) # a little right skewed
+> hist(data$x2) # very right skewed
+> hist(data$x3)
+> hist(data$x4) # some high outliers
+> hist(data$x5) # factor, mostly 1s and 2s
+> 
+> data$x5 <- as.factor(data$x5)
+> 
+> # The categorical variable x5 is itself a significant term for predicting the response variable y. However, it may be risky to use ANOVA when the response variable is so right skewed. We should consider transforming the data to something more normal.
+> aov(data = data, y ~ x5)
+Call:
+   aov(formula = y ~ x5, data = data)
+
+Terms:
+                      x5 Residuals
+Sum of Squares  0.156642  7.819563
+Deg. of Freedom        2      1393
+
+Residual standard error: 0.07492309
+Estimated effects may be unbalanced
+> 
+> # Also should consider other predictors.
+> # Remove outliers
+> data <- data %>% filter(x2 < 10000000 & x4 < 1)
+> 
+> # Try a few different models. x2 is also quite right skewed. Some variables are not good predictors.
+> lm(data = data, y ~ x1 + log(x2) + x3 + x4 + x5) %>% summary
+
+Call:
+lm(formula = y ~ x1 + log(x2) + x3 + x4 + x5, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.19186 -0.02939 -0.01149  0.01072  1.48765 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.066373   0.023546  45.288  < 2e-16 ***
+x1           0.077213   0.008522   9.061  < 2e-16 ***
+log(x2)     -0.008517   0.002069  -4.117 4.06e-05 ***
+x3          -0.011777   0.006459  -1.823   0.0685 .  
+x4           0.006413   0.036373   0.176   0.8601    
+x52         -0.011278   0.004453  -2.533   0.0114 *  
+x53          0.006343   0.019887   0.319   0.7498    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07081 on 1385 degrees of freedom
+Multiple R-squared:  0.09178,	Adjusted R-squared:  0.08785 
+F-statistic: 23.33 on 6 and 1385 DF,  p-value: < 2.2e-16
+
+> lm(data = data, y ~ x1 + log(x2) + x3 + x5) %>% summary
+
+Call:
+lm(formula = y ~ x1 + log(x2) + x3 + x5, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.19262 -0.02930 -0.01167  0.01080  1.48773 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.065142   0.022478  47.385  < 2e-16 ***
+x1           0.077563   0.008284   9.363  < 2e-16 ***
+log(x2)     -0.008399   0.001957  -4.292 1.89e-05 ***
+x3          -0.011887   0.006426  -1.850   0.0646 .  
+x52         -0.011174   0.004412  -2.533   0.0114 *  
+x53          0.006291   0.019878   0.316   0.7517    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.07078 on 1386 degrees of freedom
+Multiple R-squared:  0.09176,	Adjusted R-squared:  0.08848 
+F-statistic: 28.01 on 5 and 1386 DF,  p-value: < 2.2e-16
+
+> lm(data = data, log(y) ~ x1 + log(x2) + x3 + x5) %>% summary
+
+Call:
+lm(formula = log(y) ~ x1 + log(x2) + x3 + x5, data = data)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.16814 -0.02687 -0.01040  0.01140  0.88887 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  0.062235   0.017507   3.555 0.000391 ***
+x1           0.066179   0.006452  10.257  < 2e-16 ***
+log(x2)     -0.007385   0.001524  -4.845 1.41e-06 ***
+x3          -0.011155   0.005005  -2.229 0.025992 *  
+x52         -0.009579   0.003436  -2.788 0.005380 ** 
+x53          0.005898   0.015482   0.381 0.703302    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.05513 on 1386 degrees of freedom
+Multiple R-squared:  0.1104,	Adjusted R-squared:  0.1072 
+F-statistic: 34.39 on 5 and 1386 DF,  p-value: < 2.2e-16
+
+> 
+> # Stepwise model selection leads us to this final model with x1, log(x2), x3, and x5 as predictors for log(y). Since the data has been transformed, you will need to undo the transformation when interpreting coefficients. To summarize, however, x1 and the third category in x5 are positively correlated with the log of the response variable y. log(x2), x3, and the second category in x5 are the opposite.
+> 
+> # Given the relationship between linear regression and ANCOVA, we can see similar results when using the same model in ANOVA. x1, log(x2), x3, and x5 are significant predictors of the response variable log(y).
+> 
+> aov(data = data, log(y) ~ x1 + log(x2) + x3 + x5) %>% summary
+              Df Sum Sq Mean Sq F value   Pr(>F)    
+x1             1  0.317  0.3168 104.242  < 2e-16 ***
+log(x2)        1  0.167  0.1673  55.048 2.04e-13 ***
+x3             1  0.014  0.0142   4.674   0.0308 *  
+x5             2  0.024  0.0122   4.003   0.0185 *  
+Residuals   1386  4.212  0.0030                     
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> proc.time()
+   user  system elapsed 
+   0.46    0.10    0.56 
