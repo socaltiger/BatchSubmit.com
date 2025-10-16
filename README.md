@@ -23,7 +23,7 @@ This platform makes it easy for developers to build small, ready-to-run cloud en
 Each application is defined by a simple parameter file — once uploaded, it becomes a live, interactive tool on the web.<p>
 In short, this is not just another cloud platform — it’s a platform for instantly usable applications.<p>
 
-<font coloer="red">admin username/password: admin/bs2018</font>
+admin username/password: admin/bs2018
 
 With BatchSubmit.com, you can:<p>
 
