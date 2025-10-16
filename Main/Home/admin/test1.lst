@@ -1,0 +1,58 @@
+                                          The SAS System    07:31 Wednesday, December 16, 2015   1
+
+                                       The ARIMA Procedure
+
+                                     Name of Variable = price
+
+                                Mean of Working Series    6.469565
+                                Standard Deviation        0.791067
+                                Number of Observations          23
+
+
+                                         Autocorrelations
+ 
+  Lag    Covariance    Correlation    -1 9 8 7 6 5 4 3 2 1 0 1 2 3 4 5 6 7 8 9 1      Std Error
+
+    0      0.625787        1.00000    |                    |********************|             0
+    1      0.369188        0.58996    |            .       |************        |      0.208514
+    2      0.174098        0.27821    |         .          |******    .         |      0.271558
+    3      0.068018        0.10869    |         .          |**        .         |      0.283679
+    4      0.027536        0.04400    |         .          |*         .         |      0.285484
+    5     0.0067504        0.01079    |         .          |          .         |      0.285779
+
+                                  "." marks two standard errors
+
+
+                                     Inverse Autocorrelations
+ 
+                Lag    Correlation    -1 9 8 7 6 5 4 3 2 1 0 1 2 3 4 5 6 7 8 9 1
+
+                  1       -0.49667    |          **********|       .            |
+                  2        0.05388    |            .       |*      .            |
+                  3        0.02965    |            .       |*      .            |
+                  4       -0.02276    |            .       |       .            |
+                  5        0.00982    |            .       |       .            |
+
+
+                                     Partial Autocorrelations
+ 
+                Lag    Correlation    -1 9 8 7 6 5 4 3 2 1 0 1 2 3 4 5 6 7 8 9 1
+
+                  1        0.58996    |            .       |************        |
+                  2       -0.10713    |            .     **|       .            |
+                  3       -0.01524    |            .       |       .            |
+                  4        0.01430    |            .       |       .            |
+                  5       -0.01410    |            .       |       .            |
+
+
+                                          The SAS System    07:31 Wednesday, December 16, 2015   2
+
+                                       The ARIMA Procedure
+
+                                  Dickey-Fuller Unit Root Tests
+ 
+     Type           Lags         Rho    Pr < Rho        Tau    Pr < Tau          F    Pr > F
+
+     Zero Mean         0     -0.6785      0.5231      -2.89      0.0059                     
+     Single Mean       0     -7.8459      0.1767      -6.42      0.0003      28.34    0.0010
+     Trend             0    -10.3689      0.3144      -6.22      0.0003      26.10    0.0010

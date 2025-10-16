@@ -1,0 +1,50 @@
+
+R version 3.5.2 (2018-12-20) -- "Eggshell Igloo"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> (.packages(all.available=TRUE))
+ [1] "assertthat"   "BH"           "bigreadr"     "bindr"        "bindrcpp"    
+ [6] "bit"          "bit64"        "bitops"       "blob"         "caret"       
+[11] "caTools"      "CGE"          "cli"          "colorspace"   "crayon"      
+[16] "data.table"   "DBI"          "digest"       "dplyr"        "fansi"       
+[21] "foreach"      "generics"     "ggplot2"      "glue"         "gower"       
+[26] "gtable"       "iotools"      "ipred"        "iterators"    "labeling"    
+[31] "lattice"      "lava"         "lazyeval"     "lubridate"    "magrittr"    
+[36] "MASS"         "memoise"      "ModelMetrics" "munsell"      "NSE"         
+[41] "numDeriv"     "pillar"       "pkgconfig"    "plogr"        "plyr"        
+[46] "prettyunits"  "prodlim"      "purrr"        "R6"           "RColorBrewer"
+[51] "Rcpp"         "RcppRoll"     "RCurl"        "recipes"      "reshape2"    
+[56] "rlang"        "RSQLite"      "scales"       "SQUAREM"      "stringi"     
+[61] "stringr"      "tibble"       "tidyr"        "tidyselect"   "timeDate"    
+[66] "utf8"         "viridisLite"  "withr"        "base"         "boot"        
+[71] "class"        "cluster"      "codetools"    "compiler"     "datasets"    
+[76] "foreign"      "graphics"     "grDevices"    "grid"         "KernSmooth"  
+[81] "Matrix"       "methods"      "mgcv"         "nlme"         "nnet"        
+[86] "parallel"     "rpart"        "spatial"      "splines"      "stats"       
+[91] "stats4"       "survival"     "tcltk"        "tools"        "translations"
+[96] "utils"       
+> 
+> library()
+> 
+> library(bigreadr)
+Warning message:
+package 'bigreadr' was built under R version 3.5.3 
+> 
+> proc.time()
+   user  system elapsed 
+   0.39    0.12    3.07 

@@ -1,0 +1,56 @@
+1                                                     The SAS System                      16:17 Thursday, February 4, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to CNAM LICENCE CAMPUS, Site 70159246.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.29 seconds
+      cpu time            0.20 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Users\admin"'
+1        !                                                      ;
+2          
+3          data test;
+4          
+5          input sbject 1-2 gender $ 4 exam1 6-8 exam2 9-11 hw_geade $ 12;
+6          datalines;
+
+NOTE: The data set WORK.TEST has 6 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.51 seconds
+      cpu time            0.03 seconds
+      
+
+13         ;
+14         
+15         proc means data=test;
+16         run;
+
+NOTE: There were 6 observations read from the data set WORK.TEST.
+NOTE: The PROCEDURE MEANS printed page 1.
+NOTE: PROCEDURE MEANS used (Total process time):
+      real time           1.28 seconds
+      cpu time            0.06 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           2.40 seconds
+      cpu time            0.31 seconds
+      

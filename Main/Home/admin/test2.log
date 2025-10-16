@@ -1,0 +1,303 @@
+1                                                     The SAS System                      16:50 Thursday, February 4, 2021
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to CNAM LICENCE CAMPUS, Site 70159246.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.45 seconds
+      cpu time            0.17 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Users\admin"'
+1        !                                                      ;
+2          
+3          data dxiti71;
+4          input number x1-x7;
+5          cards;
+
+NOTE: The data set WORK.DXITI71 has 6 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.01 seconds
+      
+
+12         ;
+13         run;
+14         
+15         proc cluster data=dxiti71 method=ave std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+NOTE: The data set WORK.TR71 has 11 observations and 24 variables.
+NOTE: The PROCEDURE CLUSTER printed page 1.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.45 seconds
+      cpu time            0.04 seconds
+      
+
+16         proc tree data=tr71 n=2 out=tr71n horizontal graphics; title'使用类平均法的谱系聚类图'; run;
+
+NOTE: The GRAPHICS option is no longer required.  High resolution graphics is enabled by default.
+NOTE: 10929 bytes written to C:\Apache\htdocs\casper2\Main\Users\admin\sasgraph.png.
+NOTE: The data set WORK.TR71N has 6 observations and 3 variables.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           2.21 seconds
+      cpu time            0.18 seconds
+      
+
+17         proc sort data=tr71n; by cluster;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The data set WORK.TR71N has 6 observations and 3 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.21 seconds
+      cpu time            0.00 seconds
+      
+2                                                     The SAS System                      16:50 Thursday, February 4, 2021
+
+
+17       !                                   proc print; run;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.00 seconds
+      
+
+18         proc cluster data=dxiti71 method=med std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+NOTE: The data set WORK.TR71 has 11 observations and 22 variables.
+NOTE: The PROCEDURE CLUSTER printed page 3.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+19         proc tree data=tr71 horizontal graphics; title '使用中间距离法的谱系聚类图'; run;
+
+NOTE: The GRAPHICS option is no longer required.  High resolution graphics is enabled by default.
+NOTE: 9994 bytes written to C:\Apache\htdocs\casper2\Main\Users\admin\sasgraph.png.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.14 seconds
+      
+
+20         proc sort data=tr71n; by cluster;
+
+NOTE: Input data set is already sorted, no sorting done.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+20       !                                   proc print; run;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The PROCEDURE PRINT printed page 4.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+21         proc cluster data=dxiti71 method=WARD std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+NOTE: The data set WORK.TR71 has 11 observations and 24 variables.
+NOTE: The PROCEDURE CLUSTER printed page 5.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+22         proc tree data=tr71 horizontal graphics; title '使用离差平方和法的谱系聚类图'; run;
+
+NOTE: The GRAPHICS option is no longer required.  High resolution graphics is enabled by default.
+NOTE: 9493 bytes written to C:\Apache\htdocs\casper2\Main\Users\admin\sasgraph.png.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.14 seconds
+      cpu time            0.14 seconds
+      
+
+23         proc sort data=tr71n;
+24         by cluster;
+
+3                                                     The SAS System                      16:50 Thursday, February 4, 2021
+
+NOTE: Input data set is already sorted, no sorting done.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+24       !             proc print; run;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The PROCEDURE PRINT printed page 6.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+25         proc cluster data=dxiti71 method=fle std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+NOTE: The data set WORK.TR71 has 11 observations and 22 variables.
+NOTE: The PROCEDURE CLUSTER printed page 7.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+26         proc tree data=tr71 horizontal graphics; title '使用可变类平均法的谱系聚类图'; run;
+
+NOTE: The GRAPHICS option is no longer required.  High resolution graphics is enabled by default.
+NOTE: 9606 bytes written to C:\Apache\htdocs\casper2\Main\Users\admin\sasgraph.png.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.14 seconds
+      
+
+27         proc sort data=tr71n; by cluster;
+
+NOTE: Input data set is already sorted, no sorting done.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+27       !                                   proc print; run;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The PROCEDURE PRINT printed page 8.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+28         proc cluster data=dxiti71 method=cen std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+NOTE: The data set WORK.TR71 has 11 observations and 24 variables.
+NOTE: The PROCEDURE CLUSTER printed page 9.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+29         proc tree data=tr71 horizontal graphics; title '使用重心法的谱系聚类图'; run;
+
+NOTE: The GRAPHICS option is no longer required.  High resolution graphics is enabled by default.
+NOTE: 10601 bytes written to C:\Apache\htdocs\casper2\Main\Users\admin\sasgraph.png.
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.14 seconds
+4                                                     The SAS System                      16:50 Thursday, February 4, 2021
+
+      
+
+30         proc sort data=tr71n; by cluster;
+
+NOTE: Input data set is already sorted, no sorting done.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+30       !                                   proc print; run;
+
+NOTE: There were 6 observations read from the data set WORK.TR71N.
+NOTE: The PROCEDURE PRINT printed page 10.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+31         proc cluster data=dxiti71 method=den std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+ERROR: The K=, R=, or HYBRID options must be specified with METHOD=DENSITY.
+NOTE: The SAS System stopped processing this step because of errors.
+NOTE: SAS set option OBS=0 and will continue to check statements. This might cause NOTE: No observations in data set.
+WARNING: The data set WORK.TR71 may be incomplete.  When this step was stopped there were 0 observations and 23 variables.
+WARNING: Data set WORK.TR71 was not replaced because this step was stopped.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+32         proc tree data=tr71 horizontal graphics; title '使用密度估计法的谱系聚类图'; run;
+
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+33         proc sort data=tr71n; by cluster;
+
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+33       !                                   proc print; run;
+
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+34         proc cluster data=dxiti71 method=two std pseudo ccc outtree=tr71; var x1-x7; id number;
+
+ERROR: The K=, R=, or HYBRID options must be specified with METHOD=TWOSTAGE.
+NOTE: No observations in data set WORK.DXITI71.
+NOTE: The SAS System stopped processing this step because of errors.
+WARNING: The data set WORK.TR71 may be incomplete.  When this step was stopped there were 0 observations and 23 variables.
+WARNING: Data set WORK.TR71 was not replaced because this step was stopped.
+NOTE: PROCEDURE CLUSTER used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+
+5                                                     The SAS System                      16:50 Thursday, February 4, 2021
+
+35         proc tree data=tr71 horizontal graphics; title '使用两阶段密度估计法的谱系聚类图'; run;
+
+NOTE: PROCEDURE TREE used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+36         proc sort data=tr71n; by cluster;
+
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+36       !                                   proc print; run;
+
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+
+ERROR: Errors printed on page 4.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           5.20 seconds
+      cpu time            1.03 seconds
+      

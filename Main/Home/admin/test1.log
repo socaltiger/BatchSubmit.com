@@ -1,0 +1,74 @@
+1                                         The SAS System        07:31 Wednesday, December 16, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.25 seconds
+      cpu time            0.10 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          data mm;
+4          input time price @@;
+5          cards;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.MM has 23 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+10         ;
+11         
+12         *filename sasgraph '..\home\Users\admin\sasgraph.png';
+13         *goptions gsfname=sasgraph dev=png xpixels=500 ypixels=400;
+14         
+15         proc gplot data=mm;
+16         plot price*time;
+17         symbol i=spline v=star h=1 cv=red ci=green;
+18         run;
+
+NOTE: 13757 bytes written to C:\Apache\htdocs\casper2\home\Users\admin\sasgraph.png.
+
+NOTE: There were 23 observations read from the data set WORK.MM.
+NOTE: PROCEDURE GPLOT used (Total process time):
+      real time           0.69 seconds
+      cpu time            0.09 seconds
+2                                         The SAS System        07:31 Wednesday, December 16, 2015
+
+      
+
+19         proc arima data=mm;
+20         identify var=price stationarity=(adf=0);
+21         run;
+
+NOTE: The PROCEDURE ARIMA printed pages 1-2.
+NOTE: PROCEDURE ARIMA used (Total process time):
+      real time           0.08 seconds
+      cpu time            0.01 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.16 seconds
+      cpu time            0.26 seconds
+      

@@ -1,0 +1,98 @@
+1                                                     The SAS System                         06:26 Tuesday, April 11, 2017
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to COLLEGE OF ECONOMICS & TRADE GUANGDONG UNIVERSITY, Site 11204935.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.95 seconds
+      cpu time            0.12 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          proc setinit;
+4          run;
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+Original site validation data
+Site name:    'COLLEGE OF ECONOMICS & TRADE GUANGDONG UNIVERSITY'.
+Site number:  11204935.
+Expiration:   19AUG2017.
+Grace Period:  0 days (ending 19AUG2017).
+Warning Period: 30 days (ending 18SEP2017).
+System birthday:   18AUG2016.
+Operating System:   WX64_WKS.
+Product expiration dates:
+---Base SAS Software                                                                                    19AUG2017  
+---SAS/STAT                                                                                             19AUG2017  
+---SAS/GRAPH                                                                                            19AUG2017  
+---SAS/ETS                                                                                              19AUG2017  
+---SAS/FSP                                                                                              19AUG2017  
+---SAS/OR                                                                                               19AUG2017  
+---SAS/AF                                                                                               19AUG2017  
+---SAS/IML                                                                                              19AUG2017  
+---SAS/QC                                                                                               19AUG2017  
+---SAS/SHARE                                                                                            19AUG2017  
+---SAS/ASSIST                                                                                           19AUG2017  
+---SAS/CONNECT                                                                                          19AUG2017  
+---SAS/EIS                                                                                              19AUG2017  
+---SAS/SHARE*NET                                                                                        19AUG2017  
+---MDDB Server common products                                                                          19AUG2017  
+---SAS Integration Technologies                                                                         19AUG2017  
+---SAS Enterprise Guide                                                                                 19AUG2017  
+---SAS Bridge for ESRI                                                                                  19AUG2017  
+---OR OPT                                                                                               19AUG2017  
+---OR PRS                                                                                               19AUG2017  
+---OR IVS                                                                                               19AUG2017  
+---OR LSO                                                                                               19AUG2017  
+---SAS/ACCESS Interface to DB2                                                                          19AUG2017  
+---SAS/ACCESS Interface to Oracle                                                                       19AUG2017  
+2                                                     The SAS System                         06:26 Tuesday, April 11, 2017
+
+---SAS/ACCESS Interface to Sybase                                                                       19AUG2017  
+---SAS/ACCESS Interface to PC Files                                                                     19AUG2017  
+---SAS/ACCESS Interface to ODBC                                                                         19AUG2017  
+---SAS/ACCESS Interface to OLE DB                                                                       19AUG2017  
+---SAS/ACCESS Interface to Teradata                                                                     19AUG2017  
+---SAS/ACCESS Interface to Microsoft SQL Server                                                         19AUG2017  
+---SAS/ACCESS Interface to MySQL                                                                        19AUG2017  
+---SAS/IML Studio                                                                                       19AUG2017  
+---SAS Workspace Server for Local Access                                                                19AUG2017  
+---SAS/ACCESS Interface to Netezza                                                                      19AUG2017  
+---SAS/ACCESS Interface to Aster nCluster                                                               19AUG2017  
+---SAS/ACCESS Interface to Greenplum                                                                    19AUG2017  
+---SAS/ACCESS Interface to Sybase IQ                                                                    19AUG2017  
+---SAS/ACCESS to Hadoop                                                                                 19AUG2017  
+---SAS/ACCESS to Vertica                                                                                19AUG2017  
+---SAS/ACCESS to Postgres                                                                               19AUG2017  
+---SAS/ACCESS Reserved Slot 565                                                                         19AUG2017  
+---SAS/ACCESS Reserved Slot 567                                                                         19AUG2017  
+---SAS/ACCESS Reserved Slot 568                                                                         19AUG2017  
+---High Performance Suite                                                                               19AUG2017  
+---SAS/ACCESS to SAP HANA                                                                               19AUG2017  
+---PRODNUM964                                                                                           19AUG2017  
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           1.09 seconds
+      cpu time            0.12 seconds
+      

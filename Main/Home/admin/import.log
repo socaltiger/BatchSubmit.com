@@ -1,0 +1,121 @@
+1                                         The SAS System            07:32 Sunday, December 6, 2015
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.28 seconds
+      cpu time            0.07 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          libname this '.';
+NOTE: Libref THIS was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Apache\htdocs\casper2\home\Users\admin
+4          
+5          proc import out=this.slr
+6              datafile = "slr.csv"
+7              dbms = csv replace;
+8              getnames=yes;
+9          run;
+
+10          /**********************************************************************
+11          *   PRODUCT:   SAS
+12          *   VERSION:   9.4
+13          *   CREATOR:   External File Interface
+14          *   DATE:      06DEC15
+15          *   DESC:      Generated SAS Datastep Code
+16          *   TEMPLATE SOURCE:  (None Specified.)
+17          ***********************************************************************/
+18             data THIS.SLR    ;
+19             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */
+20             infile 'slr.csv' delimiter = ',' MISSOVER DSD lrecl=32767 firstobs=2 ;
+21                informat x best32. ;
+22                informat y best32. ;
+23                informat z best32. ;
+24                format x best12. ;
+25                format y best12. ;
+2                                         The SAS System            07:32 Sunday, December 6, 2015
+
+26                format z best12. ;
+27             input
+28                         x
+29                         y
+30                         z
+31             ;
+32             if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable
+32       ! */
+33             run;
+
+NOTE: The infile 'slr.csv' is:
+      Filename=C:\Apache\htdocs\casper2\home\Users\admin\slr.csv,
+      RECFM=V,LRECL=32767,File Size (bytes)=26,
+      Last Modified=27Sep2015:20:45:19,
+      Create Time=06Oct2015:16:12:16
+
+NOTE: 3 records were read from the infile 'slr.csv'.
+      The minimum record length was 5.
+      The maximum record length was 5.
+NOTE: The data set THIS.SLR has 3 observations and 3 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+3 rows created in THIS.SLR from slr.csv.
+  
+  
+  
+NOTE: THIS.SLR data set was successfully created.
+NOTE: The data set THIS.SLR has 3 observations and 3 variables.
+NOTE: PROCEDURE IMPORT used (Total process time):
+      real time           0.37 seconds
+      cpu time            0.01 seconds
+      
+
+34         
+35         proc contents data=this.slr;
+36         run;
+
+NOTE: PROCEDURE CONTENTS used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed page 1.
+
+37         
+38         proc print data=this.slr;
+39         run;
+
+NOTE: There were 3 observations read from the data set THIS.SLR.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+3                                         The SAS System            07:32 Sunday, December 6, 2015
+
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.79 seconds
+      cpu time            0.12 seconds
+      

@@ -1,0 +1,35 @@
+
+R version 2.14.0 (2011-10-31)
+Copyright (C) 2011 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: i386-pc-mingw32/i386 (32-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> x <- readline("What is the value of x?")  
+What is the value of x?
+> 
+> print(x)
+[1] ""
+> 
+> quit
+function (save = "default", status = 0, runLast = TRUE) 
+.Internal(quit(save, status, runLast))
+<bytecode: 0x05815260>
+<environment: namespace:base>
+> 
+> proc.time()
+   user  system elapsed 
+   0.18    0.00    0.26 

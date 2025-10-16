@@ -1,0 +1,19 @@
+                                          The SAS System          18:42 Monday, March 28, 2016   1
+
+                                          itemtype
+                                          ƒƒƒƒƒƒƒƒƒƒƒƒƒ
+                                          FnB          
+                                          ProGameCredit
+                                          ProOther     
+                                          The SAS System          18:42 Monday, March 28, 2016   2
+
+                                                  ProGame      ProGame
+                          FnB_          FnB_      Credit_      Credit_    ProOther_    ProOther_
+   region  player    itemcount    itemamount    itemcount   itemamount    itemcount   itemamount
+ ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ
+        1  Dick              .             .            2         2520            .            .
+        1  Jack              3           192            4          100            6          268
+        2  Jack              1           522            .            .            .            .
+        2  Mary              .             .            .            .            2           43
+        3  Jack              1            88            3         1036            .            .
+        3  Mary              1          4578            .            .            .            .

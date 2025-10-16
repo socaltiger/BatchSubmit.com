@@ -1,0 +1,44 @@
+                                          The SAS System        07:32 Sunday, December 6, 2015   1
+
+                                      The CONTENTS Procedure
+
+           Data Set Name        THIS.SLR                      Observations          3 
+           Member Type          DATA                          Variables             3 
+           Engine               V9                            Indexes               0 
+           Created              12/06/2015 07:32:46           Observation Length    24
+           Last Modified        12/06/2015 07:32:46           Deleted Observations  0 
+           Protection                                         Compressed            NO
+           Data Set Type                                      Sorted                NO
+           Label                                                                      
+           Data Representation  WINDOWS_32                                            
+           Encoding             wlatin1  Western (Windows)                            
+
+
+                                Engine/Host Dependent Information
+
+        Data Set Page Size          65536                                                 
+        Number of Data Set Pages    1                                                     
+        First Data Page             1                                                     
+        Max Obs per Page            2715                                                  
+        Obs in First Data Page      3                                                     
+        Number of Data Set Repairs  0                                                     
+        ExtendObsCounter            YES                                                   
+        Filename                    C:\Apache\htdocs\casper2\home\Users\admin\slr.sas7bdat
+        Release Created             9.0401M1                                              
+        Host Created                W32_8HOME                                             
+
+
+                           Alphabetic List of Variables and Attributes
+ 
+                       #    Variable    Type    Len    Format     Informat
+
+                       1    x           Num       8    BEST12.    BEST32. 
+                       2    y           Num       8    BEST12.    BEST32. 
+                       3    z           Num       8    BEST12.    BEST32. 
+                                          The SAS System        07:32 Sunday, December 6, 2015   2
+
+                       Obs               x               y               z
+
+                        1                1               2               3
+                        2                4               5               6
+                        3                7               8               9

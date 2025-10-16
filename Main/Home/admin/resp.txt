@@ -1,0 +1,10 @@
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2", 
+    "Host": "httpbin.org", 
+    "User-Agent": "Java/1.6.0_24"
+  }, 
+  "origin": "23.242.184.44", 
+  "url": "http://httpbin.org/get"
+}

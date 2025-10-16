@@ -1,0 +1,109 @@
+1                                                     The SAS System                         07:13 Tuesday, April 25, 2023
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to YALE UNIVERSITY - SFA - T&R, Site 70083298.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           1.39 seconds
+      cpu time            0.21 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\Main\Users\admin"'
+1        !                                                      ;
+2          
+3          proc setinit;
+4          run;
+
+NOTE: PROCEDURE SETINIT used (Total process time):
+      real time           1.06 seconds
+      cpu time            0.01 seconds
+      
+Original site validation data
+Site name:    'YALE UNIVERSITY - SFA - T&R'.
+Site number:  70083298.
+Expiration:   30JUN2023.
+Grace Period:  45 days (ending 14AUG2023).
+Warning Period: 50 days (ending 03OCT2023).
+System birthday:   08JUN2022.
+Operating System:   WX64_WKS.
+Product expiration dates:
+---Base SAS Software                                                                                    30JUN2023  
+---SAS/STAT                                                                                             30JUN2023  
+---SAS/GRAPH                                                                                            30JUN2023  
+---SAS/ETS                                                                                              30JUN2023  
+---SAS/FSP                                                                                              30JUN2023  
+---SAS/OR                                                                                               30JUN2023  
+---SAS/AF                                                                                               30JUN2023  
+---SAS/IML                                                                                              30JUN2023  
+---SAS/QC                                                                                               30JUN2023  
+---SAS/SHARE                                                                                            30JUN2023  
+---SAS/ASSIST                                                                                           30JUN2023  
+---SAS/CONNECT                                                                                          30JUN2023  
+---SAS/EIS                                                                                              30JUN2023  
+---SAS/GIS                                                                                              30JUN2023  
+---SAS/SHARE*NET                                                                                        30JUN2023  
+---SAS Enterprise Miner                                                                                 30JUN2023  
+---MDDB Server common products                                                                          30JUN2023  
+---SAS Integration Technologies                                                                         30JUN2023  
+---SAS/Secure 168-bit                                                                                   30JUN2023  
+---SAS/Secure Windows                                                                                   30JUN2023  
+---SAS/Genetics                                                                                         30JUN2023  
+---SAS Enterprise Guide                                                                                 30JUN2023  
+---SAS Bridge for ESRI                                                                                  30JUN2023  
+---OR OPT                                                                                               30JUN2023  
+2                                                     The SAS System                         07:13 Tuesday, April 25, 2023
+
+---OR PRS                                                                                               30JUN2023  
+---OR IVS                                                                                               30JUN2023  
+---OR LSO                                                                                               30JUN2023  
+---SAS/ACCESS Interface to DB2                                                                          30JUN2023  
+---SAS/ACCESS Interface to Oracle                                                                       30JUN2023  
+---SAS/ACCESS Interface to Sybase                                                                       30JUN2023  
+---SAS/ACCESS Interface to PC Files                                                                     30JUN2023  
+---SAS/ACCESS Interface to ODBC                                                                         30JUN2023  
+---SAS/ACCESS Interface to OLE DB                                                                       30JUN2023  
+---SAS/ACCESS Interface to R/3                                                                          30JUN2023  
+---SAS/ACCESS Interface to Teradata                                                                     30JUN2023  
+---SAS/ACCESS Interface to Microsoft SQL Server                                                         30JUN2023  
+---SAS/ACCESS Interface to MySQL                                                                        30JUN2023  
+---SAS Enterprise Miner for Desktop                                                                     30JUN2023  
+---SAS/IML Studio                                                                                       30JUN2023  
+---SAS Workspace Server for Local Access                                                                30JUN2023  
+---SAS/ACCESS Interface to Netezza                                                                      30JUN2023  
+---SAS/ACCESS Interface to Aster nCluster                                                               30JUN2023  
+---SAS/ACCESS Interface to Greenplum                                                                    30JUN2023  
+---SAS/ACCESS Interface to Sybase IQ                                                                    30JUN2023  
+---SAS/ACCESS to Hadoop                                                                                 30JUN2023  
+---SAS/ACCESS to Vertica                                                                                30JUN2023  
+---SAS/ACCESS to Postgres                                                                               30JUN2023  
+---SAS/ACCESS Reserved Slot 565                                                                         30JUN2023  
+---SAS/ACCESS Reserved Slot 566                                                                         30JUN2023  
+---SAS/ACCESS Reserved Slot 567                                                                         30JUN2023  
+---SAS/ACCESS Reserved Slot 568                                                                         30JUN2023  
+---High Performance Suite                                                                               30JUN2023  
+---SAS Add-in for Microsoft Excel                                                                       30JUN2023  
+---SAS/ACCESS to SAP HANA                                                                               30JUN2023  
+---PRODNUM964                                                                                           30JUN2023  
+---PRODNUM1304                                                                                          30JUN2023  
+---PRODNUM1312                                                                                          30JUN2023  
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           3.40 seconds
+      cpu time            0.24 seconds
+      

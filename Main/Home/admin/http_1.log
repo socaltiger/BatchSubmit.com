@@ -1,0 +1,38 @@
+1                                         The SAS System             15:31 Saturday, June 25, 2016
+
+NOTE: Copyright (c) 2002-2010 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.3 (TS1M2) 
+      Licensed to LICENCE GRATUITE EAS WINDOWS 64 BITS, Site 70109265.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Enhanced analytical products:
+
+SAS/STAT 12.1, SAS/ETS 12.1, SAS/OR 12.1, SAS/IML 12.1, SAS/QC 12.1
+
+NOTE: SAS initialization used:
+      real time           0.23 seconds
+      cpu time            0.06 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          filename resp 'resp.txt';
+4          
+5          proc http
+6             method="GET"
+7             url="http://httpbin.org/get"
+8             out=resp;
+9          run;
+
+NOTE: PROCEDURE HTTP used (Total process time):
+      real time           0.67 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.92 seconds
+      cpu time            0.09 seconds
+      

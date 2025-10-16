@@ -1,0 +1,186 @@
+1                                         The SAS System              18:42 Monday, March 28, 2016
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M1) 
+      Licensed to UNIVERSITY OF BIRMINGHAM, Site 51200421.
+NOTE: This session is executing on the W32_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.1
+      SAS/ETS 13.1
+      SAS/OR 13.1
+      SAS/IML 13.1
+      SAS/QC 13.1
+
+NOTE: Additional host information:
+
+ W32_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           0.20 seconds
+      cpu time            0.09 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          options mprint symbolgen;
+4          
+5          data A;
+6              length player $4 itemtype $13;
+7              input region player $ itemtype $ itemcount itemamount;
+8              cards;
+
+NOTE: The data set WORK.A has 12 observations and 5 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+21         ;
+22         run;
+23         
+24         %macro do_work;
+25         
+26             %local i next_name;
+27         
+28             %do i=1 %to %sysfunc(countw(&itlist));
+29         
+30                 %let next_name = %scan(&itlist, &i);
+31         
+32                 create table a_&next_name as
+33                     select region, player,
+34                            sum(itemcount) as &next_name._itemcount,
+2                                         The SAS System              18:42 Monday, March 28, 2016
+
+35                            sum(itemamount) as &next_name._itemamount
+36                     from a
+37                     where itemtype eq "&next_name"
+38                     group by region, player, itemtype;
+39         
+40                 create table t as
+41                     select * from b left join a_&next_name
+42                     on (b.region = a_&next_name..region and b.player eq a_&next_name..player);
+43         
+44                 drop table b;
+45         
+46                 create table b as select * from t;
+47         
+48                 drop table t;
+49         
+50             %end;
+51         
+52         %mend do_work;
+53         
+54         proc sql;
+55         
+56         select distinct itemtype into :itlist separated by ' ' from a order by itemtype;
+57         
+58         create table b as select distinct region, player from a;
+NOTE: Table WORK.B created, with 6 rows and 2 columns.
+
+59         
+60         %do_work;
+SYMBOLGEN:  Macro variable ITLIST resolves to FnB ProGameCredit ProOther
+SYMBOLGEN:  Macro variable ITLIST resolves to FnB ProGameCredit ProOther
+SYMBOLGEN:  Macro variable I resolves to 1
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+MPRINT(DO_WORK):   create table a_FnB as select region, player, sum(itemcount) as FnB_itemcount, 
+sum(itemamount) as FnB_itemamount from a where itemtype eq "FnB" group by region, player, 
+itemtype;
+NOTE: Table WORK.A_FNB created, with 4 rows and 4 columns.
+
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to FnB
+MPRINT(DO_WORK):   create table t as select * from b left join a_FnB on (b.region = a_FnB.region 
+and b.player eq a_FnB.player);
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 4 columns.
+
+MPRINT(DO_WORK):   drop table b;
+NOTE: Table WORK.B has been dropped.
+MPRINT(DO_WORK):   create table b as select * from t;
+NOTE: Table WORK.B created, with 6 rows and 4 columns.
+3                                         The SAS System              18:42 Monday, March 28, 2016
+
+
+MPRINT(DO_WORK):   drop table t;
+NOTE: Table WORK.T has been dropped.
+SYMBOLGEN:  Macro variable ITLIST resolves to FnB ProGameCredit ProOther
+SYMBOLGEN:  Macro variable I resolves to 2
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+MPRINT(DO_WORK):   create table a_ProGameCredit as select region, player, sum(itemcount) as 
+ProGameCredit_itemcount, sum(itemamount) as ProGameCredit_itemamount from a where itemtype eq 
+"ProGameCredit" group by region, player, itemtype;
+NOTE: Table WORK.A_PROGAMECREDIT created, with 3 rows and 4 columns.
+
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProGameCredit
+MPRINT(DO_WORK):   create table t as select * from b left join a_ProGameCredit on (b.region = 
+a_ProGameCredit.region and b.player eq a_ProGameCredit.player);
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 6 columns.
+
+MPRINT(DO_WORK):   drop table b;
+NOTE: Table WORK.B has been dropped.
+MPRINT(DO_WORK):   create table b as select * from t;
+NOTE: Table WORK.B created, with 6 rows and 6 columns.
+
+MPRINT(DO_WORK):   drop table t;
+NOTE: Table WORK.T has been dropped.
+SYMBOLGEN:  Macro variable ITLIST resolves to FnB ProGameCredit ProOther
+SYMBOLGEN:  Macro variable I resolves to 3
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+MPRINT(DO_WORK):   create table a_ProOther as select region, player, sum(itemcount) as 
+ProOther_itemcount, sum(itemamount) as ProOther_itemamount from a where itemtype eq "ProOther" 
+group by region, player, itemtype;
+NOTE: Table WORK.A_PROOTHER created, with 2 rows and 4 columns.
+
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+SYMBOLGEN:  Macro variable NEXT_NAME resolves to ProOther
+MPRINT(DO_WORK):   create table t as select * from b left join a_ProOther on (b.region = 
+a_ProOther.region and b.player eq a_ProOther.player);
+WARNING: Variable region already exists on file WORK.T.
+WARNING: Variable player already exists on file WORK.T.
+NOTE: Table WORK.T created, with 6 rows and 8 columns.
+
+MPRINT(DO_WORK):   drop table b;
+NOTE: Table WORK.B has been dropped.
+MPRINT(DO_WORK):   create table b as select * from t;
+4                                         The SAS System              18:42 Monday, March 28, 2016
+
+NOTE: Table WORK.B created, with 6 rows and 8 columns.
+
+MPRINT(DO_WORK):   drop table t;
+NOTE: Table WORK.T has been dropped.
+61         
+62         select * from b;
+63         
+64         quit;
+NOTE: The PROCEDURE SQL printed pages 1-2.
+NOTE: PROCEDURE SQL used (Total process time):
+      real time           0.07 seconds
+      cpu time            0.07 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.34 seconds
+      cpu time            0.18 seconds
+      

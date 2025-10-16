@@ -1,0 +1,98 @@
+1                                                     The SAS System                     07:15 Thursday, December 20, 2018
+
+NOTE: Copyright (c) 2002-2012 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M2 MBCS3170) 
+      Licensed to NATIONAL PINGTUNG UNI OF SCIENCE&TECH, Site 12001462.
+NOTE: This session is executing on the X64_8HOME  platform.
+
+
+
+NOTE: Updated analytical products:
+      
+      SAS/STAT 13.2
+      SAS/ETS 13.2
+      SAS/OR 13.2
+      SAS/IML 13.2
+      SAS/QC 13.2
+
+NOTE: Additional host information:
+
+ X64_8HOME WIN 6.2.9200  Workstation
+
+NOTE: SAS initialization used:
+      real time           3.03 seconds
+      cpu time            0.13 seconds
+      
+1          x 'chdir "C:\Apache\htdocs\casper2\home\Users\admin"'
+1        !                                                      ;
+2          
+3          options mprint symbolgen;
+4          
+5          %macro create (name, number);
+6          %do n=1 %to &number;
+7                &name.&n
+8          %end;
+9          %mend create;
+10         data %create(abc,3);
+SYMBOLGEN:  Macro variable NUMBER resolves to 3
+SYMBOLGEN:  Macro variable NAME resolves to abc
+SYMBOLGEN:  Macro variable N resolves to 1
+SYMBOLGEN:  Macro variable NAME resolves to abc
+SYMBOLGEN:  Macro variable N resolves to 2
+SYMBOLGEN:  Macro variable NAME resolves to abc
+SYMBOLGEN:  Macro variable N resolves to 3
+MPRINT(CREATE):   abc1 abc2
+MPRINT(CREATE):   abc3
+11         input a@@;
+12         if a=1 then output abc1;
+13         else if a=2 then output abc2;
+14         else if a=3 then output abc3;
+15         cards;
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a line.
+NOTE: The data set WORK.ABC1 has 1 observations and 1 variables.
+NOTE: The data set WORK.ABC2 has 1 observations and 1 variables.
+NOTE: The data set WORK.ABC3 has 1 observations and 1 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.46 seconds
+      cpu time            0.01 seconds
+      
+
+17         ;
+18         proc print data=abc1;
+19         run;
+
+NOTE: There were 1 observations read from the data set WORK.ABC1.
+NOTE: The PROCEDURE PRINT printed page 1.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.35 seconds
+2                                                     The SAS System                     07:15 Thursday, December 20, 2018
+
+      cpu time            0.01 seconds
+      
+
+20         proc print data=abc2;
+21         run;
+
+NOTE: There were 1 observations read from the data set WORK.ABC2.
+NOTE: The PROCEDURE PRINT printed page 2.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+22         proc print data=abc3;
+23         run;
+
+NOTE: There were 1 observations read from the data set WORK.ABC3.
+NOTE: The PROCEDURE PRINT printed page 3.
+NOTE: PROCEDURE PRINT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           4.68 seconds
+      cpu time            0.18 seconds
+      
