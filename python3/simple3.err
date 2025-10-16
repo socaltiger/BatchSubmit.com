@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Apache\htdocs\casper2\Main\Users\admin\python\.simple3.py", line 10, in <module>
+    x = input()
+EOFError: EOF when reading a line

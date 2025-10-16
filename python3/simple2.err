@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "C:\Apache\htdocs\casper2\Main\Users\admin\python\.simple2.py", line 11, in <module>
+    os.chroot(".")
+AttributeError: module 'os' has no attribute 'chroot'
