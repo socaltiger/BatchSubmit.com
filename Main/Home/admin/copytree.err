@@ -1,6 +1,0 @@
-Your code contains statements that may cause harm to the server, the task has been aborted.
-
-Details:
-
-from distutils.dir_util import copy_tree
-copy_tree(fromDirectory, toDirectory)
