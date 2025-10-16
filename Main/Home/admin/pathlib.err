@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "C:\Apache\htdocs\casper2\Main\Users\admin\.pathlib.py", line 9, in <module>
-    from pathlib import Path
-  File "C:\Apache\htdocs\casper2\Main\Users\admin\pathlib.py", line 1, in <module>
-    from pathlib import Path
-ImportError: cannot import name 'Path' from 'pathlib' (C:\Apache\htdocs\casper2\Main\Users\admin\pathlib.py)
