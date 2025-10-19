@@ -27,6 +27,13 @@ main entrance: main2.cgi
 
 admin username/password: admin/bs2018
 
+System Requirements: 
+
+OS: Windows or Linux
+Web server: Apache
+Scripting language: Perl 5
+Software Packahes: SAS(optional), R, Python
+
 With BatchSubmit.com, you can:<p>
 
 obtain similar functionalities as AWS Batch/AWS Step Functions, Google Cloud Workflows/Cloud Tasks, Azure batch, IBM Cloud Schematics/DataStage<p>
