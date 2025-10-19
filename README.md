@@ -32,7 +32,7 @@ System Requirements:
 OS: Windows or Linux<br>
 Web server: Apache<br>
 Scripting language: Perl 5<br>
-Software Packahes: SAS(optional), R, Python<br>
+Software Packages: SAS(optional), R, Python<br>
 
 With BatchSubmit.com, you can:<p>
 
