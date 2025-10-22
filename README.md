@@ -34,7 +34,7 @@ Web server: Apache<br>
 Scripting language: Perl 5<br>
 Software Packages: SAS(optional), R, Python<br>
 
-a little hint: install Apache sever on: C:\Apache directory if you are running Windows OS.
+a little tip: install Apache sever on: "C:\Apache" directory if you are running Windows OS.
 
 With BatchSubmit.com, you can:<p>
 
