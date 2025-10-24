@@ -152,7 +152,7 @@ sub main_page {
 
 	print "<tr><td align=left colspan=2>\n";
 	
-	print "<iframe width=100% scrolling=\"auto\" frameborder=\"0\" src=\"http://batchsubmit.com/casper2/help.html\"></iframe>\n";
+	print "<iframe width=100% scrolling=\"auto\" frameborder=\"0\" src=\"help.html\"></iframe>\n";
 
 	print "</td></tr>\n";
 
@@ -169,6 +169,7 @@ sub main_page {
 
 	print "</body></html>\n";
 }
+
 
 
 
