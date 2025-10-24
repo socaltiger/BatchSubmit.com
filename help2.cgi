@@ -148,7 +148,7 @@ sub main_page {
 	print "<tr><td align=left colspan=2><br>\n";
 	
 	
-	print "<iframe width=\"100%\" height=\"600\" scrolling=\"auto\" frameborder=\"0\" src=\"http://BatchSubmit.com/casper2/help.html\"></iframe>\n";
+	print "<iframe width=\"100%\" height=\"600\" scrolling=\"auto\" frameborder=\"0\" src=\"help.html\"></iframe>\n";
 
 	print "</td></tr>\n";
 
@@ -165,6 +165,7 @@ sub main_page {
 
 	print "</body></html>\n";
 }
+
 
 
 
