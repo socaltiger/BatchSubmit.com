@@ -262,7 +262,7 @@ sub main_page {
       		print "           <TR><TD colspan=2 align=center><font face=\"Courier\">username:</font> <INPUT TYPE=\"TEXT\" NAME=\"USER\" VALUE=\"$user\" SIZE=12><BR>\n";
       		print "           <font face=\"Courier\">password:</font> <INPUT TYPE=\"PASSWORD\" NAME=\"PASS\" VALUE=\"\" SIZE=12></TD></TR>\n";
       		print "           <TR><TD colspan=2 align=center><INPUT TYPE=\"submit\" name=\"action\" value=\"Login\"></TD></TR>\n";
-      		print "           <TR><TD colspan=2 align=center><a href=\"http://batchsubmit.com/casper2/rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";			
+      		print "           <TR><TD colspan=2 align=center><a href=\"rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";			
       }
       elsif ($FORM{"action"} eq "Login" || $FORM{"action"} eq "Take a Tour") {
 	   if ($loginsuccess eq 'Y') {
@@ -274,7 +274,7 @@ sub main_page {
       		print "           <TR><TD colspan=2 align=center>login failed, try again!<br><br><font face=\"Courier\">username:</font> <INPUT TYPE=\"TEXT\" NAME=\"USER\" VALUE=\"$user\" SIZE=12><BR>\n";
       		print "           <font face=\"Courier\">password:</font> <INPUT TYPE=\"PASSWORD\" NAME=\"PASS\" VALUE=\"\" SIZE=12></TD></TR>\n";
       		print "           <TR><TD colspan=2 align=center><INPUT TYPE=\"submit\" name=\"action\" value=\"Login\"></TD></TR>\n";
-      		print "           <TR><TD colspan=2 align=center><a href=\"http://batchsubmit.com/casper2/rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";				
+      		print "           <TR><TD colspan=2 align=center><a href=\"rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";				
 	   }
       }
       elsif ($usrid eq "") {
@@ -282,7 +282,7 @@ sub main_page {
       		print "           <TR><TD colspan=2 align=center><font face=\"Courier\">username:</font> <INPUT TYPE=\"TEXT\" NAME=\"USER\" VALUE=\"$user\" SIZE=12><BR>\n";
       		print "           <font face=\"Courier\">password:</font> <INPUT TYPE=\"PASSWORD\" NAME=\"PASS\" VALUE=\"\" SIZE=12></TD></TR>\n";
       		print "           <TR><TD colspan=2 align=center><INPUT TYPE=\"submit\" name=\"action\" value=\"Login\"></TD></TR>\n";
-      		print "           <TR><TD colspan=2 align=center><a href=\"http://batchsubmit.com/casper2/rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";				
+      		print "           <TR><TD colspan=2 align=center><a href=\"rgst2.cgi?task=newuser\">sign up new account</a></TD></TR>\n";				
       }
       else {
       		print "           <TR><TD colspan=2 align=left><img src=\"image/user.png\" border=0> User: $usrid</TD></TR>\n";
@@ -672,5 +672,6 @@ sub main_page {
 
 	print "</body></html>\n";
 }
+
 
 
