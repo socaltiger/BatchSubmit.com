@@ -365,7 +365,7 @@ sub main_page {
 				unlink("pswd2.flg") || die $!;
 				
 				print "<tr><td>success!<p>username: $user<br>password: $pass<br>useremail: $email<br></td></tr>\n";
-				print "<tr><td>now go to <a href=\"http://batchsubmit.com/casper2/main2.cgi\">main page</a> to logon for the first time.</td></tr>\n";			
+				print "<tr><td>now go to <a href=\"main2.pl\">main page</a> to logon for the first time.</td></tr>\n";			
 			}
 		}
 		
@@ -384,7 +384,3 @@ sub main_page {
 	print "</body></html>\n";
    }
 }
-
-
-
-
