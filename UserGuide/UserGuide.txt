@@ -41,8 +41,6 @@ SAS is installed on the application server along with connectivity components th
 
 A daemon, Cspr, runs on the server nonstop, checking for the existence of the task file created by the Exec module on the web server side. If the task file does not exist, which means no task has been submitted, it goes back to sleep for a short period of time (usually from a fraction of a second to a few seconds, to reduce CPU load), then wakes up and checks again. When it detects the existence of the task file, it will read its contents, then execute the command to run the SAS program. The SAS program, includes the temporary parm file created by Exec. The SAS program performs its designated duty and creates a log file and output files. When the SAS program is completed, it deletes the task file and temp parm file and the process starts over again.
 
-
-
 A SIMPLE EXAMPLE
 
 In the following example, we will explain how BatchSubmit is used.
@@ -122,6 +120,14 @@ UserGuide5.png
 
 When finished, click logout and return to the first screen.
 
+
+CRON JOB
+
+Cron job setup is intergated in the system because .par file carries the parameters, cron job simply scan the folders to find all the tasks scheduled for execution, it's as simple as filling out the date.
+
+UserGuide6.png
+
+
 CONCLUSION
 
 This application has successfully demonstrated both its flexibly and capability in building web front ends for existing SAS programs that have been developed in a conventional SAS environment. Using the technologies described in this paper enables non-programmers to execute SAS programs in their everyday work. It also makes the work of managing SAS programs more intuitive and less stressful. Although desirable, CGI (Perl) and html knowledge is not required for SAS programmers to build the web front ends for their SAS programs in CASPER.
@@ -129,6 +135,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
