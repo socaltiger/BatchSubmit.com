@@ -128,6 +128,11 @@ Cron job setup is intergated in the system because .par file carries the paramet
 UserGuide6.png
 
 
+DAEMON
+
+A daemon, cspr.pl, runs nonstop in the background, monitoring the task queue, when detecting a new task, fetch the parameters, execute the task, remove completed task from the queue.
+
+
 CONCLUSION
 
 This application has successfully demonstrated both its flexibly and capability in building web front ends for existing SAS programs that have been developed in a conventional SAS environment. Using the technologies described in this paper enables non-programmers to execute SAS programs in their everyday work. It also makes the work of managing SAS programs more intuitive and less stressful. Although desirable, CGI (Perl) and html knowledge is not required for SAS programmers to build the web front ends for their SAS programs in CASPER.
@@ -135,6 +140,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
