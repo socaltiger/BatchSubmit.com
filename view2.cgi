@@ -311,7 +311,7 @@ sub main_page {
 	else {
 #	  if (($filename =~ /\.htm$/i || $filename =~ /\.html$/i || $filename =~ /\.php$/i) && $action ne "editfile") {
 	  if (($filename =~ /\.htm$/i || $filename =~ /\.html$/i) && $action ne "editfile") {	
-		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><iframe width=\"100%\" height=\"600\" scrolling=\"auto\" frameborder=\"0\" src=\"http://batchsubmit.com/casper2/Main$curdir/$filename\"></iframe></td></tr>\n";
+		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><iframe width=\"100%\" height=\"600\" scrolling=\"auto\" frameborder=\"0\" src=\"Main$curdir/$filename\"></iframe></td></tr>\n";
 
 		print "       </table>\n";
 		print "</Table><br>\n";
@@ -635,6 +635,7 @@ sub main_page {
 	}  
   }
 }
+
 
 
 
