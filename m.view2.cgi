@@ -325,7 +325,7 @@ sub main_page {
 	  }
 	  elsif ($filename =~ /\.pdf$/i) {
 	
-		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><iframe width=100% scrolling=\"auto\" frameborder=\"0\" src=\"http://batchsubmit.com/casper2/Main$curdir/$filename\"></iframe></td></tr>\n";
+		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><iframe width=100% scrolling=\"auto\" frameborder=\"0\" src=\"Main$curdir/$filename\"></iframe></td></tr>\n";
 
 		print "       </table>\n";
 		print "</Table><br>\n";
@@ -338,7 +338,7 @@ sub main_page {
 	  }	  
 	  elsif ($filename =~ /\.jpg$/i || $filename =~ /\.jpeg$/i || $filename =~ /\.png$/i || $filename =~ /\.gif$/i) {
 	
-		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><img src=\"http://batchsubmit.com/casper2/Main$curdir/$filename\"></td></tr>\n";
+		print "<tr bgcolor=eedad1><tr><td colspan=4 align=center><img src=\"Main$curdir/$filename\"></td></tr>\n";
 
 		print "       </table>\n";
 		print "</Table><br>\n";
@@ -636,6 +636,7 @@ sub main_page {
 	}
   }
 }
+
 
 
 
