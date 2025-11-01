@@ -99,7 +99,7 @@ UserGuide2.png
 
 input.par looks like this:
 
- 1|<img src="http://batchsubmit.com/casper2/Main/Examples/SAS/Input/Rectangularprism2.png"><p><b>/Main/Examples/SAS/Input/volume.sas: calculate volume</b>|hidden|program|/Main/Examples/SAS/Input/volume.sas||<P>|
+ 1|<img src="http://batchsubmit.com/Main/Examples/SAS/Input/Rectangularprism2.png"><p><b>/Main/Examples/SAS/Input/volume.sas: calculate volume</b>|hidden|program|/Main/Examples/SAS/Input/volume.sas||<P>|
  2|l: |select|parm1|#6:7:8||<BR>|
  3|b: |radio|parm2|8:9:#10||<BR>|
  4|h: |text|parm3|2|5|<P>|
@@ -142,6 +142,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
