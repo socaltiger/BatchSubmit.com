@@ -87,7 +87,7 @@ The included parm.sas file which contains the assignment for the macro variables
 %let parm2 = 8;
 %let parm3 = 10;
 
-Second, we make a parameter file named simple_ex01.par, and deploy it in the directory accessible from the web. This file contains all the information needed to construct the web front end (text fields, checkboxes, pull down selections, etc.), as well as stores the parameter values the user enters from the web. A tool is currently being developed to enable the user to create this file by filling out and submit a web form instead of making it manually.
+Second, we make a parameter file named input.par, and deploy it in the directory accessible from the web. This file contains all the information needed to construct the web front end (text fields, checkboxes, pull down selections, etc.), as well as stores the parameter values the user enters from the web. A tool is currently being developed to enable the user to create this file by filling out and submit a web form instead of making it manually.
 
 That's it! Now the program has become a web application.
 
@@ -142,6 +142,7 @@ This application has successfully demonstrated both its flexibly and capability 
 SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of SAS Institute Inc. in the USA and other countries. (r) indicates USA registration.
 
 Other brand and product names are trademarks of their respective companies.
+
 
 
 
