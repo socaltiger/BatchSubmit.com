@@ -1,5 +1,7 @@
 It's a lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a Task as Service/Job as Service solution<p>
 
+Seeking strategic partners for scaling (VC inquiries welcome).<p>
+
 Our mission:<p>
 
 To liberate program execution from the hands of programmers, and turn it into a empowering tool for ordinary users.<p>
