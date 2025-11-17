@@ -2,6 +2,8 @@ It's a lightweight open source Distributed Asynchronous Job Submitting/Schedulin
 
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
+<a href="UserGuide/BatchSubmit.com (Demo).mp4"></a><p>
+
 Our mission:<p>
 
 To liberate program execution from the hands of programmers, and turn it into a empowering tool for ordinary users.<p>
