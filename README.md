@@ -1,4 +1,6 @@
-A lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a true Task as Service solution<p>
+BatchSubmit is a lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a true Task as Service solution<p>
+
+It rethinks software not as applications, but as executable tasks — invoked directly, parameterized, which creates it own UI on the fly.
 
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
