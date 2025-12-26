@@ -4,6 +4,8 @@ It rethinks software not as applications, but as executable tasks — invoked di
 
 The application is divided into numerous separate tasks, each carry it's own parameters, ready for execution.<p> 
 
+The fundamental flaw of traditional software is not complexity, but amnesia. Every launch begins with a blank parameter screen, forgetting the user’s last intent. BatchSubmit starts where work actually begins: a task that already knows how to run.<p>
+
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
 Our mission:<p>
