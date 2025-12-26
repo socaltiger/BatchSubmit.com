@@ -2,7 +2,7 @@ BatchSubmit is a lightweight open source Distributed Asynchronous Job Submitting
 
 It rethinks software not as applications, but as executable tasks — invoked directly, parameterized, and render its own UI on the fly.<p>
 
-It divides the application into numerous separate tasks, each carry it's own parameters, ready for execution.<p> 
+The application is divided into numerous separate tasks, each carry it's own parameters, ready for execution.<p> 
 
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
