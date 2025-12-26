@@ -1,4 +1,4 @@
-A lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a Task as Service solution<p>
+A lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a true Task as Service solution<p>
 
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
