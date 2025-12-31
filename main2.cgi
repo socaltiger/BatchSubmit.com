@@ -245,7 +245,7 @@ sub main_page {
       print "<table cellspacing=0 cellpadding=0 width=100% border=0>\n";
       print "  <tr><td bgcolor=white align=center background=\"image/cloud.jpg\"><br><br>\n";
       print "  <h1>BatchSubmit.com (Beta)</h1>\n";
-      print "  <h2>Cloud Computing for SAS, R and Python Scripts</h2><br></td></tr>\n";
+      print "  <h2>Task Web Operating System for SAS, R and Python Scripts</h2><br></td></tr>\n";
 	  print "</table><br>\n";
 	  
       print "<Table cellSpacing=0 cellPadding=0 width=100% border=0>\n";
@@ -672,6 +672,7 @@ sub main_page {
 
 	print "</body></html>\n";
 }
+
 
 
 
