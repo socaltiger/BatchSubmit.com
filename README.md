@@ -8,6 +8,8 @@ The application is divided into numerous separate tasks, each carry it's own par
 
 While complex programs may be too demanding for mobile browsers and often require dedicated apps, the task-web paradigm significantly simplifies the user interface, potentially eliminating the need to build mobile apps altogether.<p>
 
+The CRON capability is seamlessly integrated into the system.<p>
+
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
 Our mission:<p>
