@@ -73,3 +73,6 @@ The core technology works — now the next step is helping more people see its v
 
 If you’re interested in joining as a collaborator (UX, documentation, community, or outreach),  
 please reach out via GitHub Issues or email: omnitiger@gmail.com .
+
+## Contribution by Sana
+Added a small improvement to the README file for learning open source contribution.
