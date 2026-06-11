@@ -1,0 +1,21 @@
+                                                     Member Profile                                                     
+                                        Salaries and Number of Member Engineers                                         
+
+PROC GPLOT Output
+Data: jobs
+
+Variables: eng, dollars, num
+
+       eng     dollars         num
+----------  ----------  ----------
+     Civil       27308       73273
+      Aero       29844       70192
+      Elec       22920       89382
+      Mech       32816       19601
+      Chem       28116       25541
+     Petro       18444       34833
+
+dollars: N=6, Min=18444, Max=32816, Mean=26574.6667, Sum=159448
+num: N=6, Min=19601, Max=89382, Mean=52137.0000, Sum=312822
+
+GPLBUBL1

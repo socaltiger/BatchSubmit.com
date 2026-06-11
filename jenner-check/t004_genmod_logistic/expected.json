@@ -1,0 +1,18 @@
+{
+  "_captured_at": "2026-06-11T17:58:18.221671+00:00",
+  "_captured_run_id": "r_019eb7d59fea735195871a28e16aed82",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Output dataset predict written with 4 observations.",
+    "PROC PRINT completed: 4 observations printed"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

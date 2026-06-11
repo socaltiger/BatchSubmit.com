@@ -1,0 +1,8 @@
+{
+  "bundle": "t006_macro_nested",
+  "source_file": "Main/Home/guest/20160407/macrovar.sas",
+  "source_blob_sha": "daeda6e56b8216da2a31275dd12bd837341c66ff",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "Nested macro-variable resolution exercise (1 to 8 ampersands). Output matches SAS rescan rule exactly: b,b,c,b,c,c,d,b. Script unmodified."
+}

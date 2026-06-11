@@ -1,0 +1,8 @@
+{
+  "bundle": "t008_means_column_input",
+  "source_file": "Main/Home/admin/test3.sas",
+  "source_blob_sha": "513b4d2f223637b419cb1ded5f0608e3cc8b7ecf",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "Column-style INPUT (fixed positions) + PROC MEANS over exam scores. Script unmodified; inline DATALINES."
+}

@@ -1,0 +1,8 @@
+{
+  "bundle": "t007_gplot_bubble",
+  "source_file": "Main/Examples/SAS/SASGraph/gplot.sas",
+  "source_blob_sha": "49288d69f9cf3f574eb480d3e52fa08ea7a163d5",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "PROC GPLOT bubble chart (engineer salaries x discipline sized by member count) with PNG via goptions. Script unmodified; renders PNG+SVG."
+}

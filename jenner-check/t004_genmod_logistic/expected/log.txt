@@ -1,0 +1,43 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA aids
+
+NOTE: Processing inline DATALINES (1 lines)
+
+NOTE: Read 4 rows from DATALINES.
+NOTE: Wrote aids (4 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC GENMOD data=
+
+NOTE: PROC GENMOD using R wrapper
+NOTE: 
+NOTE: Response Variable: Y
+NOTE: Distribution: BINOMIAL
+NOTE: Link Function: LOGIT
+NOTE: Number of Observations: 4
+NOTE:   Model fitted successfully with 4 observations
+NOTE: ODS plot written: genmod_residuals_vs_predicted.spec.json
+NOTE: ODS plot written: genmod_residual_histogram_panel.spec.json
+NOTE: ODS plot written: genmod_residuals_vs_obs_order.spec.json
+NOTE: ODS plot written: genmod_qq_plot.spec.json
+NOTE: PROC GENMOD ODS Graphics generated.
+NOTE: PROC LOGISTIC data=
+
+NOTE: Using Python statsmodels.api.Logit version 0.14.6
+NOTE: Output dataset predict written with 4 observations.
+NOTE: ODS plot written: logistic_oddsratio.spec.json
+NOTE: ODS plot written: logistic_roc.spec.json
+NOTE: PROC LOGISTIC ODS Graphics generated.
+NOTE: PROC LOGISTIC completed. Results written to: ./ods_output/logistic_results.spec.json
+NOTE: PROC PRINT data=predict
+
+NOTE: PROC PRINT completed: 4 observations printed, 7 variables
+NOTE: PROC LOGISTIC data=
+
+NOTE: Using Python statsmodels.api.Logit version 0.14.6
+NOTE: PROC LOGISTIC ODS Graphics generated.
+NOTE: PROC LOGISTIC completed. Results written to: ./ods_output/logistic_results.spec.json

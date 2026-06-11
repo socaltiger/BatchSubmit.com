@@ -1,0 +1,30 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA divorce
+
+NOTE: Processing inline DATALINES (8 lines)
+
+NOTE: Read 8 rows from DATALINES.
+NOTE: Wrote divorce (8 rows, 10 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC DISTANCE data=divorce method=Djaccard
+
+NOTE: PROC DISTANCE: 8 observations, 9 variables, method=Djaccard
+NOTE: PROC PRINT data=distjacc
+
+NOTE: PROC PRINT completed: 8 observations printed, 9 variables
+NOTE: PROC CLUSTER data=distjacc method=Average
+
+NOTE: Input detected as distance matrix (TYPE=DISTANCE)
+NOTE: Using native Rust for hierarchical clustering
+NOTE: ODS plot written: cluster_dendrogram.spec.json
+NOTE: PROC CLUSTER ODS Graphics generated.
+NOTE: PROC CLUSTER: 8 observations, 0 variables clustered using Average method
+NOTE: PROC TREE data=tree
+
+NOTE: PROC TREE dendrogram SVG generated.
+NOTE: PROC TREE: Extracted 7 clusters using Python/scipy

@@ -1,0 +1,8 @@
+{
+  "bundle": "t004_genmod_logistic",
+  "source_file": "Main/Examples/SAS/SASStat/table11.sas",
+  "source_blob_sha": "093ad07bb1a0019ac7cb6d7f3968e7a394586bfe",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "AZT/AIDS events-trials example: PROC GENMOD binomial logit + PROC LOGISTIC with CLASS reference coding, predicted-probability output dataset. Script unmodified; inline DATALINES."
+}

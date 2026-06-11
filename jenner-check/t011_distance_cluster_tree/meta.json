@@ -1,0 +1,8 @@
+{
+  "bundle": "t011_distance_cluster_tree",
+  "source_file": "Main/Examples/SAS/SASStat/table38.sas",
+  "source_blob_sha": "9b83026a1d746d9e283497253ec3a563eb728eb5",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "Grounds-for-divorce example: PROC DISTANCE (Jaccard, anominal) -> PROC CLUSTER (average linkage) -> PROC TREE (7 clusters). Script unmodified."
+}

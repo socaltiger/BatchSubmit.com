@@ -1,0 +1,18 @@
+{
+  "_captured_at": "2026-06-11T17:58:25.197225+00:00",
+  "_captured_run_id": "r_019eb7d5d4a47523b7948aee9bb6a780",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Wrote jobs (6 rows, 3 columns).",
+    "NOTE: ODS plot written: gplot_basic.spec.json"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}
