@@ -1,0 +1,125 @@
+      The GENMOD Procedure      
+       Model Information        
+
+Item                       Value
+----------------------  --------
+Response Variable              Y
+Distribution            binomial
+Link Function              logit
+Number of Observations         4
+
+   Analysis of Maximum Likelihood Parameter Estimates   
+
+Parameter    Estimate  Std Error  Chi-Square  Pr > ChiSq
+-----------  --------  ---------  ----------  ----------
+(Intercept)   -1.0736     0.2629     16.6705      <.0001
+AZTYes        -0.7195     0.2790      6.6507      0.0099
+RACEWhite      0.0555     0.2886      0.0370      0.8476
+
+Criteria for Assessing Goodness of Fit
+
+Criterion          Value
+--------------  --------
+Deviance          1.3835
+Log Likelihood   -9.4299
+AIC              24.8598
+BIC              23.0187
+
+  Likelihood Ratio Confidence Intervals  
+
+Parameter    Estimate     Lower     Upper
+-----------  --------  --------  --------
+(Intercept)   -1.0736   -1.6088   -0.5735
+AZTYes        -0.7195   -1.2773   -0.1799
+RACEWhite      0.0555   -0.5023    0.6334
+
+    LR Statistics For Type 3 Analysis     
+
+Source          DF  Chi-Square  Pr > ChiSq
+--------  --------  ----------  ----------
+AZT              1      6.8709           .
+RACE             1      0.0371           .
+
+                              Observation Statistics                              
+
+     Obs  Predicted   Std Err     Lower     Upper  Resid Raw  Resid Chi  Resid Dev
+--------  ---------  --------  --------  --------  ---------  ---------  ---------
+       1     0.1496    0.2404   -0.3215    0.6208    -0.0188    -0.5447    -0.5547
+       2     0.2654    0.1985   -0.1237    0.6545     0.0178     0.4282     0.4253
+       3     0.1427    0.2844   -0.4146    0.7001     0.0319     0.7239     0.7035
+       4     0.2547    0.2629   -0.2606    0.7701    -0.0365    -0.6220    -0.6326
+                                     
+---------------------------  --------
+Number of Observations Read         4
+Number of Observations Used         4
+
+            Response Profile            
+      Probability modeled is y='1'      
+
+Ordered Value  y         Total Frequency
+-------------  --------  ---------------
+            1  0                     269
+            2  1                      69
+
+    Class Level Information    
+
+Class       Levels  Values     
+--------  --------  -----------
+race             2  Black White
+azt              2  No Yes     
+
+                                             
+---------------------------------------------
+Convergence criterion (GCONV=1E-8) satisfied.
+
+The LOGISTIC Procedure
+Response Variable: y
+
+Criterion     Value
+---------  --------
+AIC         341.151
+-2 Log L    335.151
+SC          352.620
+
+              Analysis of Maximum Likelihood Estimates               
+
+Parameter        DF  Estimate  Standard Error  Chi-Square  Pr > ChiSq
+---------  --------  --------  --------------  ----------  ----------
+Intercept         1   -1.7375          0.2404     52.2469      <.0001
+azt               1    0.7195          0.2790      6.6507      0.0099
+race              1   -0.0555          0.2886      0.0370      0.8476
+
+Profile Likelihood Confidence Interval for Parameters
+
+Parameter  95% PL CL Lower  95% PL CL Upper
+---------  ---------------  ---------------
+Intercept          -2.2318          -1.2860
+azt                 0.1799           1.2773
+race               -0.6334           0.5023
+
+  Deviance and Pearson Goodness-of-Fit Statistics  
+
+Criterion     Value        DF  Value/DF  Pr > ChiSq
+---------  --------  --------  --------  ----------
+Deviance     1.3835         1    1.3835      0.2395
+Pearson      1.3910         1    1.3910      0.2382
+
+                     Odds Ratio Estimates                     
+
+Effect    Point Estimate  95% Wald CL Lower  95% Wald CL Upper
+--------  --------------  -----------------  -----------------
+azt                2.053              1.188              3.548
+race               0.946              0.537              1.666
+
+
+  Obs   RACE  AZT   Y    N    PI_HAT  LOWER  UPPER
+-----  -----  ---  --  ---  --------  -----  -----
+    1  White  Yes  14  107  0.149625      .      .
+    2  White  No   32  113    0.2654      .      .
+    3  Black  Yes  11   63  0.142701      .      .
+    4  Black  No   12   55  0.254724      .      .
+
+                                             
+---------------------------------------------
+Convergence criterion (GCONV=1E-8) satisfied.
+

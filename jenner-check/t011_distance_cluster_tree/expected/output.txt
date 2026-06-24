@@ -1,0 +1,51 @@
+
+  Obs         _NAME_    CALIFORNIA       FLORIDA  ILLINOIS  MASSACHUSETTS      MICHIGAN       NEWYORK         TEXAS    WASHINGTON
+-----  -------------  ------------  ------------  --------  -------------  ------------  ------------  ------------  ------------
+    1  California                0             0         1   0.8888888889           0.5             1  0.6666666667  0.6666666667
+    2  Florida                   0             0         1   0.8888888889           0.5             1  0.6666666667  0.6666666667
+    3  Illinois                  1             1         0          0.375             1           0.5         0.625             1
+    4  Massachusetts  0.8888888889  0.8888888889     0.375              0         0.875           0.5  0.4444444444          0.75
+    5  Michigan                0.5           0.5         1          0.875             0             1  0.8333333333           0.5
+    6  NewYork                   1             1       0.5            0.5             1             0  0.3333333333           0.8
+    7  Texas          0.6666666667  0.6666666667     0.625   0.4444444444  0.8333333333  0.3333333333             0  0.6666666667
+    8  Washington     0.6666666667  0.6666666667         1           0.75           0.5           0.8  0.6666666667             0
+
+                                                 The CLUSTER Procedure
+                                            Average Linkage Cluster Analysis
+
+                                          Eigenvalues of the Covariance Matrix
+
+                                                    Cluster History
+
+   NCL    --------Clusters Joined--------    FREQ    SPRSQ      RSQ    Distance
+
+     7    Californ          Florida         2    0.0000    1.0000          0
+     6    NewYork           Texas           2    0.0286    0.9714        0.3
+     5    Illinois          Massachu        2    0.0362    0.9353        0.4
+     4    Michigan          Washingt        2    0.0643    0.8710        0.5
+     3    CL6               CL5             4    0.1075    0.7634        0.5
+     2    CL7               CL4             4    0.1464    0.6170        0.6
+     1    CL3               CL2             8    0.6170    0.0000        0.9
+
+
+                                  Cluster Dendrogram
+
+NewYork        .--------------------X           X                      X
+                                    X-----------X                      |
+Texas          .--------------------X           |                      |
+                                                X----------------------X
+Illinois       .-----------------------X        |                      |
+                                       X--------X                      |
+Massachusetts  .-----------------------X        X                      |
+                                                                       |
+California     X                                    X                  |
+               X------------------------------------X                  |
+Florida        X                                    |                  |
+                                                    X------------------X
+Michigan       .-------------------------------X    |                  |
+                                               X----X                  |
+Washington     .-------------------------------X    X                  X
+
+               |    .    |    .    |    .    |    .    |    .    |    .|
+               0                                                  0.8773
+                                    Merge Distance                      

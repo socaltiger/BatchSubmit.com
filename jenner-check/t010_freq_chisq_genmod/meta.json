@@ -1,0 +1,8 @@
+{
+  "bundle": "t010_freq_chisq_genmod",
+  "source_file": "Main/Examples/SAS/SASStat/table02.sas",
+  "source_blob_sha": "14b367bf053ebee0f0adf8b9aea29fec7c8550f1",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "Degree-by-belief contingency table: PROC FREQ chisq/expected/measures/cmh1 + PROC GENMOD Poisson loglinear independence model. Script unmodified."
+}

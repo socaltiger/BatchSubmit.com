@@ -1,0 +1,30 @@
+Jenner 0.1.0 (Unlicensed - limited to 100 observations)
+Get a license at https://jenneranalytics.com/license
+
+NOTE: Option OBS changed to 100.
+NOTE: DATA table
+
+NOTE: Processing inline DATALINES (3 lines)
+
+NOTE: Read 18 rows from DATALINES.
+NOTE: Wrote table (18 rows, 3 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: PROC FREQ
+NOTE: ODS plot written: freq_mosaic_degree_belief.spec.json
+NOTE: PROC FREQ statement used.
+NOTE: PROC GENMOD data=
+
+NOTE: PROC GENMOD using R wrapper
+NOTE: 
+NOTE: Response Variable: COUNT
+NOTE: Distribution: POISSON
+NOTE: Link Function: LOG
+NOTE: Number of Observations: 18
+NOTE:   Model fitted successfully with 18 observations
+NOTE: ODS plot written: genmod_residuals_vs_predicted.spec.json
+NOTE: ODS plot written: genmod_residual_histogram_panel.spec.json
+NOTE: ODS plot written: genmod_residuals_vs_obs_order.spec.json
+NOTE: ODS plot written: genmod_qq_plot.spec.json
+NOTE: PROC GENMOD ODS Graphics generated.

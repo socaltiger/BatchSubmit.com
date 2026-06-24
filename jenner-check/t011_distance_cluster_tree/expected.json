@@ -1,0 +1,17 @@
+{
+  "_captured_at": "2026-06-11T17:58:44.205610+00:00",
+  "_captured_run_id": "r_019eb7d61c577a83bd0ef68a687759be",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Input detected as distance matrix (TYPE=DISTANCE)"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "bundle": "t002_quadequation",
+  "source_file": "Main/Examples/SAS/QuadEquation/QuadEquation.sas",
+  "source_blob_sha": "ef66e92e8f5413a7b8beea54d768f7efb223f108",
+  "source_commit": "062737f0560d5530f2a1dbc346d63303a65b5e40",
+  "tier": "real_data",
+  "notes": "Quadratic-equation solver from the QuadEquation task; coefficients normally fed by QuadEquation.par are set in autoexec.sas (a=1,b=-5,c=6 -> roots 3 and 2). Script unmodified."
+}
