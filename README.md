@@ -10,6 +10,47 @@ While complex programs may be too demanding for mobile browsers and often requir
 
 The CRON capability is seamlessly integrated into the system.<p>
 
+Many computational workflows rely on existing programs that must be executed repeatedly with different parameter sets.<p>
+
+A typical workflow looks like this:<p>
+
+Open a web form or configuration file.<p>
+
+Enter dozens of parameters.<p>
+
+Submit the job.<p>
+
+Repeat the process for the next run.<p>
+
+As projects grow, users accumulate files such as:<p>
+
+labtest.py<p>
+labtest_final.py<p>
+labtest_final_v2.py<p>
+labtest_final_v2_fixed.py<p>
+...<p>
+
+BatchSubmit introduces a task-centric model.<p>
+
+Instead of treating parameters as temporary input, BatchSubmit treats each task as a first-class object.<p>
+
+Task<p>
+ ├── Parameters<p>
+ ├── Input Files<p>
+ ├── Output Files<p>
+ ├── Execution Status<p>
+ └── Execution History<p>
+
+Every task is represented by a parameter file that completely describes the execution.<p>
+
+A task can be:<p>
+
+Created<p>
+Saved<p>
+Cloned<p>
+Modified<p>
+Submitted<p>
+
 Seeking strategic partners for scaling (VC inquiries welcome).<p>
 
 Our mission:<p>
