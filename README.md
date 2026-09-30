@@ -62,13 +62,13 @@ Core Value Proposition
 
 Traditional program execution environments are developer-centric. They require users to understand programming languages, command lines, or configuration scripts in order to run or modify computational tasks. This paradigm has long limited the accessibility and reusability of complex software systems.
 
-The platform introduces a new model that fully separates program logic from the user interface. Through the Parameter-as-File (PAF) mechanism, the program’s inputs, options, and execution context are exposed in a structured file format. End users can configure and execute programs through a graphical or form-based interface—without ever interacting with source code.
+The platform introduces a new model that fully separates program logic from the user interface. Through the Parameter-as-Object (PAO) mechanism, the program’s inputs, options, and execution context are exposed in a structured file format. End users can configure and execute programs through a graphical or form-based interface—without ever interacting with source code.
 
 At its core, this mechanism represents an abstraction of program complexity. It allows professional developers to focus on algorithms and logic, while enabling non-technical users to control and apply these capabilities in an intuitive, semantic way. This layered architecture effectively dissolves the boundary between “programmer” and “user,” bringing advanced computational functions into everyday workflows.
 
 From a platform perspective, this is more than a technical convenience—it is a paradigm shift in computational interaction. It transforms executable knowledge from a developer’s toolbox into a broadly accessible operational resource.
 
-Although the implementation of the Parameter-as-File model is remarkably simple — essentially a structured parameter file rendered into a user-facing interface — the conceptual implications are profound.
+Although the implementation of the Parameter-as-Object model is remarkably simple — essentially a structured parameter file rendered into a user-facing interface — the conceptual implications are profound.
 It redefines how programs are executed, parameterized, and shared, shifting computational control from programmers to end users.
 
 The real value of a platform doesn’t come from the cloud itself — it comes from the applications that users can directly use.<p>
