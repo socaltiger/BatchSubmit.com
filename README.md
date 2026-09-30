@@ -1,5 +1,10 @@
 BatchSubmit is a lightweight open source Distributed Asynchronous Job Submitting/Scheduling Platform, a true Task as Service solution, a Task Web Operating System.<p>
 
+What is Parameter as Object?
+Traditional programs receive parameters as transient command-line arguments.<p>
+
+PAO turns those parameters into a persistent object that can be saved, validated, reused, modified, scheduled, and associated with a program.<p>
+
 The fundamental flaw of traditional software is not complexity, but amnesia. Every launch begins with a blank parameter screen, forgetting the user’s last intent. BatchSubmit starts where work actually begins: a task that already knows how to run.<p>
 
 BatchSubmit rethinks software not as applications, but as executable tasks — invoked directly, parameterized, and renders its own UI on the fly.<p>
